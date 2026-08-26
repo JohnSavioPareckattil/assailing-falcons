@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import Stats from "./components/Stats";
@@ -10,6 +11,12 @@ import Sponsors from "./components/Sponsors";
 import Footer from "./components/Footer";
 
 export default function App() {
+  useEffect(() => {
+    if (!location.hash) return;
+    const el = document.getElementById(location.hash.slice(1));
+    el?.scrollIntoView();
+  }, []);
+
   return (
     <>
       <div className="grid-field" aria-hidden="true" />

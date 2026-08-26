@@ -9,7 +9,7 @@ export default function Subteams() {
           <div>
             <p className="eyebrow">04 — How We're Built</p>
             <h2 className="section-title" style={{ marginTop: "0.6rem" }}>
-              Six desks,<br />one airframe
+              Four desks,<br />one airframe
             </h2>
           </div>
         </div>

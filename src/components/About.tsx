@@ -8,21 +8,20 @@ export default function About() {
           <Reveal>
             <p className="eyebrow">01 — Who We Are</p>
             <h2 className="section-title" style={{ marginTop: "0.6rem", marginBottom: "1.6rem" }}>
-              Fifteen years<br />in the air
+              Sixteen years<br />in the air
             </h2>
             <div className="about-copy">
               <p>
-                <strong>Team Assailing Falcons</strong> is the official Advanced Class Aero Design
-                team of Vellore Institute of Technology. We're a student-funded technical team
-                that designs, fabricates and flies autonomous RC aircraft against university
-                teams from every continent at SAE AeroDesign.
+                <strong>Team Assailing Falcons</strong> is VIT's premier aeromodelling team,
+                specialising in the design, fabrication and testing of autonomous unmanned
+                aerial vehicles. Founded in 2010, we've grown into a 50-plus member
+                multidisciplinary team that consistently pushes the boundaries of innovation.
               </p>
               <p>
-                Every airframe is scoped, stressed, wired and flown inside a single academic
-                year — a full aircraft development cycle compressed to twelve months, repeated
-                every year since 2010. Our aircraft have been recognised by engineers from{" "}
-                <strong>Boeing, Airbus and Lockheed Martin</strong>, and the team has held the
-                No.1 rank in Asia for nine consecutive years.
+                Ranked <strong>No.1 in Asia-Pacific</strong>, we compete against university
+                teams from every continent at SAE AeroDesign while giving students a
+                hands-on environment that turns them into industry-ready engineers — through
+                teamwork, technical excellence and continuous experimentation.
               </p>
             </div>
           </Reveal>
@@ -30,16 +29,16 @@ export default function About() {
           <Reveal delay={0.15}>
             <figure className="about-frame">
               <picture>
-                <source srcSet="/media/team/legacy-flag-800.webp" type="image/webp" />
+                <source srcSet="media/aircraft/indra-team-800.webp" type="image/webp" />
                 <img
-                  src="/media/team/legacy-flag-800.jpg"
+                  src="media/aircraft/indra-team-800.jpg"
                   loading="lazy"
-                  alt="The team holding the Indian flag beside three SAE AeroDesign West 2025 award plaques"
+                  alt="Team Falcons '26 group photo in their F'26 team shirts"
                 />
               </picture>
               <figcaption className="about-caption">
-                <span>SAE AeroDesign West · 2025</span>
-                <span>3 plaques, 1 podium</span>
+                <span>Falcons '26</span>
+                <span>50+ members, 4 departments</span>
               </figcaption>
             </figure>
           </Reveal>

@@ -17,9 +17,15 @@ export default function Sponsors() {
         <Reveal>
           <div className="sponsor-grid">
             {sponsors.map((s) => (
-              <div className="sponsor-tile" key={s.file}>
-                <img src={`/media/sponsors/${s.file}.png`} loading="lazy" alt={s.name} />
-              </div>
+              <a
+                className="sponsor-tile"
+                key={s.file}
+                href={s.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={`media/sponsors/${s.file}.png`} loading="lazy" alt={s.name} />
+              </a>
             ))}
           </div>
         </Reveal>

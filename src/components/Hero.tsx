@@ -20,10 +20,10 @@ export default function Hero() {
     <section className="hero" id="top">
       <div className="hero-media">
         <img
-          src="/media/aircraft/vidhyut-hero-1600.jpg"
-          srcSet="/media/aircraft/vidhyut-hero-800.jpg 800w, /media/aircraft/vidhyut-hero-1600.jpg 1600w"
+          src="media/aircraft/indra-hero-1600.jpg"
+          srcSet="media/aircraft/indra-hero-800.jpg 800w, media/aircraft/indra-hero-1600.jpg 1600w"
           sizes="100vw"
-          alt="Vidhyut, the team's 2025 flagship aircraft, spotlit on the tarmac at night"
+          alt="Indra, the team's 2026 flagship aircraft, spotlit on the tarmac at night"
           fetchPriority="high"
         />
       </div>
@@ -34,8 +34,8 @@ export default function Hero() {
           <span>VIT Vellore, Tamil Nadu</span>
         </div>
         <div className="r">
-          <span><strong>Advanced Class</strong></span>
-          <span>SAE AeroDesign</span>
+          <span><strong>F'26 · Indra</strong></span>
+          <span>Advanced Class · eVTOL Tricopter</span>
         </div>
       </div>
 
@@ -65,8 +65,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.7 }}
         >
           VIT Vellore's Advanced Class SAE AeroDesign team. We design, build and fly
-          autonomous RC aircraft — number 1 in Asia for nine straight years, third in
-          the world this year.
+          autonomous RC aircraft — No.1 in Asia-Pacific, and 1st in Technical
+          Presentation worldwide this season with Indra.
         </motion.p>
 
         <motion.p

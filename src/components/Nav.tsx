@@ -17,7 +17,7 @@ export default function Nav() {
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
     >
       <a className="nav-mark" href="#top">
-        <img src="/media/brand/mark.png" alt="" />
+        <img src="media/brand/mark.png" alt="" />
         <span>ASSAILING FALCONS</span>
       </a>
       <ul className="nav-links">
@@ -27,7 +27,7 @@ export default function Nav() {
           </li>
         ))}
       </ul>
-      <span className="nav-tail">TEAM 219</span>
+      <span className="nav-tail">F'26 · INDRA</span>
     </motion.header>
   );
 }

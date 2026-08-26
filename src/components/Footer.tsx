@@ -21,7 +21,10 @@ export default function Footer() {
               <a href={contact.linkedinUrl} target="_blank" rel="noreferrer">
                 LinkedIn
               </a>
-              <a href="/AssailingFalcons25-Brochure.pdf" target="_blank" rel="noreferrer">
+              <a href={contact.youtubeUrl} target="_blank" rel="noreferrer">
+                YouTube
+              </a>
+              <a href="AssailingFalcons25-Brochure.pdf" target="_blank" rel="noreferrer">
                 Brochure ↗
               </a>
             </div>
@@ -30,13 +33,13 @@ export default function Footer() {
           <Reveal delay={0.15}>
             <dl className="footer-meta">
               <dt>Institution</dt>
-              <dd>Vellore Institute of Technology, Vellore</dd>
+              <dd>{contact.address}</dd>
               <dt>Chapter</dt>
               <dd>SAE-VIT, SAE India Student Chapter</dd>
               <dt>Class</dt>
               <dd>SAE AeroDesign, Advanced Class</dd>
-              <dt>Team Number</dt>
-              <dd>219</dd>
+              <dt>Phone</dt>
+              <dd>{contact.phone}</dd>
             </dl>
           </Reveal>
         </div>

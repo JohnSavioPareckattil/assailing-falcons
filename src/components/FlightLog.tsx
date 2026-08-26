@@ -18,12 +18,12 @@ export default function FlightLog() {
           <div>
             <p className="eyebrow">02 — Flight Log</p>
             <h2 className="section-title" style={{ marginTop: "0.6rem" }}>
-              Five years,<br />five airframes
+              Ten years,<br />ten airframes
             </h2>
           </div>
           <p className="eyebrow eyebrow--dim" style={{ maxWidth: "34ch", textAlign: "right" }}>
             Every mission year gets a new callsign. This is the flight
-            plan from Redbird to Vidhyut.
+            plan from Jetaayu to Indra.
           </p>
         </div>
 

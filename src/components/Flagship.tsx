@@ -2,11 +2,11 @@ import Reveal from "./Reveal";
 import CornerFrame from "./CornerFrame";
 
 const specs = [
-  { key: "Class", val: "Advanced — eVTOL" },
-  { key: "Team #", val: "219" },
-  { key: "Max loaded weight", val: "1.587 kg" },
-  { key: "Payload delivered", val: "455 g" },
-  { key: "Competition", val: "SAE AeroDesign West '25" },
+  { key: "Season", val: "F'26" },
+  { key: "Class", val: "Advanced — eVTOL Tricopter" },
+  { key: "Design Report", val: "2nd Worldwide" },
+  { key: "Technical Presentation", val: "1st Worldwide" },
+  { key: "MathWorks Simulation Award", val: "2nd Worldwide" },
 ];
 
 export default function Flagship() {
@@ -17,7 +17,7 @@ export default function Flagship() {
           <div>
             <p className="eyebrow">03 — Current Flagship</p>
             <h2 className="section-title" style={{ marginTop: "0.6rem" }}>
-              Vidhyut
+              Indra
             </h2>
           </div>
         </div>
@@ -27,21 +27,21 @@ export default function Flagship() {
             <div className="flagship-media">
               <CornerFrame />
               <picture>
-                <source srcSet="/media/aircraft/vidhyut-team-comp-800.webp" type="image/webp" />
+                <source srcSet="media/aircraft/indra-flight-800.webp" type="image/webp" />
                 <img
-                  src="/media/aircraft/vidhyut-team-comp-800.jpg"
+                  src="media/aircraft/indra-flight-800.jpg"
                   loading="lazy"
-                  alt="Vidhyut and its predecessor airframe on the tarmac, ready for competition"
+                  alt="Indra in flight at dusk, with the moon visible behind it"
                 />
               </picture>
-              <span className="flagship-media-tag">F'25 · VIDHYUT · 219</span>
+              <span className="flagship-media-tag">F'26 · INDRA</span>
             </div>
           </Reveal>
 
           <Reveal delay={0.15}>
             <div className="spec-panel">
-              <div className="spec-title">VIDHYUT</div>
-              <div className="spec-subtitle">/ vɪd.jʊt / — Sanskrit for lightning</div>
+              <div className="spec-title">INDRA</div>
+              <div className="spec-subtitle">Sanskrit — god of the sky, weather and war</div>
 
               <ul className="spec-list">
                 {specs.map((s) => (
@@ -53,11 +53,12 @@ export default function Flagship() {
               </ul>
 
               <p className="spec-results">
-                An autonomous eVTOL, built to deliver and recapture its own payload
-                mid-mission. It took <strong>1st place in the Technical Design
-                Report</strong>, 3rd in Technical Presentation, and closed{" "}
-                <strong>3rd Overall</strong> at SAE AeroDesign West 2025 — the team's
-                best worldwide result since Redbird in 2019.
+                An electric VTOL tricopter built for precision payload delivery and
+                recapture. When war in Iran closed the airspace the team needed to
+                reach Fort Worth, Assailing Falcons cleared the Design Report,
+                Technical Presentation and MathWorks Simulation Award entirely
+                through remote submission — and still came home with{" "}
+                <strong>1st in Technical Presentation, worldwide</strong>.
               </p>
             </div>
           </Reveal>
