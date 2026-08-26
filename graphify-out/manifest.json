@@ -1,0 +1,677 @@
+{
+  "package.json": {
+    "mtime": 1787769432.3893957,
+    "ast_hash": "f0349af894826dc80048bb9ad834c2ef",
+    "semantic_hash": ""
+  },
+  "src/App.tsx": {
+    "mtime": 1787772537.8278224,
+    "ast_hash": "a1a9c9790ae3581d6fa276fe17d97e33",
+    "semantic_hash": ""
+  },
+  "src/components/About.tsx": {
+    "mtime": 1787772191.6779792,
+    "ast_hash": "3628b8e52726f487a4ce8df349369935",
+    "semantic_hash": ""
+  },
+  "src/components/CornerFrame.tsx": {
+    "mtime": 1787768773.825104,
+    "ast_hash": "b73f614e7e912a456932f7260c0620d5",
+    "semantic_hash": ""
+  },
+  "src/components/Flagship.tsx": {
+    "mtime": 1787772168.4019086,
+    "ast_hash": "ae6e0499504e45c58c2605a56a5cc148",
+    "semantic_hash": ""
+  },
+  "src/components/FlightLog.tsx": {
+    "mtime": 1787772102.6368814,
+    "ast_hash": "e2c4e2d2bb9c3745147cc98eac7893b2",
+    "semantic_hash": ""
+  },
+  "src/components/Footer.tsx": {
+    "mtime": 1787772234.680888,
+    "ast_hash": "337c0b2570d406b337f8f1fd0c6312be",
+    "semantic_hash": ""
+  },
+  "src/components/Hero.tsx": {
+    "mtime": 1787772144.5143168,
+    "ast_hash": "03f0235657688d2c4bdf5cc560640a47",
+    "semantic_hash": ""
+  },
+  "src/components/Nav.tsx": {
+    "mtime": 1787772153.6687417,
+    "ast_hash": "fd0bce105a47f7a33007b4888f5590f6",
+    "semantic_hash": ""
+  },
+  "src/components/People.tsx": {
+    "mtime": 1787772262.3401046,
+    "ast_hash": "d89d544f51cc3bdd6760cced64f95717",
+    "semantic_hash": ""
+  },
+  "src/components/Reveal.tsx": {
+    "mtime": 1787768783.031623,
+    "ast_hash": "8976175fbc713b6204a9ac2ad15061a0",
+    "semantic_hash": ""
+  },
+  "src/components/Sponsors.tsx": {
+    "mtime": 1787772250.8697085,
+    "ast_hash": "3b7d54bae0fa043a1b4af537da4d7497",
+    "semantic_hash": ""
+  },
+  "src/components/Stats.tsx": {
+    "mtime": 1787768844.5698671,
+    "ast_hash": "cd84c4aef73f253621ee458a666f8332",
+    "semantic_hash": ""
+  },
+  "src/components/Subteams.tsx": {
+    "mtime": 1787772201.1550362,
+    "ast_hash": "f4c56afc858e5ae468052b60d9e9e4e5",
+    "semantic_hash": ""
+  },
+  "src/data.ts": {
+    "mtime": 1787772091.0136743,
+    "ast_hash": "30e2f604532712e02143a4de1415e6b2",
+    "semantic_hash": ""
+  },
+  "src/main.tsx": {
+    "mtime": 1787768766.1999645,
+    "ast_hash": "77e179adcc90aa477212c53290037bb5",
+    "semantic_hash": ""
+  },
+  "src/vite-env.d.ts": {
+    "mtime": 1787768992.1136215,
+    "ast_hash": "0352474ba2918efe13895edbc3780d94",
+    "semantic_hash": ""
+  },
+  "tsconfig.json": {
+    "mtime": 1787768424.3229668,
+    "ast_hash": "3b8acc8d8288d92dbef756afa78136b7",
+    "semantic_hash": ""
+  },
+  "vite.config.ts": {
+    "mtime": 1787770662.6155603,
+    "ast_hash": "1bab191310b74ce31e0a59e0e4bc3ee2",
+    "semantic_hash": ""
+  },
+  ".github/workflows/deploy.yml": {
+    "mtime": 1787769416.4986708,
+    "ast_hash": "8bd4cee03973239b04afd53d86781f4b",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1787769396.0649345,
+    "ast_hash": "e36ec4ab7f684ae9dc3d632d694d3f9e",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1787772298.439737,
+    "ast_hash": "d8b21a5e3b34201d194290577279dbae",
+    "semantic_hash": ""
+  },
+  "public/robots.txt": {
+    "mtime": 1787766677.881773,
+    "ast_hash": "fa1ded1ed7c11438a9b0385b1e112850",
+    "semantic_hash": ""
+  },
+  "public/AssailingFalcons25-Brochure.pdf": {
+    "mtime": 1787766677.787559,
+    "ast_hash": "56efe1d08460e8af3c0509831fd5cbed",
+    "semantic_hash": ""
+  },
+  "public/logo192.png": {
+    "mtime": 1787766677.8443105,
+    "ast_hash": "8de7a80811c1b25aa2b73c4742060880",
+    "semantic_hash": ""
+  },
+  "public/logo512.png": {
+    "mtime": 1787766677.85907,
+    "ast_hash": "44fce5e0db860629bb8a1b9e8681f6af",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/indra-flight-400.jpg": {
+    "mtime": 1787772022.5161066,
+    "ast_hash": "b084945fdfa4380e92dffcfa7a013e1d",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/indra-flight-400.webp": {
+    "mtime": 1787772022.563419,
+    "ast_hash": "0613ac734fb209bbef60ae08027f35e6",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/indra-flight-800.jpg": {
+    "mtime": 1787772022.4184165,
+    "ast_hash": "7829b54904fb89d4425c74b5e3c8b216",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/indra-flight-800.webp": {
+    "mtime": 1787772022.471831,
+    "ast_hash": "5a10913af6913f29846487899e7a426c",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/indra-hero-1600.jpg": {
+    "mtime": 1787772021.9303036,
+    "ast_hash": "cfb725cc315db46b672754462b233f23",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/indra-hero-1600.webp": {
+    "mtime": 1787772021.9868426,
+    "ast_hash": "9962e08f991bb7e71d3863d8c6f1b541",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/indra-hero-400.jpg": {
+    "mtime": 1787772022.130975,
+    "ast_hash": "16c000b819b6b6aa5a8cf722a36eafb1",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/indra-hero-400.webp": {
+    "mtime": 1787772022.1791437,
+    "ast_hash": "ded2866a6680b5f49989a16d46b29375",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/indra-hero-800.jpg": {
+    "mtime": 1787772022.0346608,
+    "ast_hash": "e5eaa1f84118d06ece5a2c005e5edb41",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/indra-hero-800.webp": {
+    "mtime": 1787772022.0873876,
+    "ast_hash": "ed95da5567d4b06a56775341b2d66131",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/indra-team-400.jpg": {
+    "mtime": 1787772022.3278747,
+    "ast_hash": "6919605d0481a3ad7ad50ddd6193b91f",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/indra-team-400.webp": {
+    "mtime": 1787772022.375915,
+    "ast_hash": "978890aae9041f1f684abe1db6f210bd",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/indra-team-800.jpg": {
+    "mtime": 1787772022.2196012,
+    "ast_hash": "5c3b2b05584e6694e2607887d6aac892",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/indra-team-800.webp": {
+    "mtime": 1787772022.280092,
+    "ast_hash": "2e141e90e9560fb267a359a21d3f70ac",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/vidhyut-comp-400.jpg": {
+    "mtime": 1787768546.8651104,
+    "ast_hash": "36986f1921a9442b8f6566f77677af8e",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/vidhyut-comp-400.webp": {
+    "mtime": 1787768546.913829,
+    "ast_hash": "9fcc1c5c38751177644f43a5d640630e",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/vidhyut-comp-800.jpg": {
+    "mtime": 1787768546.7714944,
+    "ast_hash": "6718a123e0e2c067eb6f55754e3b6c2a",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/vidhyut-comp-800.webp": {
+    "mtime": 1787768546.8184488,
+    "ast_hash": "e95b8aa891d2af637bf8bdb20ae6c1bf",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/vidhyut-flight-400.jpg": {
+    "mtime": 1787768546.6736257,
+    "ast_hash": "1b6f70275ca675cd3558d112f01e434f",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/vidhyut-flight-400.webp": {
+    "mtime": 1787768546.7225103,
+    "ast_hash": "68dc844f0c2abb161c4df2433f98fc31",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/vidhyut-flight-800.jpg": {
+    "mtime": 1787768546.5738442,
+    "ast_hash": "7e168a0e4a03692a768267c6fd6f14a2",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/vidhyut-flight-800.webp": {
+    "mtime": 1787768546.6249313,
+    "ast_hash": "1fa10f2621f8d3f0cf3017135adcb044",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/vidhyut-hero-1600.jpg": {
+    "mtime": 1787768546.1052797,
+    "ast_hash": "4d5e8d9ccba2238036a050cfc869e2ae",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/vidhyut-hero-1600.webp": {
+    "mtime": 1787768546.1530664,
+    "ast_hash": "11706362276f61802252e174c937b415",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/vidhyut-hero-400.jpg": {
+    "mtime": 1787768546.287312,
+    "ast_hash": "a7de4552687afdaf19b7f4d16f0af0f5",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/vidhyut-hero-400.webp": {
+    "mtime": 1787768546.334041,
+    "ast_hash": "79f0d53265b2b037fe784b8d8f6169ff",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/vidhyut-hero-800.jpg": {
+    "mtime": 1787768546.197685,
+    "ast_hash": "51d7a4191ae922bbfc39d1cd1f777555",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/vidhyut-hero-800.webp": {
+    "mtime": 1787768546.2422402,
+    "ast_hash": "2bbab318704d2003ed77f9c5f70509e5",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/vidhyut-team-comp-400.jpg": {
+    "mtime": 1787768546.4783652,
+    "ast_hash": "7f6d8d128da2a69f7c93a2d9affc33bc",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/vidhyut-team-comp-400.webp": {
+    "mtime": 1787768546.5234306,
+    "ast_hash": "5e52742f85f5fee228a3cff7b4c7b35c",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/vidhyut-team-comp-800.jpg": {
+    "mtime": 1787768546.3827727,
+    "ast_hash": "9ae5ee7e5e04ae395cf36937ab664127",
+    "semantic_hash": ""
+  },
+  "public/media/aircraft/vidhyut-team-comp-800.webp": {
+    "mtime": 1787768546.430534,
+    "ast_hash": "8447aec7abf4964d26d6d34c7808dc9c",
+    "semantic_hash": ""
+  },
+  "public/media/brand/mark.png": {
+    "mtime": 1787768546.0599344,
+    "ast_hash": "3bdc305140964fca0993cd8e0854083b",
+    "semantic_hash": ""
+  },
+  "public/media/brand/wordmark.png": {
+    "mtime": 1787768546.0151832,
+    "ast_hash": "d412fc2fb78821f9736c4e05bd31916a",
+    "semantic_hash": ""
+  },
+  "public/media/sponsors/aeroatoms.png": {
+    "mtime": 1787768549.1751308,
+    "ast_hash": "cbe0b0ebac2639ebc2decc670824778b",
+    "semantic_hash": ""
+  },
+  "public/media/sponsors/ansys.png": {
+    "mtime": 1787768549.197766,
+    "ast_hash": "2d47ae92493f59ae360bb750b45956ef",
+    "semantic_hash": ""
+  },
+  "public/media/sponsors/cadfem.png": {
+    "mtime": 1787768549.220782,
+    "ast_hash": "5016faf58c4c2b836b3c78f0e5b6e201",
+    "semantic_hash": ""
+  },
+  "public/media/sponsors/drkstore.png": {
+    "mtime": 1787768549.2515395,
+    "ast_hash": "92330b9d582091c9601dbceef31799a0",
+    "semantic_hash": ""
+  },
+  "public/media/sponsors/emax.png": {
+    "mtime": 1787768549.278106,
+    "ast_hash": "631859007946f29e9a625eb3f63ed5cf",
+    "semantic_hash": ""
+  },
+  "public/media/sponsors/gemfan.png": {
+    "mtime": 1787768549.2988038,
+    "ast_hash": "6d0b72b1d2002988e5768a5daa6711bf",
+    "semantic_hash": ""
+  },
+  "public/media/sponsors/gensace.png": {
+    "mtime": 1787768549.3195498,
+    "ast_hash": "d87bbe36bfe4a5cbab35f52adff16058",
+    "semantic_hash": ""
+  },
+  "public/media/sponsors/kenesto.png": {
+    "mtime": 1787768549.347128,
+    "ast_hash": "f9c07efc2cf99a44a808c2355a6caed5",
+    "semantic_hash": ""
+  },
+  "public/media/sponsors/landmark.png": {
+    "mtime": 1787768549.3721426,
+    "ast_hash": "6de287dce32073a070618094330bd413",
+    "semantic_hash": ""
+  },
+  "public/media/sponsors/onshape.png": {
+    "mtime": 1787768549.3985643,
+    "ast_hash": "d7308149bbaeb62c5c3d6165311a95c1",
+    "semantic_hash": ""
+  },
+  "public/media/sponsors/protocase.png": {
+    "mtime": 1787768549.4225426,
+    "ast_hash": "ec0391f6e2bdaf91fa510061a6abeb40",
+    "semantic_hash": ""
+  },
+  "public/media/sponsors/solidworks.png": {
+    "mtime": 1787768549.4525266,
+    "ast_hash": "76661c8b82212dc837dd5d39053c235e",
+    "semantic_hash": ""
+  },
+  "public/media/sponsors/tattu.png": {
+    "mtime": 1787768549.4772751,
+    "ast_hash": "4ddebd3da6b4f53c8bbea55aec16aed8",
+    "semantic_hash": ""
+  },
+  "public/media/team/legacy-flag-1600.jpg": {
+    "mtime": 1787768548.2495313,
+    "ast_hash": "fdc2c7287b4661b50a68ae2528614397",
+    "semantic_hash": ""
+  },
+  "public/media/team/legacy-flag-1600.webp": {
+    "mtime": 1787768548.2949815,
+    "ast_hash": "619a802d96723cf21a257e7905ad0c92",
+    "semantic_hash": ""
+  },
+  "public/media/team/legacy-flag-400.jpg": {
+    "mtime": 1787768548.4367087,
+    "ast_hash": "2e0435b7f74acd5e9fdaf5cb6d96d649",
+    "semantic_hash": ""
+  },
+  "public/media/team/legacy-flag-400.webp": {
+    "mtime": 1787768548.4881358,
+    "ast_hash": "f45a8b23f62c1ce2f2813cce9069264e",
+    "semantic_hash": ""
+  },
+  "public/media/team/legacy-flag-800.jpg": {
+    "mtime": 1787768548.3482547,
+    "ast_hash": "bad52e2dd6bc33cf94bf87f03e7b3e6a",
+    "semantic_hash": ""
+  },
+  "public/media/team/legacy-flag-800.webp": {
+    "mtime": 1787768548.3939552,
+    "ast_hash": "16d6f2f34d0d89518f424a31e09e7509",
+    "semantic_hash": ""
+  },
+  "public/media/team/workshop-build-400.jpg": {
+    "mtime": 1787768549.0589974,
+    "ast_hash": "f4f09f792de3dfedee3e2fe4b2866df3",
+    "semantic_hash": ""
+  },
+  "public/media/team/workshop-build-400.webp": {
+    "mtime": 1787768549.1213882,
+    "ast_hash": "0746caf8943a926ef7fc1153c48ea6a3",
+    "semantic_hash": ""
+  },
+  "public/media/team/workshop-build-800.jpg": {
+    "mtime": 1787768548.9530778,
+    "ast_hash": "f056fb7b7869d357d5c0608ed1e54243",
+    "semantic_hash": ""
+  },
+  "public/media/team/workshop-build-800.webp": {
+    "mtime": 1787768549.0010912,
+    "ast_hash": "18e7b593fae11379aadb15d995285bac",
+    "semantic_hash": ""
+  },
+  "public/media/texture/sponsor-decal-400.jpg": {
+    "mtime": 1787768548.8476424,
+    "ast_hash": "84d53f3f58d79d3cf8c623dbaf0b97d7",
+    "semantic_hash": ""
+  },
+  "public/media/texture/sponsor-decal-400.webp": {
+    "mtime": 1787768548.9030364,
+    "ast_hash": "024cea6dbb32a3a671a47c54d81777fb",
+    "semantic_hash": ""
+  },
+  "public/media/texture/sponsor-decal-800.jpg": {
+    "mtime": 1787768548.7418745,
+    "ast_hash": "b4acbbdddbca0685952175de707d30c2",
+    "semantic_hash": ""
+  },
+  "public/media/texture/sponsor-decal-800.webp": {
+    "mtime": 1787768548.7930346,
+    "ast_hash": "c9b8ae9810c4c16ca7a9fedde6da9557",
+    "semantic_hash": ""
+  },
+  "public/media/texture/tail-closeup-400.jpg": {
+    "mtime": 1787768548.6315198,
+    "ast_hash": "9c5f095e4b97f46c7f7924ffd591fe30",
+    "semantic_hash": ""
+  },
+  "public/media/texture/tail-closeup-400.webp": {
+    "mtime": 1787768548.6816964,
+    "ast_hash": "0c0f18f521298804ff8aaaafc8183011",
+    "semantic_hash": ""
+  },
+  "public/media/texture/tail-closeup-800.jpg": {
+    "mtime": 1787768548.5365808,
+    "ast_hash": "53f4288725feeed54337667740162a5f",
+    "semantic_hash": ""
+  },
+  "public/media/texture/tail-closeup-800.webp": {
+    "mtime": 1787768548.5838425,
+    "ast_hash": "6fc3095507a43eeaf7f294f32b524ec0",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/airavat-hero-400.jpg": {
+    "mtime": 1787772023.089446,
+    "ast_hash": "e91b9c05a61380be177d59c8e147c7f0",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/airavat-hero-400.webp": {
+    "mtime": 1787772023.135156,
+    "ast_hash": "d58740a1314f34e6da1150747bad6baf",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/airavat-hero-800.jpg": {
+    "mtime": 1787772022.9966521,
+    "ast_hash": "c67965868d12fbc4e83220ab930d3258",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/airavat-hero-800.webp": {
+    "mtime": 1787772023.042853,
+    "ast_hash": "1098469404c19a3220c792907dc2b1da",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/aquarius-award-400.jpg": {
+    "mtime": 1787768547.7843752,
+    "ast_hash": "aa7efcc3e4c1884fab3c4a926169c555",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/aquarius-award-400.webp": {
+    "mtime": 1787768547.8330889,
+    "ast_hash": "21ee9baf7d1e808c820fa3323ef43304",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/aquarius-award-800.jpg": {
+    "mtime": 1787768547.6864974,
+    "ast_hash": "67dbc2baf3bf2bcb10aa24fb0f35f2e5",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/aquarius-award-800.webp": {
+    "mtime": 1787768547.7382524,
+    "ast_hash": "9f1aae9ce8bec34b3e7660c3c2dd2768",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/aquarius-hero-400.jpg": {
+    "mtime": 1787768547.5972404,
+    "ast_hash": "4d4c1f9c4b89a8ffe8527910aca7117f",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/aquarius-hero-400.webp": {
+    "mtime": 1787768547.6393645,
+    "ast_hash": "d39ef647b7a715b5d477aa53edaba69f",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/aquarius-hero-800.jpg": {
+    "mtime": 1787768547.5055368,
+    "ast_hash": "3ffa4917c8a84fbf1d659a18990f8ff4",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/aquarius-hero-800.webp": {
+    "mtime": 1787768547.5535252,
+    "ast_hash": "14034e08de0a97f09aaa52f3d0e216fd",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/jetaayu-hero-400.jpg": {
+    "mtime": 1787772022.7043924,
+    "ast_hash": "672d74d1c67a1ba2fd8ea1249949da05",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/jetaayu-hero-400.webp": {
+    "mtime": 1787772022.7595134,
+    "ast_hash": "0092492690816b05da27648e48d8f569",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/jetaayu-hero-800.jpg": {
+    "mtime": 1787772022.6119013,
+    "ast_hash": "c2568c9d7a1e14e499c8a683221ca06f",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/jetaayu-hero-800.webp": {
+    "mtime": 1787772022.659382,
+    "ast_hash": "2b755559568b512e0cf7ca272dd360d2",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/marut-hero-400.jpg": {
+    "mtime": 1787768548.159468,
+    "ast_hash": "5b5300e4246a8d9bf4e5c9a5fb58ccac",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/marut-hero-400.webp": {
+    "mtime": 1787768548.2003596,
+    "ast_hash": "3a93b51766d6c5f0528faeb8e92c9dc0",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/marut-hero-800.jpg": {
+    "mtime": 1787768548.0680747,
+    "ast_hash": "56c2309acf027bb2c59c655bbea94c9b",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/marut-hero-800.webp": {
+    "mtime": 1787768548.1145115,
+    "ast_hash": "f9db18b5f638f3ccd459a15cfacda021",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/marut-team-400.jpg": {
+    "mtime": 1787768547.9764516,
+    "ast_hash": "bb4bbe41012902ba7d1031a1c68cdefe",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/marut-team-400.webp": {
+    "mtime": 1787768548.0228293,
+    "ast_hash": "a97c7e40eab3f22afc018d9bbb6f2488",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/marut-team-800.jpg": {
+    "mtime": 1787768547.8811486,
+    "ast_hash": "3bf7e41e2ef6d399676465c35332b8b9",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/marut-team-800.webp": {
+    "mtime": 1787768547.9308784,
+    "ast_hash": "ca6e93808663a0e60b6feee24c7468d7",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/redbird-award-400.jpg": {
+    "mtime": 1787768547.2424152,
+    "ast_hash": "02ab3fd0368d167c94aad9255051bb6a",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/redbird-award-400.webp": {
+    "mtime": 1787768547.2838912,
+    "ast_hash": "40f6bc6a93fa81ad8010d75d92ef1046",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/redbird-award-800.jpg": {
+    "mtime": 1787768547.1491232,
+    "ast_hash": "acfe349feda8ad17ccb57db0004edd60",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/redbird-award-800.webp": {
+    "mtime": 1787768547.1931458,
+    "ast_hash": "6b4f5cc1a85ee77722f61bae07d0a867",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/redbird-team-400.jpg": {
+    "mtime": 1787768547.056097,
+    "ast_hash": "03d1eb004b07249b32dccf3038cd060e",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/redbird-team-400.webp": {
+    "mtime": 1787768547.1034224,
+    "ast_hash": "4a5b7671da387dc683e3eb02d7f78c6d",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/redbird-team-800.jpg": {
+    "mtime": 1787768546.9612968,
+    "ast_hash": "590eda0aba52befb13d14493e269b71d",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/redbird-team-800.webp": {
+    "mtime": 1787768547.007784,
+    "ast_hash": "c5ebb4b95c3fcb03f04fa1a00c8b20f4",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/trident-hero-400.jpg": {
+    "mtime": 1787768547.416091,
+    "ast_hash": "eb05bd70f19e31d9524ef930188b4d44",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/trident-hero-400.webp": {
+    "mtime": 1787768547.461377,
+    "ast_hash": "5281844de1f5c0747f4ddbd106e72d1d",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/trident-hero-800.jpg": {
+    "mtime": 1787768547.3244812,
+    "ast_hash": "bccfb255cced40a9345998b7bc89aca8",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/trident-hero-800.webp": {
+    "mtime": 1787768547.3710175,
+    "ast_hash": "1e4ae49b3d628ef63b8921f2b06fe90b",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/vulcan-hero-400.jpg": {
+    "mtime": 1787772023.2764108,
+    "ast_hash": "77a443405187975da7ecf90fefc286f4",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/vulcan-hero-400.webp": {
+    "mtime": 1787772023.3223424,
+    "ast_hash": "12642c7cea099e692fb10482e30c521b",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/vulcan-hero-800.jpg": {
+    "mtime": 1787772023.1828356,
+    "ast_hash": "7958f1ccebb8d872f6af82442e6ae5d1",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/vulcan-hero-800.webp": {
+    "mtime": 1787772023.2299156,
+    "ast_hash": "550e0570263a84af9067c8ad6761b316",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/zephyrus-hero-400.jpg": {
+    "mtime": 1787772022.9050262,
+    "ast_hash": "e4e9b50ca844f964fc4679af7f454b43",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/zephyrus-hero-400.webp": {
+    "mtime": 1787772022.9505737,
+    "ast_hash": "b71c1484f4e6521885893562b98868a6",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/zephyrus-hero-800.jpg": {
+    "mtime": 1787772022.8062449,
+    "ast_hash": "641fcbe73d5e82e5a11115f6992ed8a3",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/zephyrus-hero-800.webp": {
+    "mtime": 1787772022.852921,
+    "ast_hash": "f2a0d16aabb26f1f3e2140249df31270",
+    "semantic_hash": ""
+  }
+}

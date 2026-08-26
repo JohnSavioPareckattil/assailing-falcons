@@ -1,0 +1,760 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "App.tsx",
+      "file_type": "code",
+      "source_file": "src/App.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_app",
+      "community": 1,
+      "norm_label": "app.tsx"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "src/App.tsx",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "src_app_app",
+      "community": 1,
+      "norm_label": "app()"
+    },
+    {
+      "label": "About.tsx",
+      "file_type": "code",
+      "source_file": "src/components/About.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_about",
+      "community": 1,
+      "norm_label": "about.tsx"
+    },
+    {
+      "label": "About()",
+      "file_type": "code",
+      "source_file": "src/components/About.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "components_about_about",
+      "community": 1,
+      "norm_label": "about()"
+    },
+    {
+      "label": "Flagship.tsx",
+      "file_type": "code",
+      "source_file": "src/components/Flagship.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_flagship",
+      "community": 3,
+      "norm_label": "flagship.tsx"
+    },
+    {
+      "label": "specs",
+      "file_type": "code",
+      "source_file": "src/components/Flagship.tsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "components_flagship_specs",
+      "community": 3,
+      "norm_label": "specs"
+    },
+    {
+      "label": "Flagship()",
+      "file_type": "code",
+      "source_file": "src/components/Flagship.tsx",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "components_flagship_flagship",
+      "community": 3,
+      "norm_label": "flagship()"
+    },
+    {
+      "label": "FlightLog.tsx",
+      "file_type": "code",
+      "source_file": "src/components/FlightLog.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_flightlog",
+      "community": 4,
+      "norm_label": "flightlog.tsx"
+    },
+    {
+      "label": "FlightLog()",
+      "file_type": "code",
+      "source_file": "src/components/FlightLog.tsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "components_flightlog_flightlog",
+      "community": 4,
+      "norm_label": "flightlog()"
+    },
+    {
+      "label": "Footer.tsx",
+      "file_type": "code",
+      "source_file": "src/components/Footer.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_footer",
+      "community": 0,
+      "norm_label": "footer.tsx"
+    },
+    {
+      "label": "Footer()",
+      "file_type": "code",
+      "source_file": "src/components/Footer.tsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "components_footer_footer",
+      "community": 0,
+      "norm_label": "footer()"
+    },
+    {
+      "label": "Hero.tsx",
+      "file_type": "code",
+      "source_file": "src/components/Hero.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_hero",
+      "community": 2,
+      "norm_label": "hero.tsx"
+    },
+    {
+      "label": "lineVariants",
+      "file_type": "code",
+      "source_file": "src/components/Hero.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "components_hero_linevariants",
+      "community": 2,
+      "norm_label": "linevariants"
+    },
+    {
+      "label": "wordVariants",
+      "file_type": "code",
+      "source_file": "src/components/Hero.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "components_hero_wordvariants",
+      "community": 2,
+      "norm_label": "wordvariants"
+    },
+    {
+      "label": "Hero()",
+      "file_type": "code",
+      "source_file": "src/components/Hero.tsx",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "components_hero_hero",
+      "community": 2,
+      "norm_label": "hero()"
+    },
+    {
+      "label": "Nav.tsx",
+      "file_type": "code",
+      "source_file": "src/components/Nav.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_nav",
+      "community": 5,
+      "norm_label": "nav.tsx"
+    },
+    {
+      "label": "links",
+      "file_type": "code",
+      "source_file": "src/components/Nav.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "components_nav_links",
+      "community": 5,
+      "norm_label": "links"
+    },
+    {
+      "label": "Nav()",
+      "file_type": "code",
+      "source_file": "src/components/Nav.tsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "components_nav_nav",
+      "community": 5,
+      "norm_label": "nav()"
+    },
+    {
+      "label": "People.tsx",
+      "file_type": "code",
+      "source_file": "src/components/People.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_people",
+      "community": 6,
+      "norm_label": "people.tsx"
+    },
+    {
+      "label": "People()",
+      "file_type": "code",
+      "source_file": "src/components/People.tsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "components_people_people",
+      "community": 6,
+      "norm_label": "people()"
+    },
+    {
+      "label": "Sponsors.tsx",
+      "file_type": "code",
+      "source_file": "src/components/Sponsors.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_sponsors",
+      "community": 0,
+      "norm_label": "sponsors.tsx"
+    },
+    {
+      "label": "Sponsors()",
+      "file_type": "code",
+      "source_file": "src/components/Sponsors.tsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "components_sponsors_sponsors",
+      "community": 0,
+      "norm_label": "sponsors()"
+    },
+    {
+      "label": "Subteams.tsx",
+      "file_type": "code",
+      "source_file": "src/components/Subteams.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_subteams",
+      "community": 1,
+      "norm_label": "subteams.tsx"
+    },
+    {
+      "label": "Subteams()",
+      "file_type": "code",
+      "source_file": "src/components/Subteams.tsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "components_subteams_subteams",
+      "community": 1,
+      "norm_label": "subteams()"
+    },
+    {
+      "label": "data.ts",
+      "file_type": "code",
+      "source_file": "src/data.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_data",
+      "community": 0,
+      "norm_label": "data.ts"
+    },
+    {
+      "label": "stats",
+      "file_type": "code",
+      "source_file": "src/data.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_data_stats",
+      "community": 0,
+      "norm_label": "stats"
+    },
+    {
+      "label": "FlightLogEntry",
+      "file_type": "code",
+      "source_file": "src/data.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "src_data_flightlogentry",
+      "community": 0,
+      "norm_label": "flightlogentry"
+    },
+    {
+      "label": "flightLog",
+      "file_type": "code",
+      "source_file": "src/data.ts",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "src_data_flightlog",
+      "community": 4,
+      "norm_label": "flightlog"
+    },
+    {
+      "label": "subteams",
+      "file_type": "code",
+      "source_file": "src/data.ts",
+      "source_location": "L112",
+      "_origin": "ast",
+      "id": "src_data_subteams",
+      "community": 1,
+      "norm_label": "subteams"
+    },
+    {
+      "label": "sponsors",
+      "file_type": "code",
+      "source_file": "src/data.ts",
+      "source_location": "L139",
+      "_origin": "ast",
+      "id": "src_data_sponsors",
+      "community": 0,
+      "norm_label": "sponsors"
+    },
+    {
+      "label": "leadership",
+      "file_type": "code",
+      "source_file": "src/data.ts",
+      "source_location": "L155",
+      "_origin": "ast",
+      "id": "src_data_leadership",
+      "community": 6,
+      "norm_label": "leadership"
+    },
+    {
+      "label": "contact",
+      "file_type": "code",
+      "source_file": "src/data.ts",
+      "source_location": "L160",
+      "_origin": "ast",
+      "id": "src_data_contact",
+      "community": 0,
+      "norm_label": "contact"
+    },
+    {
+      "label": "vite.config.ts",
+      "file_type": "code",
+      "source_file": "vite.config.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "vite_config",
+      "community": 7,
+      "norm_label": "vite.config.ts"
+    }
+  ],
+  "links": [
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "components_about",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "components_flagship",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "components_flightlog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "components_footer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "components_hero",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "components_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "components_people",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "components_sponsors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "components_subteams",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "src_app_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/About.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "components_about",
+      "target": "components_about_about",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Flagship.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "components_flagship",
+      "target": "components_flagship_flagship",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Flagship.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_flagship",
+      "target": "components_flagship_specs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/FlightLog.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "components_flightlog",
+      "target": "components_flightlog_flightlog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/FlightLog.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_flightlog",
+      "target": "src_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/FlightLog.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_flightlog",
+      "target": "src_data_flightlog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Footer.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_footer",
+      "target": "components_footer_footer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Footer.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "components_footer",
+      "target": "src_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Footer.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "components_footer",
+      "target": "src_data_contact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Hero.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "components_hero",
+      "target": "components_hero_hero",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Hero.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "components_hero",
+      "target": "components_hero_linevariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Hero.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "components_hero",
+      "target": "components_hero_wordvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Nav.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "components_nav",
+      "target": "components_nav_links",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Nav.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "components_nav",
+      "target": "components_nav_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/People.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_people",
+      "target": "components_people_people",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/People.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "components_people",
+      "target": "src_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/People.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "components_people",
+      "target": "src_data_leadership",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Sponsors.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_sponsors",
+      "target": "components_sponsors_sponsors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Sponsors.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "components_sponsors",
+      "target": "src_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Sponsors.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "components_sponsors",
+      "target": "src_data_sponsors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Subteams.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_subteams",
+      "target": "components_subteams_subteams",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Subteams.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "components_subteams",
+      "target": "src_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Subteams.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "components_subteams",
+      "target": "src_data_subteams",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.ts",
+      "source_location": "L160",
+      "weight": 1.0,
+      "source": "src_data",
+      "target": "src_data_contact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "src_data",
+      "target": "src_data_flightlog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_data",
+      "target": "src_data_flightlogentry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.ts",
+      "source_location": "L155",
+      "weight": 1.0,
+      "source": "src_data",
+      "target": "src_data_leadership",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.ts",
+      "source_location": "L139",
+      "weight": 1.0,
+      "source": "src_data",
+      "target": "src_data_sponsors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_data",
+      "target": "src_data_stats",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data.ts",
+      "source_location": "L112",
+      "weight": 1.0,
+      "source": "src_data",
+      "target": "src_data_subteams",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "828487a2f6208087bf663e9ec9faca5219a6ba73"
+}
