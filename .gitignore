@@ -1,0 +1,10 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+*.tsbuildinfo
+
+# Raw / unoptimized source photography (400MB+) — curated, web-sized
+# copies live in public/media. Kept locally for future re-cropping.
+public/images/
