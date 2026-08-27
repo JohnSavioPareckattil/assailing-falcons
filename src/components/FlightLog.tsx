@@ -18,12 +18,12 @@ export default function FlightLog() {
           <div>
             <p className="eyebrow">02 — Flight Log</p>
             <h2 className="section-title" style={{ marginTop: "0.6rem" }}>
-              Ten years,<br />ten airframes
+              Sixteen years,<br />thirteen airframes
             </h2>
           </div>
           <p className="eyebrow eyebrow--dim" style={{ maxWidth: "34ch", textAlign: "right" }}>
             Every mission year gets a new callsign. This is the flight
-            plan from Jetaayu to Indra.
+            plan from Falcons Alpha to Indra.
           </p>
         </div>
 
@@ -46,14 +46,28 @@ export default function FlightLog() {
               </span>
               <div className="log-card">
                 <div className="log-thumb">
-                  <picture>
-                    <source srcSet={`${entry.image}-800.webp`} type="image/webp" />
-                    <img
-                      src={`${entry.image}-800.jpg`}
-                      loading="lazy"
-                      alt={`${entry.name}, the ${entry.year} aircraft`}
-                    />
-                  </picture>
+                  {entry.image ? (
+                    <picture>
+                      <source srcSet={`${entry.image}-800.webp`} type="image/webp" />
+                      <img
+                        src={`${entry.image}-800.jpg`}
+                        loading="lazy"
+                        alt={`${entry.name}, the ${entry.year} aircraft`}
+                      />
+                    </picture>
+                  ) : (
+                    <div className="log-thumb-empty" aria-hidden="true">
+                      <svg viewBox="0 0 48 48" fill="none">
+                        <path
+                          d="M6 26l36-14-9 34-6-13-13 8 4-9-12-6z"
+                          stroke="currentColor"
+                          strokeWidth="1.4"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      <span>NO ARCHIVE PHOTOGRAPH</span>
+                    </div>
+                  )}
                 </div>
                 <div>
                   <span className="log-year-mobile">{entry.year}</span>

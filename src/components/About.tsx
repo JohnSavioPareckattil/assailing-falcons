@@ -1,8 +1,10 @@
 import Reveal from "./Reveal";
+import Blueprint from "./Blueprint";
 
 export default function About() {
   return (
-    <section className="section" id="about">
+    <section className="section about" id="about">
+      <Blueprint className="about-blueprint" />
       <div className="container">
         <div className="about-grid">
           <Reveal>

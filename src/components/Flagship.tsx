@@ -1,5 +1,6 @@
 import Reveal from "./Reveal";
 import CornerFrame from "./CornerFrame";
+import Blueprint from "./Blueprint";
 
 const specs = [
   { key: "Season", val: "F'26" },
@@ -11,7 +12,7 @@ const specs = [
 
 export default function Flagship() {
   return (
-    <section className="section flagship" id="vidhyut">
+    <section className="section flagship" id="indra">
       <div className="container">
         <div className="section-head">
           <div>
@@ -40,6 +41,7 @@ export default function Flagship() {
 
           <Reveal delay={0.15}>
             <div className="spec-panel">
+              <Blueprint className="spec-blueprint" />
               <div className="spec-title">INDRA</div>
               <div className="spec-subtitle">Sanskrit — god of the sky, weather and war</div>
 

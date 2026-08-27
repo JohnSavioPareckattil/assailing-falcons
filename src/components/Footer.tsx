@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <Reveal>
-            <p className="eyebrow">07 — Get In Touch</p>
+            <p className="eyebrow">08 — Get In Touch</p>
             <h2 className="footer-title" style={{ marginTop: "0.8rem" }}>
               Fly with us.
             </h2>

@@ -2,9 +2,10 @@ import { motion } from "motion/react";
 
 const links = [
   { href: "#log", label: "Flight Log" },
-  { href: "#vidhyut", label: "Vidhyut" },
+  { href: "#indra", label: "Indra" },
   { href: "#crew", label: "Crew" },
-  { href: "#sponsors", label: "Sponsors" },
+  { href: "#gallery", label: "Gallery" },
+  { href: "#sponsor-us", label: "Sponsor Us" },
   { href: "#contact", label: "Contact" },
 ];
 

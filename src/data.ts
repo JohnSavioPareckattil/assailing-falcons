@@ -11,11 +11,38 @@ export type FlightLogEntry = {
   name: string;
   result: string;
   blurb: string;
-  image: string;
+  image: string | null;
   current?: boolean;
 };
 
 export const flightLog: FlightLogEntry[] = [
+  {
+    year: "2011",
+    code: "F'11",
+    name: "FALCONS ALPHA",
+    result: "37TH OF 75 — FIRST U.S. ENTRY",
+    blurb:
+      "The team's first aircraft to cross the Atlantic and compete on American soil, at SAE Aero Design in Fort Worth, Texas — the opening flight of everything that followed.",
+    image: null,
+  },
+  {
+    year: "2012–15",
+    code: "F'1X",
+    name: "FALCONS BETA",
+    result: "19TH OVERALL — VAN NUYS, LA",
+    blurb:
+      "Flown at the Van Nuys, Los Angeles competition during the team's early build-and-learn years. Exact season undocumented in surviving team records.",
+    image: null,
+  },
+  {
+    year: "2016",
+    code: "F'16",
+    name: "CARVAO",
+    result: "9TH OVERALL, ADVANCED CLASS",
+    blurb:
+      "A medium-altitude, long-endurance design flown alongside sister aircraft Cirio at Los Angeles — the only Indian team to clear Advanced Class technical inspection that year.",
+    image: null,
+  },
   {
     year: "2017",
     code: "F'17",
@@ -41,7 +68,7 @@ export const flightLog: FlightLogEntry[] = [
     result: "4TH OVERALL · 1ST DESIGN REPORT · 1ST PRESENTATION",
     blurb:
       "The best finish an Asia-Pacific team had ever posted — a record that stood for seven years, until Indra's presentation win in 2026.",
-    image: "media/timeline/redbird-award",
+    image: "media/timeline/redbird-plane",
   },
   {
     year: "2020",
@@ -77,7 +104,7 @@ export const flightLog: FlightLogEntry[] = [
     result: "3RD DESIGN REPORT · 3RD PRESENTATION",
     blurb:
       "Named for the water-bearing constellation. Carried an 11 lb water payload and released its own Powered Autonomous Delivery Aircraft mid-mission.",
-    image: "media/timeline/aquarius-award",
+    image: "media/timeline/aquarius-hero",
   },
   {
     year: "2024",
@@ -86,7 +113,7 @@ export const flightLog: FlightLogEntry[] = [
     result: "#1 IN ASIA · 2ND (TIED) FLIGHT PERFORMANCE",
     blurb:
       "A blended-wing firefighting concept with a 10-ft wingspan, rated to carry 13 lb of water and release a powered delta-wing vehicle mid-air.",
-    image: "media/timeline/marut-team",
+    image: "media/timeline/marut-hero",
   },
   {
     year: "2025",
@@ -136,6 +163,81 @@ export const subteams = [
   },
 ];
 
+export type GalleryItem = {
+  src: string;
+  category: "aircraft" | "team" | "events";
+  alt: string;
+  wide?: boolean;
+};
+
+export const gallery: GalleryItem[] = [
+  { src: "media/aircraft/indra-hero", category: "aircraft", alt: "Indra, the F'26 tricopter, spotlit at night", wide: true },
+  { src: "media/gallery/indra-1", category: "aircraft", alt: "Indra on the tarmac, close-up of the airframe" },
+  { src: "media/gallery/indra-2", category: "aircraft", alt: "Indra's tricopter rotor assembly" },
+  { src: "media/gallery/indra-flight1", category: "aircraft", alt: "Indra airborne during a test flight" },
+  { src: "media/gallery/indra-flight2", category: "aircraft", alt: "Indra in flight, low pass" },
+  { src: "media/gallery/indra-flight3", category: "aircraft", alt: "Indra climbing after a vertical takeoff" },
+  { src: "media/gallery/indra-flight5", category: "aircraft", alt: "Indra descending for a precision landing" },
+  { src: "media/gallery/indra-comp1", category: "aircraft", alt: "Indra on the competition flight line" },
+  { src: "media/gallery/indra-5", category: "aircraft", alt: "Indra's payload bay detail" },
+  { src: "media/gallery/indra-6", category: "aircraft", alt: "Indra viewed head-on" },
+  { src: "media/gallery/vidhyut-2", category: "aircraft", alt: "Vidhyut, the F'25 tiltrotor VTOL" },
+  { src: "media/gallery/vidhyut-flight2", category: "aircraft", alt: "Vidhyut transitioning to forward flight" },
+  { src: "media/gallery/vidhyut-comp2", category: "aircraft", alt: "Vidhyut on the competition tarmac" },
+  { src: "media/gallery/marut-1", category: "aircraft", alt: "Marut, the F'24 blended-wing firefighting concept" },
+  { src: "media/gallery/marut-2", category: "aircraft", alt: "Marut's blended-wing planform from above" },
+  { src: "media/gallery/trident-2", category: "aircraft", alt: "Trident, the F'22 mid-wing aircraft" },
+  { src: "media/gallery/trident-4", category: "aircraft", alt: "Trident on final approach" },
+  { src: "media/gallery/aquarius-1", category: "aircraft", alt: "Aquarius, the F'23 aircraft, on the ramp" },
+  { src: "media/gallery/aquarius-3", category: "aircraft", alt: "Aquarius carrying its water payload" },
+  { src: "media/gallery/vulcan-2", category: "aircraft", alt: "Vulcan, the F'21 pandemic-season aircraft" },
+  { src: "media/gallery/zephyrus-2", category: "aircraft", alt: "Zephyrus, the F'18 aircraft" },
+  { src: "media/gallery/jetaayu-2", category: "aircraft", alt: "Jetaayu, the F'17 aircraft" },
+  { src: "media/gallery/redbird-1", category: "aircraft", alt: "Redbird, the F'19 aircraft, on the grid" },
+  { src: "media/gallery/indra-team", category: "team", alt: "Team Falcons '26 in front of Indra", wide: true },
+  { src: "media/gallery/team-photo", category: "team", alt: "Full team group photo" },
+  { src: "media/gallery/team-india", category: "team", alt: "The team representing India at competition" },
+  { src: "media/gallery/marut-comp-team3", category: "team", alt: "The Marut season crew at competition" },
+  { src: "media/gallery/trident-team-events", category: "team", alt: "The Trident season team at an outreach event" },
+  { src: "media/gallery/aquarius-flight-team", category: "team", alt: "The Aquarius flight crew on the line" },
+  { src: "media/gallery/events-2", category: "events", alt: "Falcons at a build or outreach event" },
+  { src: "media/gallery/events-3", category: "events", alt: "Falcons demonstrating an aircraft at an event" },
+  { src: "media/gallery/events-ac24", category: "events", alt: "AeroConclave 2024" },
+  { src: "media/gallery/events-ac25-1", category: "events", alt: "AeroConclave 2025, session one" },
+  { src: "media/gallery/events-ac25-2", category: "events", alt: "AeroConclave 2025, session two" },
+  { src: "media/gallery/events-id", category: "events", alt: "Falcons at an inter-departmental showcase" },
+];
+
+export const sponsorTiers = [
+  {
+    name: "Title",
+    tagline: "Your mark on the fuselage",
+    perks: [
+      "Largest logo placement on the flagship aircraft",
+      "Named recognition across every team channel and the brochure",
+      "First call on technical collaboration with the design and avionics desks",
+    ],
+  },
+  {
+    name: "Gold",
+    tagline: "On every panel that matters",
+    perks: [
+      "Prominent logo on the aircraft and pit signage",
+      "Feature placement on the website and social channels",
+      "Invitation to pre-competition test flights",
+    ],
+  },
+  {
+    name: "Silver",
+    tagline: "Backing the build",
+    perks: [
+      "Logo on the aircraft decal sheet",
+      "Listed on the website and sponsor wall",
+      "Season wrap-up report after competition",
+    ],
+  },
+];
+
 export const sponsors = [
   { file: "aeroatoms", name: "Aero Atoms", url: "https://aeroatoms.com/" },
   { file: "ansys", name: "ANSYS", url: "https://ansys.synopsys.com/" },
@@ -150,11 +252,6 @@ export const sponsors = [
   { file: "protocase", name: "Protocase", url: "https://www.protocase.com/" },
   { file: "solidworks", name: "SOLIDWORKS", url: "https://www.solidworks.com/" },
   { file: "tattu", name: "Tattu", url: "https://www.tattuworld.com/" },
-];
-
-export const leadership = [
-  { name: "Samyak Doshi", role: "Team Captain", phone: "+91 98250 55701" },
-  { name: "Veer Joshi", role: "Team Manager", phone: "+91 63517 81836" },
 ];
 
 export const contact = {

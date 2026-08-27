@@ -7,7 +7,7 @@ export default function Sponsors() {
       <div className="container">
         <div className="section-head">
           <div>
-            <p className="eyebrow">06 — Backed By</p>
+            <p className="eyebrow">07 — Backed By</p>
             <h2 className="section-title" style={{ marginTop: "0.6rem" }}>
               On the fuselage
             </h2>

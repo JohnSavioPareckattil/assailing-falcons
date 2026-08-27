@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#06090c" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/x-icon" href="/assailing-falcons/favicon.ico" />
+    <title>Off Course — Team Assailing Falcons</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Public+Sans:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #06090a;
+        --panel: #0c1215;
+        --line: rgba(241, 236, 223, 0.13);
+        --line-strong: rgba(241, 236, 223, 0.3);
+        --paper: #f1ecdd;
+        --paper-dim: #99a49c;
+        --paper-faint: #5c6863;
+        --green-bright: #4fd996;
+        --brass: #e7c268;
+        --glow-green: rgba(79, 217, 150, 0.35);
+        --f-display: "Rajdhani", "Arial Narrow", sans-serif;
+        --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+        --f-body: "Public Sans", system-ui, sans-serif;
+      }
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        height: 100%;
+        background: var(--ink);
+        color: var(--paper);
+        font-family: var(--f-body);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+      body {
+        position: relative;
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 1.5rem;
+      }
+      .grid-field {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(var(--line) 1px, transparent 1px),
+          linear-gradient(90deg, var(--line) 1px, transparent 1px);
+        background-size: 64px 64px;
+        opacity: 0.35;
+        -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black, transparent 75%);
+        mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black, transparent 75%);
+        animation: gridDrift 22s linear infinite;
+      }
+      .sweep {
+        position: fixed;
+        top: -20%;
+        left: 50%;
+        width: 140vmax;
+        height: 140vmax;
+        margin-left: -70vmax;
+        background: conic-gradient(from 0deg, transparent 0deg, var(--glow-green) 4deg, transparent 30deg, transparent 360deg);
+        opacity: 0.5;
+        animation: sweepRotate 34s linear infinite;
+        pointer-events: none;
+        z-index: 0;
+      }
+      @keyframes gridDrift {
+        from { background-position: 0 0, 0 0; }
+        to { background-position: 64px 128px, 64px 128px; }
+      }
+      @keyframes sweepRotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .card {
+        position: relative;
+        z-index: 1;
+        max-width: 560px;
+        width: 100%;
+        border: 1px solid var(--line);
+        background: rgba(12, 18, 21, 0.7);
+        backdrop-filter: blur(6px);
+        padding: clamp(2rem, 6vw, 3.4rem);
+        text-align: center;
+      }
+      .eyebrow {
+        font-family: var(--f-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--green-bright);
+      }
+      .code {
+        margin-top: 1rem;
+        font-family: var(--f-display);
+        font-weight: 700;
+        font-size: clamp(4.5rem, 18vw, 7.5rem);
+        line-height: 0.9;
+        letter-spacing: -0.01em;
+        color: var(--paper);
+      }
+      .plane {
+        display: inline-flex;
+        margin-top: 0.6rem;
+        color: var(--brass);
+        transform: rotate(35deg);
+        animation: bob 3s ease-in-out infinite;
+      }
+      @keyframes bob {
+        0%, 100% { transform: rotate(35deg) translateY(0); }
+        50% { transform: rotate(35deg) translateY(-8px); }
+      }
+      h1 {
+        margin: 1rem 0 0;
+        font-family: var(--f-display);
+        font-weight: 700;
+        font-size: clamp(1.3rem, 3.4vw, 1.8rem);
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+      }
+      p {
+        margin: 0.9rem auto 0;
+        max-width: 40ch;
+        color: var(--paper-dim);
+        font-size: 0.98rem;
+        line-height: 1.55;
+      }
+      .path {
+        margin-top: 1rem;
+        display: inline-block;
+        font-family: var(--f-mono);
+        font-size: 0.78rem;
+        color: var(--paper-faint);
+        word-break: break-all;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1.8rem;
+        font-family: var(--f-mono);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--ink);
+        background: var(--green-bright);
+        border: 1px solid var(--green-bright);
+        padding: 0.75rem 1.4rem;
+        transition: background 0.25s ease, border-color 0.25s ease;
+      }
+      .btn:hover {
+        background: var(--brass);
+        border-color: var(--brass);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-field" aria-hidden="true"></div>
+    <div class="sweep" aria-hidden="true"></div>
+    <main class="card">
+      <p class="eyebrow">Flight Log — Error</p>
+      <div class="code">404</div>
+      <div class="plane" aria-hidden="true">
+        <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
+          <path d="M6 26l36-14-9 34-6-13-13 8 4-9-12-6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+        </svg>
+      </div>
+      <h1>Off course — no such runway</h1>
+      <p>
+        The page you're looking for has drifted outside the flight plan.
+        It may have been moved, renamed, or never existed.
+      </p>
+      <span class="path" id="req-path"></span>
+      <br />
+      <a class="btn" href="/assailing-falcons/">Return to base ↗</a>
+    </main>
+    <script>
+      try {
+        var p = document.getElementById("req-path");
+        if (p) p.textContent = location.pathname;
+      } catch (e) {}
+    </script>
+  </body>
+</html>

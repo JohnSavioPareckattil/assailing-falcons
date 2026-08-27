@@ -1,12 +1,15 @@
 import { useEffect } from "react";
 import Nav from "./components/Nav";
+import LoadingScreen from "./components/LoadingScreen";
 import Hero from "./components/Hero";
+import Ticker from "./components/Ticker";
 import Stats from "./components/Stats";
 import About from "./components/About";
 import FlightLog from "./components/FlightLog";
 import Flagship from "./components/Flagship";
 import Subteams from "./components/Subteams";
-import People from "./components/People";
+import Gallery from "./components/Gallery";
+import SponsorUs from "./components/SponsorUs";
 import Sponsors from "./components/Sponsors";
 import Footer from "./components/Footer";
 
@@ -19,17 +22,20 @@ export default function App() {
 
   return (
     <>
+      <LoadingScreen />
       <div className="grid-field" aria-hidden="true" />
       <div className="grain" aria-hidden="true" />
       <Nav />
       <main>
         <Hero />
+        <Ticker />
         <Stats />
         <About />
         <FlightLog />
         <Flagship />
         <Subteams />
-        <People />
+        <Gallery />
+        <SponsorUs />
         <Sponsors />
       </main>
       <Footer />
