@@ -94,18 +94,35 @@ export default function Gallery() {
 
         <Reveal>
           <div className="gallery-grid">
-            {filtered.map((item, i) => (
-              <button
-                type="button"
-                key={item.src}
-                className={`gallery-tile${item.wide ? " gallery-tile--wide" : ""}`}
-                onClick={() => setOpenIndex(i)}
-                aria-label={`Open photo: ${item.alt}`}
-              >
-                <LazyImage webp={`${item.src}-800.webp`} src={`${item.src}-800.jpg`} alt={item.alt} />
-                <span className="gallery-tile-glow" aria-hidden="true" />
-              </button>
-            ))}
+            {filtered.map((item, i) => {
+              const groupSize =
+                item.category === "aircraft" ? planeGroups[planeSlugOf(item.src)]?.length ?? 1 : 1;
+              return (
+                <button
+                  type="button"
+                  key={item.src}
+                  className={`gallery-tile${item.wide ? " gallery-tile--wide" : ""}`}
+                  onClick={() => setOpenIndex(i)}
+                  aria-label={
+                    groupSize > 1
+                      ? `Open photo: ${item.alt} (${groupSize} photos of this aircraft)`
+                      : `Open photo: ${item.alt}`
+                  }
+                >
+                  <LazyImage webp={`${item.src}-800.webp`} src={`${item.src}-800.jpg`} alt={item.alt} />
+                  <span className="gallery-tile-glow" aria-hidden="true" />
+                  {groupSize > 1 && (
+                    <span className="gallery-tile-badge" aria-hidden="true">
+                      <svg viewBox="0 0 16 16" fill="none">
+                        <rect x="1.5" y="4.5" width="10" height="8" rx="1" stroke="currentColor" strokeWidth="1.1" />
+                        <path d="M4 4.5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1.5" stroke="currentColor" strokeWidth="1.1" />
+                      </svg>
+                      {groupSize}
+                    </span>
+                  )}
+                </button>
+              );
+            })}
 
             <a
               className="gallery-tile gallery-tile--video"

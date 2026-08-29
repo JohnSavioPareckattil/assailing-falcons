@@ -105,13 +105,32 @@ export default function HeroSky() {
       }
       raf = requestAnimationFrame(tick);
     };
-    raf = requestAnimationFrame(tick);
+
+    // the hero stays mounted for the page's whole life — pause the redraw
+    // loop once it scrolls out of view instead of burning a frame budget
+    // on stars nobody can see
+    let visible = true;
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        visible = entry.isIntersecting;
+        if (visible && !raf) raf = requestAnimationFrame(tick);
+        if (!visible && raf) {
+          cancelAnimationFrame(raf);
+          raf = 0;
+        }
+      },
+      { threshold: 0 }
+    );
+    visibilityObserver.observe(canvas);
+
+    if (visible) raf = requestAnimationFrame(tick);
 
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", buildScene);
       observer.disconnect();
       media.removeEventListener("change", onMediaChange);
+      visibilityObserver.disconnect();
     };
   }, [reduceMotion]);
 

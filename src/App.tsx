@@ -30,7 +30,9 @@ export default function App() {
       <EasterEgg />
       <CursorTrail />
       <ScrollFlightPath />
-      <div className="grid-field" aria-hidden="true" />
+      <div className="grid-field" aria-hidden="true">
+        <div className="grid-field-pattern" />
+      </div>
       <div className="aurora-field" aria-hidden="true">
         <span className="aurora-blob-3" />
       </div>

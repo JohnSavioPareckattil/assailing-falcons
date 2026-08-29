@@ -32,14 +32,21 @@ export default function Hero() {
   return (
     <section className="hero" id="top" ref={sectionRef}>
       <div className="hero-media">
-        <motion.img
-          src="media/aircraft/indra-hero-1600.jpg"
-          srcSet="media/aircraft/indra-hero-800.jpg 800w, media/aircraft/indra-hero-1600.jpg 1600w"
-          sizes="100vw"
-          alt="Indra, the team's 2026 flagship aircraft, spotlit on the tarmac at night"
-          fetchPriority="high"
-          style={reduceMotion ? undefined : { y: mediaY, scale: 1.12 }}
-        />
+        <picture>
+          <source
+            srcSet="media/aircraft/indra-hero-800.webp 800w, media/aircraft/indra-hero-1600.webp 1600w"
+            sizes="100vw"
+            type="image/webp"
+          />
+          <motion.img
+            src="media/aircraft/indra-hero-1600.jpg"
+            srcSet="media/aircraft/indra-hero-800.jpg 800w, media/aircraft/indra-hero-1600.jpg 1600w"
+            sizes="100vw"
+            alt="Indra, the team's 2026 flagship aircraft, spotlit on the tarmac at night"
+            fetchPriority="high"
+            style={reduceMotion ? undefined : { y: mediaY, scale: 1.12 }}
+          />
+        </picture>
       </div>
 
       <HeroSky />

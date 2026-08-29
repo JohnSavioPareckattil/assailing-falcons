@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import Reveal from "./Reveal";
 import CornerFrame from "./CornerFrame";
 import Blueprint from "./Blueprint";
@@ -6,10 +7,17 @@ import LazyImage from "./LazyImage";
 const specs = [
   { key: "Season", val: "F'26" },
   { key: "Class", val: "Advanced, eVTOL Tricopter" },
-  { key: "Design Report", val: "2nd Worldwide" },
-  { key: "Technical Presentation", val: "1st Worldwide" },
-  { key: "MathWorks Simulation Award", val: "2nd Worldwide" },
 ];
+
+const results = [
+  { label: "Design Report", ordinal: "2nd", place: 2 },
+  { label: "Technical Presentation", ordinal: "1st", place: 1 },
+  { label: "MathWorks Simulation Award", ordinal: "3rd", place: 3 },
+];
+
+// illustrative fill, not a literal percentage of anything — 1st reads full,
+// each place back reads visibly shorter
+const barScale = (place: number) => Math.max(0.4, 1 - (place - 1) * 0.22);
 
 export default function Flagship() {
   return (
@@ -51,6 +59,26 @@ export default function Flagship() {
                   </li>
                 ))}
               </ul>
+
+              <div className="results-bars">
+                {results.map((r, i) => (
+                  <div className="results-bar" key={r.label}>
+                    <div className="results-bar-head">
+                      <span>{r.label}</span>
+                      <span className="results-bar-ordinal">{r.ordinal}</span>
+                    </div>
+                    <div className="results-bar-track">
+                      <motion.div
+                        className="results-bar-fill"
+                        initial={{ scaleX: 0 }}
+                        whileInView={{ scaleX: barScale(r.place) }}
+                        viewport={{ once: true, margin: "-60px" }}
+                        transition={{ duration: 0.9, delay: 0.2 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
 
               <p className="spec-results">
                 An electric VTOL tricopter built for precision payload delivery and

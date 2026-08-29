@@ -5,8 +5,8 @@
    ============================================================ */
 
 @keyframes gridDrift {
-  from { background-position: 0 0, 0 0; }
-  to { background-position: 64px 128px, 64px 128px; }
+  from { transform: translate(0, 0); }
+  to { transform: translate(64px, 128px); }
 }
 
 @keyframes sweepRotate {
@@ -38,6 +38,20 @@
   /* surfaces (dark / night-tarmac, default) */
   --ink: #06090a;
   --ink-rgb: 6, 9, 10;
+
+  /* always-dark, theme-invariant — for shadows and photo scrims, which must
+     stay dark regardless of theme (a light-mode "shadow" tinted with the
+     page's own near-white background is invisible, not a shadow) */
+  --shadow-rgb: 6, 9, 10;
+
+  /* always-light, theme-invariant — text sitting on the hero photo, which
+     keeps its own dark scrim in both themes (see --shadow-rgb above), needs
+     a text color that doesn't flip to a dark, page-matching tone in light
+     mode and vanish against that scrim */
+  --on-photo: #f1ecdd;
+  --on-photo-dim: #99a49c;
+  --on-photo-accent: #5b8ef5;
+  --on-photo-brass: #e7c268;
   --panel: #0c1215;
   --panel-2: #111a1e;
   --panel-3: #16211f;
@@ -193,15 +207,24 @@ img {
   position: fixed;
   inset: 0;
   z-index: 0;
+  overflow: hidden;
   pointer-events: none;
+  opacity: 0.35;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent 75%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent 75%);
+}
+/* the drifting grid lines live on their own layer, oversized and animated
+   via transform rather than background-position — background-position
+   forces a full repaint every frame; transform is compositor-only */
+.grid-field-pattern {
+  position: absolute;
+  inset: -128px;
   background-image:
     linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px);
   background-size: 64px 64px;
-  opacity: 0.35;
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent 75%);
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent 75%);
   animation: gridDrift 22s linear infinite;
+  will-change: transform;
 }
 
 /* slow radar-style sweep, aviation motif, very low opacity.
@@ -335,8 +358,11 @@ img {
   left: 0;
   width: 26px;
   height: 26px;
-  margin-top: -4px;
-  margin-left: -2px;
+  /* mark.png pads its falcon glyph unevenly within its square canvas (more
+     headroom above than below) — these margins center the visible silhouette
+     itself on the pointer, not the padded canvas box */
+  margin-top: -14px;
+  margin-left: -13px;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-size: contain;
@@ -344,7 +370,7 @@ img {
   -webkit-mask-position: center;
   mask-position: center;
   background: linear-gradient(160deg, var(--green-bright), var(--brass));
-  filter: drop-shadow(0 2px 5px rgba(var(--ink-rgb), 0.4));
+  filter: drop-shadow(0 2px 5px rgba(var(--shadow-rgb), 0.4));
 }
 
 /* the falcon mark replaces the system cursor on desktop pointers;
@@ -503,15 +529,13 @@ html.custom-cursor-active * {
   gap: clamp(1rem, 2.4vw, 2.2rem);
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 2px;
   overflow-x: auto;
   scrollbar-width: none;
   max-width: 72vw;
-  -webkit-mask-image: linear-gradient(90deg, black 0 90%, transparent 100%);
-  mask-image: linear-gradient(90deg, black 0 90%, transparent 100%);
 }
 @media (min-width: 1040px) {
-  .nav-links { max-width: 58vw; }
+  .nav-links { max-width: none; }
 }
 .nav-links::-webkit-scrollbar { display: none; }
 .nav-links li { flex: none; }
@@ -623,13 +647,23 @@ html.custom-cursor-active * {
   object-fit: cover;
   object-position: 50% 40%;
 }
+/* a fixed-dark scrim, not tied to --ink: a light-theme "shadow" tinted with
+   the page's own near-white surface just washes the photo out instead of
+   grounding it. Clear through the middle band where the airframe sits
+   (object-position 50% 40%) so it reads at full contrast; the HUD text up
+   top and the title/CTAs down low keep their own legibility scrims. */
 .hero-media::after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 55% at 50% 62%, rgba(var(--ink-rgb),0.15), rgba(var(--ink-rgb),0.86) 72%),
-    linear-gradient(180deg, rgba(var(--ink-rgb),0.75) 0%, rgba(var(--ink-rgb),0.25) 30%, rgba(var(--ink-rgb),0.55) 62%, var(--ink) 100%);
+    linear-gradient(180deg,
+      rgba(var(--shadow-rgb), 0.62) 0%,
+      rgba(var(--shadow-rgb), 0) 24%,
+      rgba(var(--shadow-rgb), 0) 52%,
+      rgba(var(--shadow-rgb), 0.58) 80%,
+      rgba(var(--shadow-rgb), 0.94) 100%),
+    radial-gradient(ellipse 85% 68% at 50% 42%, rgba(var(--shadow-rgb), 0) 0%, rgba(var(--shadow-rgb), 0.32) 100%);
 }
 
 .hero-sky {
@@ -655,17 +689,17 @@ html.custom-cursor-active * {
   font-family: var(--f-mono);
   font-size: 0.7rem;
   letter-spacing: 0.14em;
-  color: var(--paper-dim);
+  color: var(--on-photo-dim);
   text-transform: uppercase;
 }
 .hero-hud > div { display: flex; flex-direction: column; gap: 0.35rem; }
 .hero-hud .r { text-align: right; align-items: flex-end; }
-.hero-hud strong { color: var(--brass-text); font-weight: 500; }
+.hero-hud strong { color: var(--on-photo-brass); font-weight: 500; }
 .hero-hud-live {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: var(--accent-text);
+  color: var(--on-photo-accent);
 }
 .wind-compass {
   width: 15px;
@@ -674,21 +708,21 @@ html.custom-cursor-active * {
 }
 .wind-compass-ring {
   fill: none;
-  stroke: var(--paper-dim);
+  stroke: var(--on-photo-dim);
   stroke-width: 1;
   opacity: 0.55;
 }
 .wind-compass line:not(.wind-compass-needle) {
-  stroke: var(--paper-dim);
+  stroke: var(--on-photo-dim);
   stroke-width: 1;
   opacity: 0.45;
 }
 .wind-compass-needle {
-  stroke: var(--accent-text);
+  stroke: var(--on-photo-accent);
   stroke-width: 1.6;
 }
 .wind-compass-hub {
-  fill: var(--accent-text);
+  fill: var(--on-photo-accent);
 }
 
 .hero-body {
@@ -702,7 +736,7 @@ html.custom-cursor-active * {
   font-size: 0.78rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--accent-text);
+  color: var(--on-photo-accent);
   margin-bottom: 1.1rem;
 }
 
@@ -710,21 +744,46 @@ html.custom-cursor-active * {
   font-family: var(--f-display);
   font-weight: 700;
   text-transform: uppercase;
-  font-size: clamp(3.2rem, 11vw, 8.5rem);
+  font-size: clamp(3.8rem, 13.5vw, 11rem);
   line-height: 0.86;
   letter-spacing: -0.01em;
-  color: var(--paper);
+  color: var(--on-photo);
   overflow: hidden;
 }
 .hero-title .line { display: block; overflow: hidden; }
 .hero-title .line span { display: inline-block; will-change: transform; }
-.hero-title .accent { color: var(--accent-text); }
+.hero-title .accent {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  color: var(--on-photo-accent);
+  text-shadow: 0 0 80px rgba(91, 142, 245, 0.35);
+}
+/* one-shot light streak once the word finishes its reveal — see the
+   word-reveal timing in Hero.tsx (~1.15s to settle) */
+.hero-title .accent::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: -35%;
+  width: 22%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+  transform: skewX(-18deg);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  animation: heroStreak 1s ease-out 1.3s 1 both;
+}
+@keyframes heroStreak {
+  0% { left: -35%; opacity: 0; }
+  15% { opacity: 1; }
+  100% { left: 120%; opacity: 0; }
+}
 
 .hero-sub {
   margin-top: 1.6rem;
   max-width: 46ch;
   font-size: clamp(1rem, 1.6vw, 1.2rem);
-  color: var(--paper-dim);
+  color: var(--on-photo-dim);
   font-weight: 400;
 }
 
@@ -733,6 +792,16 @@ html.custom-cursor-active * {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+}
+/* the outline button's default border/text pull from the page's own text
+   tokens, which is correct on a normal panel but flips to near-black in
+   light theme — invisible against the hero's (always-dark) photo scrim */
+.hero-ctas .btn:not(.btn--primary) {
+  color: var(--on-photo);
+  border-color: rgba(241, 236, 223, 0.3);
+}
+.hero-ctas .btn:not(.btn--primary):hover {
+  border-color: var(--on-photo-dim);
 }
 
 .hero-scroll-cue {
@@ -751,12 +820,12 @@ html.custom-cursor-active * {
   font-family: var(--f-mono);
   font-size: 0.62rem;
   letter-spacing: 0.28em;
-  color: var(--paper-dim);
+  color: var(--on-photo-dim);
 }
 .hero-scroll-cue-line {
   width: 1px;
   height: 28px;
-  background: var(--line-strong);
+  background: rgba(241, 236, 223, 0.3);
   transform-origin: top;
 }
 @media (max-width: 640px) {
@@ -964,7 +1033,7 @@ html.custom-cursor-active * {
 }
 .log-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 20px 34px -24px rgba(var(--ink-rgb), 0.5);
+  box-shadow: 0 20px 34px -24px rgba(var(--shadow-rgb), 0.5);
 }
 @media (min-width: 640px) {
   .log-card { grid-template-columns: 160px 1fr; }
@@ -1091,7 +1160,7 @@ html.custom-cursor-active * {
   font-size: 0.7rem;
   letter-spacing: 0.1em;
   color: var(--brass-text);
-  background: rgba(var(--ink-rgb),0.75);
+  background: rgba(var(--shadow-rgb),0.75);
   border: 1px solid var(--line-strong);
   padding: 0.3rem 0.55rem;
 }
@@ -1156,6 +1225,39 @@ html.custom-cursor-active * {
   color: var(--paper);
   text-align: right;
 }
+/* F'26 results at a glance, sized against the spec list's real placements */
+.results-bars {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.results-bar-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--paper-dim);
+  margin-bottom: 0.4rem;
+}
+.results-bar-ordinal {
+  color: var(--brass-text);
+  flex: none;
+}
+.results-bar-track {
+  height: 5px;
+  background: var(--line);
+  overflow: hidden;
+}
+.results-bar-fill {
+  height: 100%;
+  width: 100%;
+  transform-origin: left;
+  background: linear-gradient(90deg, var(--green-bright), var(--brass));
+}
+
 .spec-results {
   margin-top: 1.6rem;
   color: var(--paper-dim);
@@ -1251,14 +1353,14 @@ html.custom-cursor-active * {
   padding: clamp(1rem, 2.4vw, 1.6rem);
   filter: grayscale(1);
   opacity: 0.82;
-  box-shadow: 0 1px 0 rgba(var(--ink-rgb), 0.06);
+  box-shadow: 0 1px 0 rgba(var(--shadow-rgb), 0.06);
   transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 .sponsor-tile:hover {
   filter: grayscale(0);
   opacity: 1;
   transform: translateY(-3px);
-  box-shadow: 0 14px 24px -14px rgba(var(--ink-rgb), 0.35);
+  box-shadow: 0 14px 24px -14px rgba(var(--shadow-rgb), 0.35);
 }
 .sponsor-tile img {
   max-width: 100%;
@@ -1268,8 +1370,29 @@ html.custom-cursor-active * {
 
 /* ============================== FOOTER / CONTACT ============================== */
 .footer {
+  position: relative;
+  overflow: hidden;
   background: var(--panel);
   border-top: 1px solid var(--line);
+  box-shadow: inset 0 24px 40px -32px rgba(var(--shadow-rgb), 0.5);
+}
+.footer::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 0;
+  width: 60vmax;
+  height: 60vmax;
+  right: -22vmax;
+  bottom: -30vmax;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--glow-green) 0%, transparent 68%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.footer > .container {
+  position: relative;
+  z-index: 1;
 }
 .footer-grid {
   display: grid;
@@ -1570,7 +1693,7 @@ html.custom-cursor-active * {
   transition: box-shadow 0.3s ease;
 }
 .gallery-tile:hover {
-  box-shadow: 0 20px 34px -20px rgba(var(--ink-rgb), 0.55);
+  box-shadow: 0 20px 34px -20px rgba(var(--shadow-rgb), 0.55);
 }
 .gallery-tile--wide {
   grid-column: span 2;
@@ -1596,6 +1719,29 @@ html.custom-cursor-active * {
 .gallery-tile:hover .gallery-tile-glow,
 .gallery-tile:focus-visible .gallery-tile-glow {
   box-shadow: inset 0 0 0 2px var(--green-bright);
+}
+/* flags a tile that opens into a browsable, multi-photo set (see the arc
+   scrubber in the lightbox) so that feature is discoverable from the grid */
+.gallery-tile-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.5rem;
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  color: var(--paper);
+  background: rgba(var(--shadow-rgb), 0.6);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(241, 236, 223, 0.2);
+}
+.gallery-tile-badge svg {
+  width: 12px;
+  height: 12px;
 }
 .gallery-tile--video {
   display: flex;
@@ -1639,7 +1785,7 @@ html.custom-cursor-active * {
   align-items: center;
   justify-content: center;
   padding: clamp(1rem, 5vw, 3rem);
-  background: rgba(var(--ink-rgb), 0.92);
+  background: rgba(var(--shadow-rgb), 0.92);
   backdrop-filter: blur(6px);
 }
 .lightbox-frame {
@@ -1801,7 +1947,7 @@ html.custom-cursor-active * {
   -webkit-mask-position: center;
   mask-position: center;
   background: linear-gradient(160deg, var(--green-bright), var(--brass));
-  filter: drop-shadow(0 10px 18px rgba(var(--ink-rgb), 0.35));
+  filter: drop-shadow(0 10px 18px rgba(var(--shadow-rgb), 0.35));
 }
 .sponsor-node {
   position: absolute;
@@ -1960,12 +2106,12 @@ html.custom-cursor-active * {
   position: relative;
   border: 1px solid var(--line);
   padding: clamp(1.8rem, 4vw, 2.8rem);
-  box-shadow: 0 24px 40px -28px rgba(var(--ink-rgb), 0.5);
+  box-shadow: 0 24px 40px -28px rgba(var(--shadow-rgb), 0.5);
   transition: transform 0.35s var(--ease-snap), box-shadow 0.35s ease;
 }
 .testimonial-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 30px 48px -24px rgba(var(--ink-rgb), 0.55);
+  box-shadow: 0 30px 48px -24px rgba(var(--shadow-rgb), 0.55);
 }
 .testimonial-quote {
   font-family: var(--f-display);

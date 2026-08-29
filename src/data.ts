@@ -2,7 +2,7 @@ export const stats = [
   { value: "16", unit: "YRS", label: "Airborne since 2010" },
   { value: "01", unit: "ASIA", label: "Rank in Asia-Pacific" },
   { value: "20+", unit: "", label: "Aircraft built" },
-  { value: "06", unit: "WRLD", label: "All-time world rank" },
+  { value: "06", unit: "WRLD", label: "Current world rank" },
 ];
 
 export type FlightLogEntry = {
@@ -164,7 +164,7 @@ export const flightLog: FlightLogEntry[] = [
     year: "2026",
     code: "F'26",
     name: "INDRA",
-    result: "1ST PRESENTATION · 2ND DESIGN REPORT · 2ND MATHWORKS",
+    result: "1ST PRESENTATION · 2ND DESIGN REPORT · 3RD MATHWORKS",
     blurb:
       "An electric VTOL tricopter for precision payload delivery and retrieval. When the war in Iran shut down international travel to Texas, the team cleared every submission-based round remotely. They couldn't fly the in-person mission, so SAE let them compete in everything that didn't require being there.",
     image: "media/aircraft/indra-hero",
