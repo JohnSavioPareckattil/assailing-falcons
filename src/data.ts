@@ -27,7 +27,7 @@ export const flightLog: FlightLogEntry[] = [
   },
   {
     year: "2012-15",
-    code: "F'1X",
+    code: "F'12-15",
     name: "FALCONS BETA",
     result: "19TH OVERALL · VAN NUYS, LA",
     blurb:
@@ -63,7 +63,7 @@ export const flightLog: FlightLogEntry[] = [
   },
   {
     year: "2016",
-    code: "F'16R",
+    code: "F'16",
     name: "CIRIO",
     result: "REGULAR CLASS · LOS ANGELES",
     blurb:
@@ -176,28 +176,24 @@ export const subteams = [
   {
     code: "DS",
     name: "Design",
-    color: "#f5a742",
     detail:
       "The foundation of every Falcons aircraft. Conceptual design, aerodynamic analysis, MDO, CFD and airfoil optimisation, turning ideas into mission-ready aerial systems, fixed-wing or VTOL.",
   },
   {
     code: "ST",
     name: "Structures",
-    color: "#38c6b4",
     detail:
       "CAD modelling, structural analysis and weight optimisation translated into flight-worthy airframes, plus in-house composite fabrication, assembly and physical validation testing.",
   },
   {
     code: "AV",
     name: "Avionics",
-    color: "#9b7cf0",
     detail:
       "Sensors, payloads, power systems and flight-control architecture for autonomous operation. Built AVGP, a vision-guided rover that navigates and reacts entirely on its own.",
   },
   {
     code: "MG",
     name: "Management",
-    color: "#f2607a",
     detail:
       "Sponsorships, outreach and the coordination that turns a design into a funded, fabricated, flown aircraft, so every other department can focus on engineering.",
   },
@@ -248,34 +244,33 @@ export const gallery: GalleryItem[] = [
   { src: "media/gallery/events-id", category: "events", alt: "Falcons at an inter-departmental showcase" },
 ];
 
-export const sponsorTiers = [
+// The team's own three sponsorship categories, as printed in the official
+// sponsorship brochure (public/AssailingFalcons25-Brochure.pdf).
+export const sponsorWays = [
   {
-    name: "Title",
-    tagline: "Your mark on the fuselage",
-    perks: [
-      "Largest logo placement on the flagship aircraft",
-      "Named recognition across every team channel and the brochure",
-      "First call on technical collaboration with the design and avionics desks",
-    ],
+    code: "01",
+    name: "Product",
+    detail:
+      "Hardware that goes straight into the next airframe: motors, batteries, composites, electronics, radios. Named on the parts list, not just the pit banner.",
   },
   {
-    name: "Gold",
-    tagline: "On every panel that matters",
-    perks: [
-      "Prominent logo on the aircraft and pit signage",
-      "Feature placement on the website and social channels",
-      "Invitation to pre-competition test flights",
-    ],
+    code: "02",
+    name: "Monetary",
+    detail:
+      "Funding that covers what hardware donations can't: competition entry fees, travel to Fort Worth, and the material stock burned through in a season of testing.",
   },
   {
-    name: "Silver",
-    tagline: "Backing the build",
-    perks: [
-      "Logo on the aircraft decal sheet",
-      "Listed on the website and sponsor wall",
-      "Season wrap-up report after competition",
-    ],
+    code: "03",
+    name: "Technical",
+    detail:
+      "Engineering mentorship, software licenses and manufacturing access, the kind of support that raises the ceiling on what a student team can actually design and build.",
   },
+];
+
+export const sponsorProof = [
+  { value: "9", label: "Consecutive years ranked No.1 in Asia" },
+  { value: "16", label: "Years of design, build and flight, since 2010" },
+  { value: "3", label: "Industry giants that have recognised the build: Boeing, Airbus, Lockheed Martin" },
 ];
 
 export const sponsors = [

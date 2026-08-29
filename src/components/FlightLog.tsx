@@ -37,7 +37,7 @@ export default function FlightLog() {
 
           {flightLog.map((entry, i) => (
             <Reveal
-              key={entry.code}
+              key={entry.name}
               delay={i * 0.05}
               className={`log-entry${entry.current ? " log-entry--current" : ""}`}
             >

@@ -297,6 +297,31 @@ img {
   margin-left: -5px;
   mix-blend-mode: var(--cursor-blend, normal);
 }
+.cursor-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  margin-top: -4px;
+  margin-left: -2px;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
+  background: linear-gradient(160deg, var(--green-bright), var(--brass));
+  filter: drop-shadow(0 2px 5px rgba(var(--ink-rgb), 0.4));
+}
+
+/* the falcon mark replaces the system cursor on desktop pointers;
+   see CursorTrail.tsx, which only sets this class once it confirms a
+   fine pointer and that reduced-motion is off */
+html.custom-cursor-active,
+html.custom-cursor-active * {
+  cursor: none !important;
+}
 
 /* skeleton-shimmer image loader, see LazyImage.tsx */
 .lazy-image {
@@ -847,6 +872,11 @@ img {
   border: 1px solid var(--line);
   background: var(--ink);
   padding: clamp(1.1rem, 2.6vw, 1.6rem);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.log-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 34px -24px rgba(var(--ink-rgb), 0.5);
 }
 @media (min-width: 640px) {
   .log-card { grid-template-columns: 160px 1fr; }
@@ -1079,21 +1109,21 @@ img {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--crew-accent);
+  background: var(--green-bright);
 }
 .crew-card:hover {
   background: var(--panel-2);
-  border-color: color-mix(in srgb, var(--crew-accent) 45%, var(--line));
-  box-shadow: 0 16px 32px -18px color-mix(in srgb, var(--crew-accent) 55%, transparent);
+  border-color: color-mix(in srgb, var(--green-bright) 45%, var(--line));
+  box-shadow: 0 16px 32px -18px color-mix(in srgb, var(--green-bright) 55%, transparent);
 }
 .crew-code {
   display: inline-block;
   font-family: var(--f-mono);
   font-size: 0.72rem;
   font-weight: 600;
-  color: color-mix(in srgb, var(--crew-accent) 82%, var(--ink) 0%);
+  color: color-mix(in srgb, var(--green-bright) 82%, var(--ink) 0%);
   letter-spacing: 0.08em;
-  background: color-mix(in srgb, var(--crew-accent) 16%, transparent);
+  background: color-mix(in srgb, var(--green-bright) 16%, transparent);
   padding: 0.2rem 0.5rem;
 }
 .crew-name {
@@ -1133,12 +1163,14 @@ img {
   padding: clamp(1rem, 2.4vw, 1.6rem);
   filter: grayscale(1);
   opacity: 0.82;
-  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 1px 0 rgba(var(--ink-rgb), 0.06);
+  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 .sponsor-tile:hover {
   filter: grayscale(0);
   opacity: 1;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 24px -14px rgba(var(--ink-rgb), 0.35);
 }
 .sponsor-tile img {
   max-width: 100%;
@@ -1447,6 +1479,10 @@ img {
   background: var(--ink);
   cursor: pointer;
   display: block;
+  transition: box-shadow 0.3s ease;
+}
+.gallery-tile:hover {
+  box-shadow: 0 20px 34px -20px rgba(var(--ink-rgb), 0.55);
 }
 .gallery-tile--wide {
   grid-column: span 2;
@@ -1570,80 +1606,148 @@ img {
 .sponsor-us {
   background: var(--panel);
 }
-.sponsor-us-grid {
+
+/* signature element: the team's own "how to sponsor us" triangle,
+   redrawn from the official brochure (Product / Monetary / Technical
+   around the falcon mark), given real depth via a mouse-tracked tilt */
+.sponsor-ways {
+  display: grid;
+  grid-template-columns: minmax(260px, 380px) 1fr;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .sponsor-ways { grid-template-columns: 1fr; }
+  .sponsor-triangle-wrap { display: none; }
+}
+.sponsor-triangle {
+  position: relative;
+  aspect-ratio: 1 / 0.88;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.sponsor-triangle-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.sponsor-triangle-lines path {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1.2;
+}
+.sponsor-triangle-mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 34%;
+  aspect-ratio: 1080 / 1080;
+  transform: translate(-50%, -46%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
+  background: linear-gradient(160deg, var(--green-bright), var(--brass));
+  filter: drop-shadow(0 10px 18px rgba(var(--ink-rgb), 0.35));
+}
+.sponsor-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.sponsor-node--0 { top: 9%; left: 50%; }
+.sponsor-node--1 { top: 88%; left: 11%; }
+.sponsor-node--2 { top: 88%; left: 89%; }
+.sponsor-node-code {
+  font-family: var(--f-mono);
+  font-size: 0.62rem;
+  color: var(--paper-faint);
+  letter-spacing: 0.1em;
+}
+.sponsor-node-name {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--panel);
+  padding: 0.15rem 0.5rem;
+}
+
+.sponsor-ways-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+.sponsor-way {
+  border-top: 1px solid var(--line);
+  padding-top: 1.1rem;
+}
+.sponsor-way-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+.sponsor-way-code {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  color: var(--accent-text);
+  letter-spacing: 0.08em;
+}
+.sponsor-way-name {
+  font-family: var(--f-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+}
+.sponsor-way-detail {
+  margin-top: 0.4rem;
+  color: var(--paper-dim);
+  font-size: 0.94rem;
+  line-height: 1.55;
+  max-width: 52ch;
+}
+
+.sponsor-proof {
+  margin-top: clamp(2rem, 5vw, 3rem);
   display: grid;
   grid-template-columns: 1fr;
   gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);
 }
-@media (min-width: 760px) {
-  .sponsor-us-grid { grid-template-columns: repeat(3, 1fr); }
+@media (min-width: 700px) {
+  .sponsor-proof { grid-template-columns: repeat(3, 1fr); }
 }
-.sponsor-us-card {
+.sponsor-proof-item {
   background: var(--ink);
-  padding: clamp(1.6rem, 3vw, 2.2rem);
-  display: flex;
-  flex-direction: column;
-  transition: background 0.3s ease;
+  padding: clamp(1.2rem, 2.6vw, 1.6rem);
 }
-.sponsor-us-tier {
+.sponsor-proof-value {
+  display: block;
   font-family: var(--f-display);
   font-weight: 700;
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  color: var(--brass-text);
+  font-size: 2.4rem;
+  line-height: 1;
+  background: linear-gradient(90deg, var(--green-bright), var(--brass));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-/* Remix-style saturated "signal" card for the top tier */
-.sponsor-us-card--signal {
-  background: var(--green-bright);
-}
-.sponsor-us-card--signal .sponsor-us-tier {
-  color: var(--on-accent);
-}
-.sponsor-us-card--signal .sponsor-us-tagline {
-  color: rgba(var(--on-accent-rgb), 0.68);
-}
-.sponsor-us-card--signal .sponsor-us-perks {
-  border-top-color: rgba(var(--on-accent-rgb), 0.25);
-}
-.sponsor-us-card--signal .sponsor-us-perks li {
-  color: rgba(var(--on-accent-rgb), 0.78);
-}
-.sponsor-us-card--signal .sponsor-us-perks li::before {
-  background: var(--on-accent);
-}
-.sponsor-us-tagline {
-  margin-top: 0.4rem;
-  font-family: var(--f-mono);
-  font-size: 0.78rem;
+.sponsor-proof-label {
+  display: block;
+  margin-top: 0.5rem;
   color: var(--paper-dim);
-}
-.sponsor-us-perks {
-  margin: 1.4rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  border-top: 1px solid var(--line);
-  padding-top: 1.1rem;
-}
-.sponsor-us-perks li {
-  position: relative;
-  padding-left: 1.1rem;
-  color: var(--paper-dim);
-  font-size: 0.92rem;
-  line-height: 1.5;
-}
-.sponsor-us-perks li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 6px;
-  height: 6px;
-  background: var(--green-bright);
+  font-size: 0.86rem;
+  line-height: 1.4;
+  max-width: 30ch;
 }
 .sponsor-us-cta {
   margin-top: clamp(2rem, 5vw, 3rem);
@@ -1706,6 +1810,12 @@ img {
   position: relative;
   border: 1px solid var(--line);
   padding: clamp(1.8rem, 4vw, 2.8rem);
+  box-shadow: 0 24px 40px -28px rgba(var(--ink-rgb), 0.5);
+  transition: transform 0.35s var(--ease-snap), box-shadow 0.35s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 48px -24px rgba(var(--ink-rgb), 0.55);
 }
 .testimonial-quote {
   font-family: var(--f-display);

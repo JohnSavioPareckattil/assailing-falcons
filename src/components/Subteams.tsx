@@ -22,7 +22,6 @@ export default function Subteams() {
             <Reveal key={t.code} as="div" variant="pop" delay={i * 0.1} className="crew-card-wrap">
               <motion.div
                 className="crew-card"
-                style={{ "--crew-accent": t.color } as React.CSSProperties}
                 whileHover={reduceMotion ? undefined : { y: -6, rotate: i % 2 === 0 ? -0.6 : 0.6 }}
                 transition={{ type: "spring", bounce: 0.3, duration: 0.4 }}
               >

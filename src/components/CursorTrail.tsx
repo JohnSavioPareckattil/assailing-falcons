@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring, useReducedMotion } from "motion/react";
 
-const COLORS = ["#5b8ef5", "#e7c268", "#38c6b4", "#f2607a"];
-// Each dot gets a progressively softer/laggier spring than the last, so
-// the comet stretches out behind fast pointer movement instead of the
-// dots all snapping to the same spot.
+const COLORS = ["#e7c268", "#38c6b4", "#f2607a"];
+// Trailing dots get progressively softer/laggier springs than the falcon
+// mark itself, so they stretch out behind fast pointer movement.
 const SPRING_CONFIGS = [
-  { stiffness: 700, damping: 40 },
-  { stiffness: 320, damping: 34 },
-  { stiffness: 180, damping: 30 },
-  { stiffness: 110, damping: 26 },
+  { stiffness: 900, damping: 45 }, // the falcon mark, tight to the pointer
+  { stiffness: 300, damping: 32 },
+  { stiffness: 170, damping: 28 },
+  { stiffness: 100, damping: 24 },
 ];
 
 export default function CursorTrail() {
@@ -27,8 +26,7 @@ export default function CursorTrail() {
   const sx3 = useSpring(x, SPRING_CONFIGS[3]);
   const sy3 = useSpring(y, SPRING_CONFIGS[3]);
 
-  const dots = [
-    { sx: sx0, sy: sy0 },
+  const trailDots = [
     { sx: sx1, sy: sy1 },
     { sx: sx2, sy: sy2 },
     { sx: sx3, sy: sy3 },
@@ -38,6 +36,7 @@ export default function CursorTrail() {
     if (reduceMotion) return;
     const fine = window.matchMedia("(pointer: fine)");
     setEnabled(fine.matches);
+    document.documentElement.classList.toggle("custom-cursor-active", fine.matches);
     if (!fine.matches) return;
 
     const onMove = (e: PointerEvent) => {
@@ -45,14 +44,17 @@ export default function CursorTrail() {
       y.set(e.clientY);
     };
     window.addEventListener("pointermove", onMove);
-    return () => window.removeEventListener("pointermove", onMove);
+    return () => {
+      window.removeEventListener("pointermove", onMove);
+      document.documentElement.classList.remove("custom-cursor-active");
+    };
   }, [reduceMotion, x, y]);
 
   if (reduceMotion || !enabled) return null;
 
   return (
     <div className="cursor-trail" aria-hidden="true">
-      {dots.map(({ sx, sy }, i) => (
+      {trailDots.map(({ sx, sy }, i) => (
         <motion.span
           key={i}
           className="cursor-trail-dot"
@@ -60,12 +62,21 @@ export default function CursorTrail() {
             x: sx,
             y: sy,
             backgroundColor: COLORS[i % COLORS.length],
-            width: 10 - i * 1.6,
-            height: 10 - i * 1.6,
-            opacity: 1 - i * 0.18,
+            width: 8 - i * 1.4,
+            height: 8 - i * 1.4,
+            opacity: 0.85 - i * 0.2,
           }}
         />
       ))}
+      <motion.span
+        className="cursor-mark"
+        style={{
+          x: sx0,
+          y: sy0,
+          WebkitMaskImage: "url(media/brand/mark.png)",
+          maskImage: "url(media/brand/mark.png)",
+        }}
+      />
     </div>
   );
 }

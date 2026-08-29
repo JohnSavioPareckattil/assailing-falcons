@@ -5,13 +5,13 @@
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1787996782.530861,
-    "ast_hash": "f7a736c6a2081892c5ab3321fa170af6",
+    "mtime": 1787998193.008512,
+    "ast_hash": "d8e2c4168d6516e7933dc1ca026a46b2",
     "semantic_hash": ""
   },
   "src/components/About.tsx": {
-    "mtime": 1787805266.7366254,
-    "ast_hash": "08794d9d200e6fdaade4de14d6e14cb8",
+    "mtime": 1787998039.613073,
+    "ast_hash": "4e37821f7dd9ca7136a073c3af90be5f",
     "semantic_hash": ""
   },
   "src/components/CornerFrame.tsx": {
@@ -20,13 +20,13 @@
     "semantic_hash": ""
   },
   "src/components/Flagship.tsx": {
-    "mtime": 1787805353.1835911,
-    "ast_hash": "db2bb496d96e7577d49eebc03e4e2c6f",
+    "mtime": 1787998093.5795653,
+    "ast_hash": "58c2497cda95167d7bede79571a11a67",
     "semantic_hash": ""
   },
   "src/components/FlightLog.tsx": {
-    "mtime": 1787808294.0802727,
-    "ast_hash": "108c9c7be6c61e26dba402fa033423b1",
+    "mtime": 1787997987.623881,
+    "ast_hash": "ba4323d7abcd0e224b87c00334a7b7cb",
     "semantic_hash": ""
   },
   "src/components/Footer.tsx": {
@@ -35,8 +35,8 @@
     "semantic_hash": ""
   },
   "src/components/Hero.tsx": {
-    "mtime": 1787809321.7439723,
-    "ast_hash": "e64f4cca77383fcfa834373801e1dd43",
+    "mtime": 1787998333.8054428,
+    "ast_hash": "2b086dda7585acee1f8fc78f9e1763c4",
     "semantic_hash": ""
   },
   "src/components/Nav.tsx": {
@@ -675,8 +675,8 @@
     "semantic_hash": ""
   },
   "src/components/Gallery.tsx": {
-    "mtime": 1787805158.7030919,
-    "ast_hash": "a06b6221bfe9ac3e0636d5b09186414d",
+    "mtime": 1787998134.7084117,
+    "ast_hash": "0fc702a0de75c91ed25bdc95cee1671b",
     "semantic_hash": ""
   },
   "src/components/LoadingScreen.tsx": {
@@ -1872,6 +1872,16 @@
   "public/media/timeline/nautilus-hero-800.webp": {
     "mtime": 1787810623.2546506,
     "ast_hash": "6bae404961abda2b4bab6db119872ac6",
+    "semantic_hash": ""
+  },
+  "src/components/CursorTrail.tsx": {
+    "mtime": 1787997764.6288087,
+    "ast_hash": "71f622d95f27f4519c2cbcf92462d353",
+    "semantic_hash": ""
+  },
+  "src/components/LazyImage.tsx": {
+    "mtime": 1787997910.444098,
+    "ast_hash": "7c2b9ae2026b3a2766f12823c1675b86",
     "semantic_hash": ""
   }
 }
