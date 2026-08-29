@@ -32,14 +32,14 @@
   --paper-faint: #5c6863;
 
   /* brand fills (buttons, tags, dots, glows — paired with --on-accent text) */
-  --green: #1f6b49;
-  --green-deep: #123a29;
-  --green-bright: #4fd996;
+  --green: #1f3f78;
+  --green-deep: #0e1f3d;
+  --green-bright: #5b8ef5;
   --brass: #e7c268;
   --redline: #d1503a;
 
   /* brand as standalone text/links on the page surface */
-  --accent-text: #4fd996;
+  --accent-text: #5b8ef5;
   --brass-text: #e7c268;
 
   /* fixed dark text/border for content sitting on a bright accent fill,
@@ -48,7 +48,7 @@
   --on-accent-rgb: 6, 9, 10;
 
   /* glows */
-  --glow-green: rgba(79, 217, 150, 0.35);
+  --glow-green: rgba(91, 142, 245, 0.35);
   --glow-brass: rgba(231, 194, 104, 0.3);
 
   /* type */
@@ -67,7 +67,7 @@
 }
 
 /* light / day-tarmac — drafting-paper surface, same brand hues, deepened
-   just enough on the green/brass tokens used as standalone text so body
+   just enough on the blue/brass tokens used as standalone text so body
    copy still clears WCAG AA against white */
 :root[data-theme="light"] {
   --ink: #f5f3ec;
@@ -83,16 +83,16 @@
   --paper-dim: #52584f;
   --paper-faint: #7c8177;
 
-  --green: #1f6b49;
-  --green-deep: #d9f1e5;
-  --green-bright: #2fae76;
+  --green: #1f3f78;
+  --green-deep: #dde6fb;
+  --green-bright: #2f6fe0;
   --brass: #cf9a2e;
   --redline: #b83f28;
 
-  --accent-text: #0f7a4f;
+  --accent-text: #1d4fbd;
   --brass-text: #8a5f12;
 
-  --glow-green: rgba(47, 174, 118, 0.25);
+  --glow-green: rgba(47, 111, 224, 0.25);
   --glow-brass: rgba(207, 154, 46, 0.22);
 }
 

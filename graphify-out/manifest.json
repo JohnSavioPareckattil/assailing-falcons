@@ -5,13 +5,13 @@
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1787774839.384516,
-    "ast_hash": "4ca006cfc2dbe1176f162981d0cf3221",
+    "mtime": 1787811101.7501917,
+    "ast_hash": "3e21280321e33afa3b36cfb754a3c8c6",
     "semantic_hash": ""
   },
   "src/components/About.tsx": {
-    "mtime": 1787775884.7879198,
-    "ast_hash": "9657ac1333da69ffb5c594fc47fe3f56",
+    "mtime": 1787805266.7366254,
+    "ast_hash": "08794d9d200e6fdaade4de14d6e14cb8",
     "semantic_hash": ""
   },
   "src/components/CornerFrame.tsx": {
@@ -20,53 +20,53 @@
     "semantic_hash": ""
   },
   "src/components/Flagship.tsx": {
-    "mtime": 1787775900.8654394,
-    "ast_hash": "c0f3597956a96f90decbec2f5551dec8",
+    "mtime": 1787805353.1835911,
+    "ast_hash": "db2bb496d96e7577d49eebc03e4e2c6f",
     "semantic_hash": ""
   },
   "src/components/FlightLog.tsx": {
-    "mtime": 1787774331.5670376,
-    "ast_hash": "ccc6180bbb784f1bf7dc8cc352e17fe2",
+    "mtime": 1787808294.0802727,
+    "ast_hash": "108c9c7be6c61e26dba402fa033423b1",
     "semantic_hash": ""
   },
   "src/components/Footer.tsx": {
-    "mtime": 1787774353.4147983,
-    "ast_hash": "6af6e1f4062f45709962b78b1a04d762",
+    "mtime": 1787810814.1820014,
+    "ast_hash": "b715ba43e7f71f6dea3cc39cf190971f",
     "semantic_hash": ""
   },
   "src/components/Hero.tsx": {
-    "mtime": 1787772144.5143168,
-    "ast_hash": "03f0235657688d2c4bdf5cc560640a47",
+    "mtime": 1787809321.7439723,
+    "ast_hash": "e64f4cca77383fcfa834373801e1dd43",
     "semantic_hash": ""
   },
   "src/components/Nav.tsx": {
-    "mtime": 1787774344.6748283,
-    "ast_hash": "cc7f49aaaefa97d3bef60896565234c5",
+    "mtime": 1787805083.453888,
+    "ast_hash": "feaf10d3e3b6d4a0c9bbe2f3e1375528",
     "semantic_hash": ""
   },
   "src/components/Reveal.tsx": {
-    "mtime": 1787768783.031623,
-    "ast_hash": "8976175fbc713b6204a9ac2ad15061a0",
+    "mtime": 1787804342.0096226,
+    "ast_hash": "7596c7b02ad6701915c743d5967b92d8",
     "semantic_hash": ""
   },
   "src/components/Sponsors.tsx": {
-    "mtime": 1787774351.5907357,
-    "ast_hash": "01d03b6e45f3836584fe768f5322bff8",
+    "mtime": 1787805182.8866854,
+    "ast_hash": "efccf79350c0b8f1f4484aa0f9ebed1e",
     "semantic_hash": ""
   },
   "src/components/Stats.tsx": {
-    "mtime": 1787768844.5698671,
-    "ast_hash": "cd84c4aef73f253621ee458a666f8332",
+    "mtime": 1787804437.2852929,
+    "ast_hash": "0f29a9c1c5114506dd46277a784cc433",
     "semantic_hash": ""
   },
   "src/components/Subteams.tsx": {
-    "mtime": 1787772201.1550362,
-    "ast_hash": "f4c56afc858e5ae468052b60d9e9e4e5",
+    "mtime": 1787805189.4105692,
+    "ast_hash": "52c489f663fb158264379149aca46685",
     "semantic_hash": ""
   },
   "src/data.ts": {
-    "mtime": 1787776909.8898158,
-    "ast_hash": "93758f3fdc6287f695bf536a8c6b67e9",
+    "mtime": 1787810989.201435,
+    "ast_hash": "6b5dfc02729ae0a5b18fe68a2089e005",
     "semantic_hash": ""
   },
   "src/main.tsx": {
@@ -100,8 +100,8 @@
     "semantic_hash": ""
   },
   "index.html": {
-    "mtime": 1787772298.439737,
-    "ast_hash": "d8b21a5e3b34201d194290577279dbae",
+    "mtime": 1787807556.1766431,
+    "ast_hash": "1735c4e15e77b74d69e38e2c2b94f3bb",
     "semantic_hash": ""
   },
   "public/robots.txt": {
@@ -670,23 +670,23 @@
     "semantic_hash": ""
   },
   "src/components/Blueprint.tsx": {
-    "mtime": 1787775875.417746,
-    "ast_hash": "0514dc5b63237fb6f5c8daf77597dc35",
+    "mtime": 1787805280.2825544,
+    "ast_hash": "80437879d7ba506bb8a9fa9e40768695",
     "semantic_hash": ""
   },
   "src/components/Gallery.tsx": {
-    "mtime": 1787774825.5537443,
-    "ast_hash": "49df295841e279154e6df753a011a339",
+    "mtime": 1787805158.7030919,
+    "ast_hash": "a06b6221bfe9ac3e0636d5b09186414d",
     "semantic_hash": ""
   },
   "src/components/LoadingScreen.tsx": {
-    "mtime": 1787776052.763091,
-    "ast_hash": "fecd1c022111c0a1b188cb832b9849db",
+    "mtime": 1787934012.2273417,
+    "ast_hash": "58f5c8888cf3985908cb9a1c14cc13cd",
     "semantic_hash": ""
   },
   "src/components/SponsorUs.tsx": {
-    "mtime": 1787775919.4557014,
-    "ast_hash": "b4ebfab7ab02a514a81feb37e24c59d0",
+    "mtime": 1787805167.8444977,
+    "ast_hash": "636dff3b51d380d649ed8cba134974fe",
     "semantic_hash": ""
   },
   "src/components/Ticker.tsx": {
@@ -695,8 +695,8 @@
     "semantic_hash": ""
   },
   "public/404.html": {
-    "mtime": 1787774988.6688776,
-    "ast_hash": "7c0d4d4264523cc7fc509cba53e95de3",
+    "mtime": 1787805450.7657712,
+    "ast_hash": "d6e57bc8412c7e1f4700656a84181911",
     "semantic_hash": ""
   },
   "public/media/gallery/aquarius-1-1600.jpg": {
@@ -1737,6 +1737,141 @@
   "public/media/timeline/redbird-plane-800.webp": {
     "mtime": 1787774259.7726183,
     "ast_hash": "5cfcf9849a0ab2eb225788202cd11c37",
+    "semantic_hash": ""
+  },
+  "src/components/EasterEgg.tsx": {
+    "mtime": 1787807244.2180748,
+    "ast_hash": "a03bfa4b9149b885c1ff6c0dbba1ef42",
+    "semantic_hash": ""
+  },
+  "src/components/HeroSky.tsx": {
+    "mtime": 1787991353.9205408,
+    "ast_hash": "38288e5f3e52f5783283e7ffb6217151",
+    "semantic_hash": ""
+  },
+  "src/components/LiveWeather.tsx": {
+    "mtime": 1787807183.057101,
+    "ast_hash": "31830bf9dc483809f15e64d10b9f8681",
+    "semantic_hash": ""
+  },
+  "src/components/MagneticButton.tsx": {
+    "mtime": 1787807111.211152,
+    "ast_hash": "a931894107c196863ef5ebdeb854b5bf",
+    "semantic_hash": ""
+  },
+  "src/components/ScrollClipImage.tsx": {
+    "mtime": 1787934004.8417814,
+    "ast_hash": "975a565556a6f441f4291ff426bad107",
+    "semantic_hash": ""
+  },
+  "src/components/ScrollProgress.tsx": {
+    "mtime": 1787933998.4446702,
+    "ast_hash": "cf73dea7516eedee1bbec6760bdf8dd3",
+    "semantic_hash": ""
+  },
+  "src/components/StatCounter.tsx": {
+    "mtime": 1787804428.62755,
+    "ast_hash": "666d581c49a9c96a42ae93084990ad12",
+    "semantic_hash": ""
+  },
+  "src/components/Testimonials.tsx": {
+    "mtime": 1787811014.9398112,
+    "ast_hash": "6c00e1414da67577d80d4ac352a65dda",
+    "semantic_hash": ""
+  },
+  "src/components/ThemeToggle.tsx": {
+    "mtime": 1787805074.1375,
+    "ast_hash": "341c1eca233f3d2f1291d46f3249a376",
+    "semantic_hash": ""
+  },
+  "src/components/useClickSpark.tsx": {
+    "mtime": 1787807121.2815964,
+    "ast_hash": "0accd0255b2fa0b500f1d93881e52012",
+    "semantic_hash": ""
+  },
+  "public/media/social/instagram-square.jpg": {
+    "mtime": 1787807542.2030368,
+    "ast_hash": "379303391329303c137f11c0cbeefec7",
+    "semantic_hash": ""
+  },
+  "public/media/social/og-banner.jpg": {
+    "mtime": 1787807542.1667292,
+    "ast_hash": "04511ce45022ffa2217b4715843d22d8",
+    "semantic_hash": ""
+  },
+  "public/media/social/profile-cover.jpg": {
+    "mtime": 1787807542.242679,
+    "ast_hash": "9cd5664e7227fb4bb73ee72644479701",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/carvao-hero-800.jpg": {
+    "mtime": 1787810623.2988515,
+    "ast_hash": "7448316a2e71eb2c6d245f37485df628",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/carvao-hero-800.webp": {
+    "mtime": 1787810623.3405373,
+    "ast_hash": "4f657fa3a16225d661a061e294ad2472",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/cirio-hero-800.jpg": {
+    "mtime": 1787810623.2602422,
+    "ast_hash": "bf68323b1e4c39820a911545fd6f59cd",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/cirio-hero-800.webp": {
+    "mtime": 1787810623.2898467,
+    "ast_hash": "270ced0b8bfced5342b6b498cd920fad",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/falcons-alpha-hero-800.jpg": {
+    "mtime": 1787810621.952884,
+    "ast_hash": "9aba1241c5238e0670c7ea84602bee0a",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/falcons-alpha-hero-800.webp": {
+    "mtime": 1787810623.0749779,
+    "ast_hash": "483eb06404edfad3ca3d2753f8abcf60",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/falcons-beta-hero-800.jpg": {
+    "mtime": 1787810623.0810063,
+    "ast_hash": "db6f48b6dfab8c09d55477ac11821ae5",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/falcons-beta-hero-800.webp": {
+    "mtime": 1787810623.1040595,
+    "ast_hash": "43602c3bccb581dddefc22cbfbe64e2b",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/jugaad-hero-800.jpg": {
+    "mtime": 1787810623.1130583,
+    "ast_hash": "290863b231008fda035af0b8a4c20fca",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/jugaad-hero-800.webp": {
+    "mtime": 1787810623.153108,
+    "ast_hash": "192f7cccfedd7b8da5df4893836dc82a",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/knightout-hero-800.jpg": {
+    "mtime": 1787810623.164761,
+    "ast_hash": "a86d59230503c18ed4537430e48130b8",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/knightout-hero-800.webp": {
+    "mtime": 1787810623.2035825,
+    "ast_hash": "11a352b639120bd43917b5e1531f9553",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/nautilus-hero-800.jpg": {
+    "mtime": 1787810623.2137039,
+    "ast_hash": "ef87900edd259be68d22deed6a89b398",
+    "semantic_hash": ""
+  },
+  "public/media/timeline/nautilus-hero-800.webp": {
+    "mtime": 1787810623.2546506,
+    "ast_hash": "6bae404961abda2b4bab6db119872ac6",
     "semantic_hash": ""
   }
 }

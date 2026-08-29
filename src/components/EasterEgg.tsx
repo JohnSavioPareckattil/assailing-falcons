@@ -26,7 +26,7 @@ export default function EasterEgg() {
   useEffect(() => {
     console.log(
       "%c ASSAILING FALCONS ",
-      "background:#4fd996;color:#06090a;font-family:monospace;font-weight:700;padding:4px 8px;"
+      "background:#5b8ef5;color:#06090a;font-family:monospace;font-weight:700;padding:4px 8px;"
     );
     console.log(
       "%cPre-flight checklist complete. If you're reading this, you already know how to read code.\nDesign, structures, avionics or management, we're always looking for engineers.\nassailingfalcons@vit.ac.in",
