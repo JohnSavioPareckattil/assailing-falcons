@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring, useReducedMotion } from "motion/react";
 
-const COLORS = ["#e7c268", "#38c6b4", "#f2607a"];
+// a single warm-to-transparent trail, not three clashing hues — reads as
+// one coherent comet behind the falcon mark instead of a scattered blob
+const COLORS = ["#e7c268", "#e7c268", "#e7c268"];
 // Trailing dots get progressively softer/laggier springs than the falcon
 // mark itself, so they stretch out behind fast pointer movement.
 const SPRING_CONFIGS = [

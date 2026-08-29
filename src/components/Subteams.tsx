@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "motion/react";
 import Reveal from "./Reveal";
+import SubteamGraphic from "./SubteamGraphic";
 import { subteams } from "../data";
 
 export default function Subteams() {
@@ -25,6 +26,7 @@ export default function Subteams() {
                 whileHover={reduceMotion ? undefined : { y: -6, rotate: i % 2 === 0 ? -0.6 : 0.6 }}
                 transition={{ type: "spring", bounce: 0.3, duration: 0.4 }}
               >
+                <SubteamGraphic code={t.code} />
                 <span className="crew-code">{t.code}</span>
                 <h3 className="crew-name">{t.name}</h3>
                 <p className="crew-detail">{t.detail}</p>

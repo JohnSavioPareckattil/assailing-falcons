@@ -16,6 +16,7 @@ import Footer from "./components/Footer";
 import EasterEgg from "./components/EasterEgg";
 import CursorTrail from "./components/CursorTrail";
 import ScrollFlightPath from "./components/ScrollFlightPath";
+import AmbientMotes from "./components/AmbientMotes";
 
 export default function App() {
   useEffect(() => {
@@ -36,6 +37,7 @@ export default function App() {
       <div className="aurora-field" aria-hidden="true">
         <span className="aurora-blob-3" />
       </div>
+      <AmbientMotes />
       <div className="grain" aria-hidden="true" />
       <Nav />
       <main>

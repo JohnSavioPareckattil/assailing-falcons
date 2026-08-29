@@ -294,6 +294,35 @@ img {
   animation: auroraDriftC 60s ease-in-out infinite;
 }
 
+/* dust-in-a-hangar-beam: 16 specks drifting up the full page height on a
+   loop, offset start times via negative animation-delay so they never
+   read as a single synchronised burst */
+@keyframes moteDrift {
+  0% { transform: translateY(8vh) translateX(0); opacity: 0; }
+  8% { opacity: 0.7; }
+  92% { opacity: 0.5; }
+  100% { transform: translateY(-108vh) translateX(var(--mote-drift, 24px)); opacity: 0; }
+}
+.ambient-motes {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.ambient-mote {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  filter: blur(0.5px);
+  animation-name: moteDrift;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  --mote-drift: 26px;
+}
+.ambient-mote--blue { background: var(--green-bright); box-shadow: 0 0 6px 1px var(--glow-green); }
+.ambient-mote--brass { background: var(--brass); box-shadow: 0 0 6px 1px var(--glow-brass); }
+
 .grain {
   position: fixed;
   inset: 0;
@@ -338,18 +367,18 @@ img {
   left: 50%;
   top: 0;
   bottom: 0;
-  width: 1px;
+  width: 2px;
   background: linear-gradient(to bottom, transparent, var(--line-strong) 12%, var(--line-strong) 88%, transparent);
   transform: translateX(-50%);
 }
 .scroll-path-marker {
   position: absolute;
   left: 50%;
-  width: 13px;
-  height: 13px;
+  width: 11px;
+  height: 11px;
   transform: translate(-50%, -50%) rotate(140deg);
-  color: var(--accent-text);
-  filter: drop-shadow(0 0 6px var(--glow-green));
+  color: var(--brass-text);
+  filter: drop-shadow(0 0 5px var(--glow-brass));
 }
 
 .cursor-mark {
@@ -524,6 +553,23 @@ html.custom-cursor-active * {
   .nav-mark span { display: inline; }
 }
 
+.nav-links-wrap {
+  position: relative;
+  min-width: 0;
+}
+/* slides between nav items as the corresponding section scrolls into
+   view — see the IntersectionObserver in Nav.tsx */
+.nav-active-indicator {
+  position: absolute;
+  bottom: -7px;
+  height: 2px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, var(--green-bright), var(--brass));
+  pointer-events: none;
+}
+.nav-links a[aria-current="true"] {
+  color: var(--paper);
+}
 .nav-links {
   display: flex;
   gap: clamp(1rem, 2.4vw, 2.2rem);
@@ -552,7 +598,7 @@ html.custom-cursor-active * {
 }
 .nav-links a:hover,
 .nav-links a:focus-visible {
-  color: var(--accent-text);
+  color: var(--brass-text);
 }
 .nav-links a::after {
   content: "";
@@ -561,7 +607,7 @@ html.custom-cursor-active * {
   right: 100%;
   bottom: 0;
   height: 1px;
-  background: var(--green-bright);
+  background: var(--brass);
   transition: right 0.3s ease;
 }
 .nav-links a:hover::after {
@@ -588,6 +634,11 @@ html.custom-cursor-active * {
   border-radius: 50%;
   background: var(--green-bright);
   box-shadow: 0 0 6px 1px var(--glow-green);
+  animation: livePulse 2.4s ease-in-out infinite;
+}
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.8); }
 }
 
 .nav-right {
@@ -612,7 +663,7 @@ html.custom-cursor-active * {
 }
 .theme-toggle:hover,
 .theme-toggle:focus-visible {
-  color: var(--accent-text);
+  color: var(--brass-text);
   border-color: var(--paper-dim);
 }
 .theme-toggle:active {
@@ -742,20 +793,26 @@ html.custom-cursor-active * {
 
 .hero-title {
   font-family: var(--f-display);
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
-  font-size: clamp(3.8rem, 13.5vw, 11rem);
-  line-height: 0.86;
-  letter-spacing: -0.01em;
-  color: var(--on-photo);
+  font-size: clamp(1.3rem, 3vw, 2.1rem);
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  color: var(--on-photo-dim);
   overflow: hidden;
 }
 .hero-title .line { display: block; overflow: hidden; }
 .hero-title .line span { display: inline-block; will-change: transform; }
+/* the wordmark: everything else in the lockup is a kicker for this */
 .hero-title .accent {
   position: relative;
   display: inline-block;
   overflow: hidden;
+  margin-top: 0.12em;
+  font-weight: 700;
+  font-size: clamp(4.2rem, min(14vw, 12.5vh), 9.5rem);
+  line-height: 0.86;
+  letter-spacing: -0.01em;
   color: var(--on-photo-accent);
   text-shadow: 0 0 80px rgba(91, 142, 245, 0.35);
 }
@@ -1051,6 +1108,13 @@ html.custom-cursor-active * {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* .lazy-image img also sets a transition (opacity, for the load fade) —
+     restate it here alongside transform since same-specificity rules don't
+     merge, the later one wins outright and would otherwise kill the fade */
+  transition: opacity 0.5s var(--ease-snap), transform 0.5s var(--ease-snap);
+}
+.log-card:hover .log-thumb img {
+  transform: scale(1.09);
 }
 .log-thumb-empty {
   width: 100%;
@@ -1143,6 +1207,15 @@ html.custom-cursor-active * {
   position: relative;
   border: 1px solid var(--line);
   min-height: 320px;
+  /* the grid item (Reveal's wrapper) is stretched to the row's full height
+     by .flagship-grid's align-items:stretch, but that only gives THIS
+     element a definite height to inherit — without height:100% here, the
+     percentage-height LazyImage/img inside had no definite box to resolve
+     against and collapsed to zero, silently hiding the photo entirely */
+  height: 100%;
+}
+@media (max-width: 959px) {
+  .flagship-media { height: auto; aspect-ratio: 4 / 3; }
 }
 .flagship-media img {
   width: 100%;
@@ -1303,8 +1376,8 @@ html.custom-cursor-active * {
 }
 .crew-card:hover {
   background: var(--panel-2);
-  border-color: color-mix(in srgb, var(--green-bright) 45%, var(--line));
-  box-shadow: 0 16px 32px -18px color-mix(in srgb, var(--green-bright) 55%, transparent);
+  border-color: color-mix(in srgb, var(--brass) 45%, var(--line));
+  box-shadow: 0 16px 32px -18px color-mix(in srgb, var(--brass) 55%, transparent);
 }
 .crew-code {
   display: inline-block;
@@ -1322,6 +1395,22 @@ html.custom-cursor-active * {
   font-weight: 600;
   font-size: 1.4rem;
   text-transform: uppercase;
+}
+.crew-graphic {
+  position: absolute;
+  right: -18px;
+  bottom: -18px;
+  width: 112px;
+  height: 112px;
+  color: var(--line-strong);
+  opacity: 0.7;
+  pointer-events: none;
+  transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+.crew-card:hover .crew-graphic {
+  color: var(--brass);
+  opacity: 0.9;
+  transform: scale(1.05);
 }
 .crew-detail {
   margin-top: 0.6rem;
@@ -1712,13 +1801,13 @@ html.custom-cursor-active * {
 .gallery-tile-glow {
   position: absolute;
   inset: 0;
-  box-shadow: inset 0 0 0 0 var(--glow-green);
+  box-shadow: inset 0 0 0 0 var(--glow-brass);
   transition: box-shadow 0.3s ease;
   pointer-events: none;
 }
 .gallery-tile:hover .gallery-tile-glow,
 .gallery-tile:focus-visible .gallery-tile-glow {
-  box-shadow: inset 0 0 0 2px var(--green-bright);
+  box-shadow: inset 0 0 0 2px var(--brass);
 }
 /* flags a tile that opens into a browsable, multi-photo set (see the arc
    scrubber in the lightbox) so that feature is discoverable from the grid */

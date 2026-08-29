@@ -88,9 +88,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.7 }}
         >
-          VIT Vellore's Advanced Class SAE AeroDesign team. We design, build and fly
-          autonomous RC aircraft. No.1 in Asia-Pacific. 1st in Technical Presentation
-          worldwide this season with Indra.
+          VIT Vellore's Advanced Class SAE AeroDesign team. No.1 in Asia-Pacific,
+          1st in Technical Presentation worldwide with Indra.
         </motion.p>
 
         <motion.div
