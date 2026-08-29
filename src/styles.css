@@ -14,6 +14,16 @@
   to { transform: rotate(360deg); }
 }
 
+@keyframes auroraDriftA {
+  0%, 100% { transform: translate(-6%, -4%) scale(1); }
+  50% { transform: translate(4%, 6%) scale(1.12); }
+}
+
+@keyframes auroraDriftB {
+  0%, 100% { transform: translate(6%, 4%) scale(1.08); }
+  50% { transform: translate(-5%, -6%) scale(1); }
+}
+
 :root {
   /* surfaces (dark / night-tarmac, default) */
   --ink: #06090a;
@@ -180,7 +190,8 @@ img {
   animation: gridDrift 22s linear infinite;
 }
 
-/* slow radar-style sweep, aviation motif, very low opacity */
+/* slow radar-style sweep, aviation motif, very low opacity.
+   Two-tone: blue arm and a brass arm opposite each other, like a compass. */
 .grid-field::before {
   content: "";
   position: absolute;
@@ -189,10 +200,51 @@ img {
   width: 140vmax;
   height: 140vmax;
   margin-left: -70vmax;
-  background: conic-gradient(from 0deg, transparent 0deg, var(--glow-green) 4deg, transparent 30deg, transparent 360deg);
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    var(--glow-green) 4deg,
+    transparent 30deg,
+    transparent 180deg,
+    var(--glow-brass) 184deg,
+    transparent 210deg,
+    transparent 360deg
+  );
   opacity: 0.5;
   animation: sweepRotate 34s linear infinite;
   transform-origin: 50% 50%;
+}
+
+/* slow drifting colour wash, fixed behind all sections so the page keeps
+   a sense of ambient life past the hero, not just a flat void */
+.aurora-field {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.55;
+  overflow: hidden;
+}
+.aurora-field::before,
+.aurora-field::after {
+  content: "";
+  position: absolute;
+  width: 60vmax;
+  height: 60vmax;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+.aurora-field::before {
+  top: -10%;
+  left: -12%;
+  background: radial-gradient(circle, var(--glow-green) 0%, transparent 70%);
+  animation: auroraDriftA 46s ease-in-out infinite;
+}
+.aurora-field::after {
+  bottom: -18%;
+  right: -10%;
+  background: radial-gradient(circle, var(--glow-brass) 0%, transparent 70%);
+  animation: auroraDriftB 52s ease-in-out infinite;
 }
 
 .grain {
@@ -926,9 +978,7 @@ img {
 .crew-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
+  gap: 1rem;
 }
 @media (min-width: 640px) {
   .crew-grid { grid-template-columns: repeat(2, 1fr); }
@@ -936,23 +986,43 @@ img {
 @media (min-width: 1000px) {
   .crew-grid { grid-template-columns: repeat(4, 1fr); }
 }
+.crew-card-wrap { height: 100%; }
 .crew-card {
-  background: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--line);
   padding: clamp(1.4rem, 2.6vw, 1.9rem);
   position: relative;
-  transition: background 0.3s ease;
+  overflow: hidden;
+  height: 100%;
+  cursor: default;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.crew-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--crew-accent);
 }
 .crew-card:hover {
   background: var(--panel-2);
+  border-color: color-mix(in srgb, var(--crew-accent) 45%, var(--line));
+  box-shadow: 0 16px 32px -18px color-mix(in srgb, var(--crew-accent) 55%, transparent);
 }
 .crew-code {
+  display: inline-block;
   font-family: var(--f-mono);
-  font-size: 0.75rem;
-  color: var(--brass-text);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--crew-accent) 82%, var(--ink) 0%);
   letter-spacing: 0.08em;
+  background: color-mix(in srgb, var(--crew-accent) 16%, transparent);
+  padding: 0.2rem 0.5rem;
 }
 .crew-name {
-  margin-top: 0.7rem;
+  margin-top: 0.8rem;
   font-family: var(--f-display);
   font-weight: 600;
   font-size: 1.4rem;

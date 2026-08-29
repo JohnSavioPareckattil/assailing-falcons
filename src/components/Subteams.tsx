@@ -1,7 +1,10 @@
+import { motion, useReducedMotion } from "motion/react";
 import Reveal from "./Reveal";
 import { subteams } from "../data";
 
 export default function Subteams() {
+  const reduceMotion = useReducedMotion();
+
   return (
     <section className="section" id="crew">
       <div className="container">
@@ -14,17 +17,22 @@ export default function Subteams() {
           </div>
         </div>
 
-        <Reveal>
-          <div className="crew-grid">
-            {subteams.map((t) => (
-              <div className="crew-card" key={t.code}>
+        <div className="crew-grid">
+          {subteams.map((t, i) => (
+            <Reveal key={t.code} as="div" variant="pop" delay={i * 0.1} className="crew-card-wrap">
+              <motion.div
+                className="crew-card"
+                style={{ "--crew-accent": t.color } as React.CSSProperties}
+                whileHover={reduceMotion ? undefined : { y: -6, rotate: i % 2 === 0 ? -0.6 : 0.6 }}
+                transition={{ type: "spring", bounce: 0.3, duration: 0.4 }}
+              >
                 <span className="crew-code">{t.code}</span>
                 <h3 className="crew-name">{t.name}</h3>
                 <p className="crew-detail">{t.detail}</p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
+              </motion.div>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

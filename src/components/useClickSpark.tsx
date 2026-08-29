@@ -5,6 +5,7 @@ type Spark = { id: number; x: number; y: number };
 
 let sparkId = 0;
 const RAYS = 6;
+const SPARK_COLORS = ["#5b8ef5", "#e7c268", "#38c6b4", "#f2607a", "#f5a742", "#9b7cf0"];
 
 export function useClickSpark() {
   const [sparks, setSparks] = useState<Spark[]>([]);
@@ -30,7 +31,12 @@ export function useClickSpark() {
           {Array.from({ length: RAYS }).map((_, i) => (
             <motion.i
               key={i}
-              style={{ "--a": `${(360 / RAYS) * i}deg` } as React.CSSProperties}
+              style={
+                {
+                  "--a": `${(360 / RAYS) * i}deg`,
+                  color: SPARK_COLORS[i % SPARK_COLORS.length],
+                } as React.CSSProperties
+              }
               initial={{ opacity: 1, scale: 0.3 }}
               animate={{ opacity: 0, scale: 1 }}
               transition={{ duration: 0.45, ease: "easeOut" }}

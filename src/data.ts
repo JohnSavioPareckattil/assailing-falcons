@@ -176,24 +176,28 @@ export const subteams = [
   {
     code: "DS",
     name: "Design",
+    color: "#f5a742",
     detail:
       "The foundation of every Falcons aircraft. Conceptual design, aerodynamic analysis, MDO, CFD and airfoil optimisation, turning ideas into mission-ready aerial systems, fixed-wing or VTOL.",
   },
   {
     code: "ST",
     name: "Structures",
+    color: "#38c6b4",
     detail:
       "CAD modelling, structural analysis and weight optimisation translated into flight-worthy airframes, plus in-house composite fabrication, assembly and physical validation testing.",
   },
   {
     code: "AV",
     name: "Avionics",
+    color: "#9b7cf0",
     detail:
       "Sensors, payloads, power systems and flight-control architecture for autonomous operation. Built AVGP, a vision-guided rover that navigates and reacts entirely on its own.",
   },
   {
     code: "MG",
     name: "Management",
+    color: "#f2607a",
     detail:
       "Sponsorships, outreach and the coordination that turns a design into a funded, fabricated, flown aircraft, so every other department can focus on engineering.",
   },

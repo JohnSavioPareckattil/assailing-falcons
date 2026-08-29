@@ -27,6 +27,7 @@ export default function App() {
       <LoadingScreen />
       <EasterEgg />
       <div className="grid-field" aria-hidden="true" />
+      <div className="aurora-field" aria-hidden="true" />
       <div className="grain" aria-hidden="true" />
       <Nav />
       <main>
