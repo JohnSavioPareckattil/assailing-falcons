@@ -24,6 +24,16 @@
   50% { transform: translate(-5%, -6%) scale(1); }
 }
 
+@keyframes auroraDriftC {
+  0%, 100% { transform: translate(-4%, 5%) scale(1.05); }
+  50% { transform: translate(5%, -4%) scale(0.96); }
+}
+
+@keyframes skeletonShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 :root {
   /* surfaces (dark / night-tarmac, default) */
   --ink: #06090a;
@@ -74,6 +84,8 @@
   /* motion, remix.run-style: instant/snappy for interactive states */
   --ease-snap: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-instant: 150ms;
+
+  --cursor-blend: screen;
 }
 
 /* light / day-tarmac — drafting-paper surface, same brand hues, deepened
@@ -104,6 +116,8 @@
 
   --glow-green: rgba(47, 111, 224, 0.25);
   --glow-brass: rgba(207, 154, 46, 0.22);
+
+  --cursor-blend: multiply;
 }
 
 * {
@@ -246,6 +260,16 @@ img {
   background: radial-gradient(circle, var(--glow-brass) 0%, transparent 70%);
   animation: auroraDriftB 52s ease-in-out infinite;
 }
+.aurora-blob-3 {
+  position: absolute;
+  top: 32%;
+  left: 38%;
+  width: 55vmax;
+  height: 55vmax;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 198, 180, 0.22) 0%, transparent 70%);
+  animation: auroraDriftC 60s ease-in-out infinite;
+}
 
 .grain {
   position: fixed;
@@ -255,6 +279,56 @@ img {
   opacity: 0.05;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* comet-trail cursor follower, desktop-with-a-mouse only (see CursorTrail.tsx) */
+.cursor-trail {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+}
+.cursor-trail-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  margin-top: -5px;
+  margin-left: -5px;
+  mix-blend-mode: var(--cursor-blend, normal);
+}
+
+/* skeleton-shimmer image loader, see LazyImage.tsx */
+.lazy-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.lazy-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.lazy-image img {
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-snap);
+}
+.lazy-image img.is-loaded {
+  opacity: 1;
+}
+.lazy-image-skeleton {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, var(--panel) 28%, var(--panel-2) 50%, var(--panel) 72%);
+  background-size: 220% 100%;
+  animation: skeletonShimmer 1.7s ease-in-out infinite;
+  transition: opacity 0.4s ease;
+  opacity: 1;
+}
+.lazy-image-skeleton.is-loaded {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .container {
@@ -484,6 +558,7 @@ img {
   position: absolute;
   inset: 0;
   z-index: -1;
+  overflow: hidden;
 }
 .hero-media img {
   width: 100%;
@@ -1686,13 +1761,20 @@ img {
   transform: scale(0.96);
 }
 .btn--primary {
-  background: var(--green-bright);
+  background-color: var(--green-bright);
+  background-image: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.4) 50%, transparent 65%);
+  background-size: 220% 100%;
+  background-position: 140% 0;
+  background-repeat: no-repeat;
   border-color: var(--green-bright);
   color: var(--on-accent);
   font-weight: 600;
+  transition: background-position 0.6s var(--ease-snap), background-color var(--dur-instant) ease,
+    border-color var(--dur-instant) ease, transform var(--dur-instant) var(--ease-snap);
 }
 .btn--primary:hover {
-  background: var(--brass);
+  background-color: var(--brass);
+  background-position: -60% 0;
   border-color: var(--brass);
   color: var(--on-accent);
 }

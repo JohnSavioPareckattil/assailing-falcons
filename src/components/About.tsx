@@ -1,5 +1,6 @@
 import Reveal from "./Reveal";
 import Blueprint from "./Blueprint";
+import LazyImage from "./LazyImage";
 
 export default function About() {
   return (
@@ -30,14 +31,11 @@ export default function About() {
 
           <Reveal delay={0.15} variant="scale">
             <figure className="about-frame">
-              <picture>
-                <source srcSet="media/aircraft/indra-team-800.webp" type="image/webp" />
-                <img
-                  src="media/aircraft/indra-team-800.jpg"
-                  loading="lazy"
-                  alt="Team Falcons '26 group photo in their F'26 team shirts"
-                />
-              </picture>
+              <LazyImage
+                webp="media/aircraft/indra-team-800.webp"
+                src="media/aircraft/indra-team-800.jpg"
+                alt="Team Falcons '26 group photo in their F'26 team shirts"
+              />
               <figcaption className="about-caption">
                 <span>Falcons '26</span>
                 <span>50+ members, 4 departments</span>

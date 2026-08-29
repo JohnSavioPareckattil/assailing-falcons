@@ -14,6 +14,7 @@ import Sponsors from "./components/Sponsors";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 import EasterEgg from "./components/EasterEgg";
+import CursorTrail from "./components/CursorTrail";
 
 export default function App() {
   useEffect(() => {
@@ -26,8 +27,11 @@ export default function App() {
     <>
       <LoadingScreen />
       <EasterEgg />
+      <CursorTrail />
       <div className="grid-field" aria-hidden="true" />
-      <div className="aurora-field" aria-hidden="true" />
+      <div className="aurora-field" aria-hidden="true">
+        <span className="aurora-blob-3" />
+      </div>
       <div className="grain" aria-hidden="true" />
       <Nav />
       <main>

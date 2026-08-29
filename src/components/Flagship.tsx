@@ -1,6 +1,7 @@
 import Reveal from "./Reveal";
 import CornerFrame from "./CornerFrame";
 import Blueprint from "./Blueprint";
+import LazyImage from "./LazyImage";
 
 const specs = [
   { key: "Season", val: "F'26" },
@@ -27,14 +28,11 @@ export default function Flagship() {
           <Reveal variant="scale">
             <div className="flagship-media">
               <CornerFrame />
-              <picture>
-                <source srcSet="media/aircraft/indra-flight-800.webp" type="image/webp" />
-                <img
-                  src="media/aircraft/indra-flight-800.jpg"
-                  loading="lazy"
-                  alt="Indra in flight at dusk, with the moon visible behind it"
-                />
-              </picture>
+              <LazyImage
+                webp="media/aircraft/indra-flight-800.webp"
+                src="media/aircraft/indra-flight-800.jpg"
+                alt="Indra in flight at dusk, with the moon visible behind it"
+              />
               <span className="flagship-media-tag">F'26 · INDRA</span>
             </div>
           </Reveal>

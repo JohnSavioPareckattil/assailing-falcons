@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Reveal from "./Reveal";
 import CornerFrame from "./CornerFrame";
+import LazyImage from "./LazyImage";
 import { gallery, contact, type GalleryItem } from "../data";
 
 const categories: { key: GalleryItem["category"] | "all"; label: string }[] = [
@@ -59,10 +60,7 @@ export default function Gallery() {
                 onClick={() => setOpenIndex(i)}
                 aria-label={`Open photo: ${item.alt}`}
               >
-                <picture>
-                  <source srcSet={`${item.src}-800.webp`} type="image/webp" />
-                  <img src={`${item.src}-800.jpg`} loading="lazy" alt={item.alt} />
-                </picture>
+                <LazyImage webp={`${item.src}-800.webp`} src={`${item.src}-800.jpg`} alt={item.alt} />
                 <span className="gallery-tile-glow" aria-hidden="true" />
               </button>
             ))}
@@ -106,10 +104,7 @@ export default function Gallery() {
               onClick={(e) => e.stopPropagation()}
             >
               <CornerFrame />
-              <picture>
-                <source srcSet={`${open.src}-1600.webp`} type="image/webp" />
-                <img src={`${open.src}-1600.jpg`} alt={open.alt} />
-              </picture>
+              <LazyImage webp={`${open.src}-1600.webp`} src={`${open.src}-1600.jpg`} alt={open.alt} />
               <figcaption>{open.alt}</figcaption>
               <button
                 type="button"

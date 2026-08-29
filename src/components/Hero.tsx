@@ -1,4 +1,5 @@
-import { motion } from "motion/react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
 import MagneticButton from "./MagneticButton";
 import LiveWeather from "./LiveWeather";
 import HeroSky from "./HeroSky";
@@ -22,16 +23,21 @@ const wordVariants = {
 export default function Hero() {
   const primarySpark = useClickSpark();
   const secondarySpark = useClickSpark();
+  const sectionRef = useRef<HTMLElement>(null);
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
+  const mediaY = useTransform(scrollYProgress, [0, 1], [0, 160]);
 
   return (
-    <section className="hero" id="top">
+    <section className="hero" id="top" ref={sectionRef}>
       <div className="hero-media">
-        <img
+        <motion.img
           src="media/aircraft/indra-hero-1600.jpg"
           srcSet="media/aircraft/indra-hero-800.jpg 800w, media/aircraft/indra-hero-1600.jpg 1600w"
           sizes="100vw"
           alt="Indra, the team's 2026 flagship aircraft, spotlit on the tarmac at night"
           fetchPriority="high"
+          style={reduceMotion ? undefined : { y: mediaY, scale: 1.12 }}
         />
       </div>
 

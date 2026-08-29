@@ -5,8 +5,8 @@
     "semantic_hash": ""
   },
   "src/App.tsx": {
-    "mtime": 1787811101.7501917,
-    "ast_hash": "3e21280321e33afa3b36cfb754a3c8c6",
+    "mtime": 1787996782.530861,
+    "ast_hash": "f7a736c6a2081892c5ab3321fa170af6",
     "semantic_hash": ""
   },
   "src/components/About.tsx": {
@@ -45,8 +45,8 @@
     "semantic_hash": ""
   },
   "src/components/Reveal.tsx": {
-    "mtime": 1787804342.0096226,
-    "ast_hash": "7596c7b02ad6701915c743d5967b92d8",
+    "mtime": 1787996681.234934,
+    "ast_hash": "de43a58da8547e36a323529e95bbb037",
     "semantic_hash": ""
   },
   "src/components/Sponsors.tsx": {
@@ -60,13 +60,13 @@
     "semantic_hash": ""
   },
   "src/components/Subteams.tsx": {
-    "mtime": 1787805189.4105692,
-    "ast_hash": "52c489f663fb158264379149aca46685",
+    "mtime": 1787996692.9341729,
+    "ast_hash": "161eeb7e5be9c9d4f5ad814b91a196b7",
     "semantic_hash": ""
   },
   "src/data.ts": {
-    "mtime": 1787810989.201435,
-    "ast_hash": "6b5dfc02729ae0a5b18fe68a2089e005",
+    "mtime": 1787996666.9249704,
+    "ast_hash": "18df673e7050753c124d6855675b45c6",
     "semantic_hash": ""
   },
   "src/main.tsx": {
@@ -1785,8 +1785,8 @@
     "semantic_hash": ""
   },
   "src/components/useClickSpark.tsx": {
-    "mtime": 1787807121.2815964,
-    "ast_hash": "0accd0255b2fa0b500f1d93881e52012",
+    "mtime": 1787996808.0537791,
+    "ast_hash": "c5d0d265a8e6a83e8c39f28e1e779a5b",
     "semantic_hash": ""
   },
   "public/media/social/instagram-square.jpg": {

@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useReducedMotion } from "motion/react";
 import Reveal from "./Reveal";
+import LazyImage from "./LazyImage";
 import { flightLog } from "../data";
 
 export default function FlightLog() {
@@ -47,14 +48,11 @@ export default function FlightLog() {
               <div className="log-card">
                 <div className="log-thumb">
                   {entry.image ? (
-                    <picture>
-                      <source srcSet={`${entry.image}-800.webp`} type="image/webp" />
-                      <img
-                        src={`${entry.image}-800.jpg`}
-                        loading="lazy"
-                        alt={`${entry.name}, the ${entry.year} aircraft`}
-                      />
-                    </picture>
+                    <LazyImage
+                      webp={`${entry.image}-800.webp`}
+                      src={`${entry.image}-800.jpg`}
+                      alt={`${entry.name}, the ${entry.year} aircraft`}
+                    />
                   ) : (
                     <div className="log-thumb-empty" aria-hidden="true">
                       <svg viewBox="0 0 48 48" fill="none">
