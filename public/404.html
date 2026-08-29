@@ -6,7 +6,20 @@
     <meta name="theme-color" content="#06090c" />
     <meta name="robots" content="noindex" />
     <link rel="icon" type="image/x-icon" href="/assailing-falcons/favicon.ico" />
-    <title>Off Course — Team Assailing Falcons</title>
+    <title>Off Course, Team Assailing Falcons</title>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("falcons-theme");
+          var theme = stored === "light" || stored === "dark"
+            ? stored
+            : (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,6 +29,7 @@
     <style>
       :root {
         --ink: #06090a;
+        --ink-rgb: 6, 9, 10;
         --panel: #0c1215;
         --line: rgba(241, 236, 223, 0.13);
         --line-strong: rgba(241, 236, 223, 0.3);
@@ -24,10 +38,28 @@
         --paper-faint: #5c6863;
         --green-bright: #4fd996;
         --brass: #e7c268;
+        --accent-text: #4fd996;
+        --brass-text: #e7c268;
+        --on-accent: #06090a;
         --glow-green: rgba(79, 217, 150, 0.35);
         --f-display: "Rajdhani", "Arial Narrow", sans-serif;
         --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
         --f-body: "Public Sans", system-ui, sans-serif;
+      }
+      :root[data-theme="light"] {
+        --ink: #f5f3ec;
+        --ink-rgb: 245, 243, 236;
+        --panel: #fcfbf7;
+        --line: rgba(11, 15, 12, 0.12);
+        --line-strong: rgba(11, 15, 12, 0.28);
+        --paper: #12140f;
+        --paper-dim: #52584f;
+        --paper-faint: #7c8177;
+        --green-bright: #2fae76;
+        --brass: #cf9a2e;
+        --accent-text: #0f7a4f;
+        --brass-text: #8a5f12;
+        --glow-green: rgba(47, 174, 118, 0.25);
       }
       * { box-sizing: border-box; }
       html, body {
@@ -94,7 +126,7 @@
         max-width: 560px;
         width: 100%;
         border: 1px solid var(--line);
-        background: rgba(12, 18, 21, 0.7);
+        background: rgba(var(--ink-rgb), 0.7);
         backdrop-filter: blur(6px);
         padding: clamp(2rem, 6vw, 3.4rem);
         text-align: center;
@@ -104,7 +136,7 @@
         font-size: 0.72rem;
         letter-spacing: 0.22em;
         text-transform: uppercase;
-        color: var(--green-bright);
+        color: var(--accent-text);
       }
       .code {
         margin-top: 1rem;
@@ -118,7 +150,7 @@
       .plane {
         display: inline-flex;
         margin-top: 0.6rem;
-        color: var(--brass);
+        color: var(--brass-text);
         transform: rotate(35deg);
         animation: bob 3s ease-in-out infinite;
       }
@@ -159,7 +191,7 @@
         letter-spacing: 0.08em;
         text-transform: uppercase;
         text-decoration: none;
-        color: var(--ink);
+        color: var(--on-accent);
         background: var(--green-bright);
         border: 1px solid var(--green-bright);
         padding: 0.75rem 1.4rem;
@@ -175,14 +207,14 @@
     <div class="grid-field" aria-hidden="true"></div>
     <div class="sweep" aria-hidden="true"></div>
     <main class="card">
-      <p class="eyebrow">Flight Log — Error</p>
+      <p class="eyebrow">Flight Log: Error</p>
       <div class="code">404</div>
       <div class="plane" aria-hidden="true">
         <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
           <path d="M6 26l36-14-9 34-6-13-13 8 4-9-12-6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
         </svg>
       </div>
-      <h1>Off course — no such runway</h1>
+      <h1>Off course, no such runway</h1>
       <p>
         The page you're looking for has drifted outside the flight plan.
         It may have been moved, renamed, or never existed.

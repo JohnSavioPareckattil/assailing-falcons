@@ -8,27 +8,27 @@ export default function About() {
       <div className="container">
         <div className="about-grid">
           <Reveal>
-            <p className="eyebrow">01 — Who We Are</p>
+            <p className="eyebrow">Who We Are</p>
             <h2 className="section-title" style={{ marginTop: "0.6rem", marginBottom: "1.6rem" }}>
               Sixteen years<br />in the air
             </h2>
             <div className="about-copy">
               <p>
-                <strong>Team Assailing Falcons</strong> is VIT's premier aeromodelling team,
-                specialising in the design, fabrication and testing of autonomous unmanned
-                aerial vehicles. Founded in 2010, we've grown into a 50-plus member
-                multidisciplinary team that consistently pushes the boundaries of innovation.
+                <strong>Team Assailing Falcons</strong> is VIT Vellore's aeromodelling team.
+                We design, build, fabricate and test autonomous unmanned aircraft from
+                scratch. Founded in 2010, we've grown into a 50-plus member crew spanning
+                design, structures, avionics and management.
               </p>
               <p>
-                Ranked <strong>No.1 in Asia-Pacific</strong>, we compete against university
-                teams from every continent at SAE AeroDesign while giving students a
-                hands-on environment that turns them into industry-ready engineers — through
-                teamwork, technical excellence and continuous experimentation.
+                Ranked <strong>No.1 in Asia-Pacific</strong>, we go up against university
+                teams from every continent at SAE AeroDesign. Every season means real
+                deadlines, real flight tests and real failures, the kind of experience that
+                turns students into engineers before they graduate.
               </p>
             </div>
           </Reveal>
 
-          <Reveal delay={0.15}>
+          <Reveal delay={0.15} variant="scale">
             <figure className="about-frame">
               <picture>
                 <source srcSet="media/aircraft/indra-team-800.webp" type="image/webp" />

@@ -4,7 +4,7 @@ import Blueprint from "./Blueprint";
 
 const specs = [
   { key: "Season", val: "F'26" },
-  { key: "Class", val: "Advanced — eVTOL Tricopter" },
+  { key: "Class", val: "Advanced, eVTOL Tricopter" },
   { key: "Design Report", val: "2nd Worldwide" },
   { key: "Technical Presentation", val: "1st Worldwide" },
   { key: "MathWorks Simulation Award", val: "2nd Worldwide" },
@@ -16,7 +16,7 @@ export default function Flagship() {
       <div className="container">
         <div className="section-head">
           <div>
-            <p className="eyebrow">03 — Current Flagship</p>
+            <p className="eyebrow">Current Flagship</p>
             <h2 className="section-title" style={{ marginTop: "0.6rem" }}>
               Indra
             </h2>
@@ -24,7 +24,7 @@ export default function Flagship() {
         </div>
 
         <div className="flagship-grid">
-          <Reveal>
+          <Reveal variant="scale">
             <div className="flagship-media">
               <CornerFrame />
               <picture>
@@ -39,11 +39,11 @@ export default function Flagship() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.15}>
+          <Reveal delay={0.15} variant="fade">
             <div className="spec-panel">
               <Blueprint className="spec-blueprint" />
               <div className="spec-title">INDRA</div>
-              <div className="spec-subtitle">Sanskrit — god of the sky, weather and war</div>
+              <div className="spec-subtitle">Sanskrit: god of the sky, weather and war</div>
 
               <ul className="spec-list">
                 {specs.map((s) => (
@@ -56,10 +56,10 @@ export default function Flagship() {
 
               <p className="spec-results">
                 An electric VTOL tricopter built for precision payload delivery and
-                recapture. When war in Iran closed the airspace the team needed to
+                recapture. When war in Iran shut down the airspace the team needed to
                 reach Fort Worth, Assailing Falcons cleared the Design Report,
-                Technical Presentation and MathWorks Simulation Award entirely
-                through remote submission — and still came home with{" "}
+                Technical Presentation and MathWorks Simulation Award entirely by
+                remote submission, and still came home with{" "}
                 <strong>1st in Technical Presentation, worldwide</strong>.
               </p>
             </div>

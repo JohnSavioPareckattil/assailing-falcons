@@ -16,9 +16,9 @@ export default function FlightLog() {
       <div className="container">
         <div className="section-head">
           <div>
-            <p className="eyebrow">02 — Flight Log</p>
+            <p className="eyebrow">Flight Log</p>
             <h2 className="section-title" style={{ marginTop: "0.6rem" }}>
-              Sixteen years,<br />thirteen airframes
+              Sixteen years,<br />seventeen airframes
             </h2>
           </div>
           <p className="eyebrow eyebrow--dim" style={{ maxWidth: "34ch", textAlign: "right" }}>
@@ -36,7 +36,7 @@ export default function FlightLog() {
 
           {flightLog.map((entry, i) => (
             <Reveal
-              key={entry.year}
+              key={entry.code}
               delay={i * 0.05}
               className={`log-entry${entry.current ? " log-entry--current" : ""}`}
             >

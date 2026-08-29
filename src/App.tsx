@@ -11,7 +11,9 @@ import Subteams from "./components/Subteams";
 import Gallery from "./components/Gallery";
 import SponsorUs from "./components/SponsorUs";
 import Sponsors from "./components/Sponsors";
+import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
+import EasterEgg from "./components/EasterEgg";
 
 export default function App() {
   useEffect(() => {
@@ -23,6 +25,7 @@ export default function App() {
   return (
     <>
       <LoadingScreen />
+      <EasterEgg />
       <div className="grid-field" aria-hidden="true" />
       <div className="grain" aria-hidden="true" />
       <Nav />
@@ -37,6 +40,7 @@ export default function App() {
         <Gallery />
         <SponsorUs />
         <Sponsors />
+        <Testimonials />
       </main>
       <Footer />
     </>

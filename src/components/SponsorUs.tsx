@@ -7,7 +7,7 @@ export default function SponsorUs() {
       <div className="container">
         <div className="section-head">
           <div>
-            <p className="eyebrow">06 — Sponsor Us</p>
+            <p className="eyebrow">Sponsor Us</p>
             <h2 className="section-title" style={{ marginTop: "0.6rem" }}>
               Back the build
             </h2>
@@ -40,7 +40,7 @@ export default function SponsorUs() {
           <div className="sponsor-us-cta">
             <p>
               Want your name on the fuselage that flies to Fort Worth?
-              Reach out — we'll send the sponsorship brochure and tier deck.
+              Reach out and we'll send the sponsorship brochure and tier deck.
             </p>
             <div className="sponsor-us-cta-actions">
               <a className="btn btn--primary" href={`mailto:${contact.email}?subject=Sponsorship enquiry`}>

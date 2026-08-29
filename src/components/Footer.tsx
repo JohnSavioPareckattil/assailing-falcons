@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <Reveal>
-            <p className="eyebrow">08 — Get In Touch</p>
+            <p className="eyebrow">Get In Touch</p>
             <h2 className="footer-title" style={{ marginTop: "0.8rem" }}>
               Fly with us.
             </h2>
@@ -47,6 +47,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Team Assailing Falcons, VIT Vellore</span>
           <span>#SkyboundIngenuity</span>
+          <span className="footer-credit">Site by John Pareckattil</span>
         </div>
       </div>
     </footer>

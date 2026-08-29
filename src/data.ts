@@ -20,19 +20,55 @@ export const flightLog: FlightLogEntry[] = [
     year: "2011",
     code: "F'11",
     name: "FALCONS ALPHA",
-    result: "37TH OF 75 — FIRST U.S. ENTRY",
+    result: "37TH OF 75 · FIRST U.S. ENTRY",
     blurb:
-      "The team's first aircraft to cross the Atlantic and compete on American soil, at SAE Aero Design in Fort Worth, Texas — the opening flight of everything that followed.",
-    image: null,
+      "The team's first aircraft to cross the Atlantic and compete on American soil, at SAE Aero Design in Fort Worth, Texas. The opening flight of everything that followed.",
+    image: "media/timeline/falcons-alpha-hero",
   },
   {
-    year: "2012–15",
+    year: "2012-15",
     code: "F'1X",
     name: "FALCONS BETA",
-    result: "19TH OVERALL — VAN NUYS, LA",
+    result: "19TH OVERALL · VAN NUYS, LA",
     blurb:
       "Flown at the Van Nuys, Los Angeles competition during the team's early build-and-learn years. Exact season undocumented in surviving team records.",
-    image: null,
+    image: "media/timeline/falcons-beta-hero",
+  },
+  {
+    year: "2012-13",
+    code: "F'13",
+    name: "JUGAAD",
+    result: "REGULAR CLASS · RECORDS UNAVAILABLE",
+    blurb:
+      "One of the team's early Regular Class builds from the build-and-learn years, before the move up to Advanced Class. Detailed competition results haven't survived in team archives.",
+    image: "media/timeline/jugaad-hero",
+  },
+  {
+    year: "2013-14",
+    code: "F'14",
+    name: "KNIGHTOUT",
+    result: "SAE AERO DESIGN · RECORDS UNAVAILABLE",
+    blurb:
+      "Flown as the team pushed toward Advanced Class competition. Named in team photo archives, but detailed results from that season haven't survived.",
+    image: "media/timeline/knightout-hero",
+  },
+  {
+    year: "2014-15",
+    code: "F'15",
+    name: "NAUTILUS",
+    result: "ADVANCED CLASS · SAE AERO DESIGN EAST",
+    blurb:
+      "The season's biplane design, built to address the lack of credible aerodynamic data available for biplane configurations at the time. One of the more experimental airframes in team history.",
+    image: "media/timeline/nautilus-hero",
+  },
+  {
+    year: "2016",
+    code: "F'16R",
+    name: "CIRIO",
+    result: "REGULAR CLASS · LOS ANGELES",
+    blurb:
+      "The team's Regular Class entry the same season as Carvao, built around a tapered wing spanning over a square metre and rated to lift more than 15 lb.",
+    image: "media/timeline/cirio-hero",
   },
   {
     year: "2016",
@@ -40,8 +76,8 @@ export const flightLog: FlightLogEntry[] = [
     name: "CARVAO",
     result: "9TH OVERALL, ADVANCED CLASS",
     blurb:
-      "A medium-altitude, long-endurance design flown alongside sister aircraft Cirio at Los Angeles — the only Indian team to clear Advanced Class technical inspection that year.",
-    image: null,
+      "A medium-altitude, long-endurance design flown alongside sister aircraft Cirio at Los Angeles. The only Indian team to clear Advanced Class technical inspection that year.",
+    image: "media/timeline/carvao-hero",
   },
   {
     year: "2017",
@@ -56,7 +92,7 @@ export const flightLog: FlightLogEntry[] = [
     year: "2018",
     code: "F'18",
     name: "ZEPHYRUS",
-    result: "6TH OVERALL — BEST IN ASIA AT THE TIME",
+    result: "6TH OVERALL · BEST IN ASIA AT THE TIME",
     blurb:
       "Named for the Greek god of the west wind. Improved lift and payload-drop capacity carried the team to 6th in the world at SAE Aero Design East.",
     image: "media/timeline/zephyrus-hero",
@@ -67,7 +103,7 @@ export const flightLog: FlightLogEntry[] = [
     name: "REDBIRD",
     result: "4TH OVERALL · 1ST DESIGN REPORT · 1ST PRESENTATION",
     blurb:
-      "The best finish an Asia-Pacific team had ever posted — a record that stood for seven years, until Indra's presentation win in 2026.",
+      "The best finish an Asia-Pacific team had ever posted, a record that stood for seven years until Indra's presentation win in 2026.",
     image: "media/timeline/redbird-plane",
   },
   {
@@ -83,7 +119,7 @@ export const flightLog: FlightLogEntry[] = [
     year: "2021",
     code: "F'21",
     name: "VULCAN",
-    result: "1ST DESIGN REPORT — #1 IN ASIA",
+    result: "1ST DESIGN REPORT · #1 IN ASIA",
     blurb:
       "Designed through a second pandemic-disrupted season. Topped the design report worldwide and held No.1 in Asia regardless.",
     image: "media/timeline/vulcan-hero",
@@ -121,7 +157,7 @@ export const flightLog: FlightLogEntry[] = [
     name: "VIDHYUT",
     result: "3RD OVERALL · 1ST DESIGN REPORT",
     blurb:
-      "A tiltrotor VTOL built for high-performance payload missions in tight spaces — vertical takeoff and landing without giving up forward-flight range.",
+      "A tiltrotor VTOL built for high-performance payload missions in tight spaces: vertical takeoff and landing without giving up forward-flight range.",
     image: "media/aircraft/vidhyut-hero",
   },
   {
@@ -130,7 +166,7 @@ export const flightLog: FlightLogEntry[] = [
     name: "INDRA",
     result: "1ST PRESENTATION · 2ND DESIGN REPORT · 2ND MATHWORKS",
     blurb:
-      "An electric VTOL tricopter for precision payload delivery and retrieval. When the war in Iran shut down international travel to Texas, the team cleared every submission-based round remotely and simply couldn't fly the in-person mission — SAE let them compete in everything that didn't require being there.",
+      "An electric VTOL tricopter for precision payload delivery and retrieval. When the war in Iran shut down international travel to Texas, the team cleared every submission-based round remotely. They couldn't fly the in-person mission, so SAE let them compete in everything that didn't require being there.",
     image: "media/aircraft/indra-hero",
     current: true,
   },
@@ -141,13 +177,13 @@ export const subteams = [
     code: "DS",
     name: "Design",
     detail:
-      "The foundation of every Falcons aircraft. Conceptual design, aerodynamic analysis, MDO, CFD and airfoil optimisation — turning ideas into mission-ready aerial systems, fixed-wing or VTOL.",
+      "The foundation of every Falcons aircraft. Conceptual design, aerodynamic analysis, MDO, CFD and airfoil optimisation, turning ideas into mission-ready aerial systems, fixed-wing or VTOL.",
   },
   {
     code: "ST",
     name: "Structures",
     detail:
-      "CAD modelling, structural analysis and weight optimisation translated into flight-worthy airframes — plus in-house composite fabrication, assembly and physical validation testing.",
+      "CAD modelling, structural analysis and weight optimisation translated into flight-worthy airframes, plus in-house composite fabrication, assembly and physical validation testing.",
   },
   {
     code: "AV",
@@ -159,7 +195,7 @@ export const subteams = [
     code: "MG",
     name: "Management",
     detail:
-      "Sponsorships, outreach and the coordination that turns a design into a funded, fabricated, flown aircraft — so every other department can focus on engineering.",
+      "Sponsorships, outreach and the coordination that turns a design into a funded, fabricated, flown aircraft, so every other department can focus on engineering.",
   },
 ];
 
@@ -252,6 +288,20 @@ export const sponsors = [
   { file: "protocase", name: "Protocase", url: "https://www.protocase.com/" },
   { file: "solidworks", name: "SOLIDWORKS", url: "https://www.solidworks.com/" },
   { file: "tattu", name: "Tattu", url: "https://www.tattuworld.com/" },
+];
+
+export type Testimonial = {
+  quote: string;
+  source: string;
+  context: string;
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    quote: "One of the most stable planes he flew all competition.",
+    source: "SAE Aero Design competition pilot",
+    context: "On flying the team's 2016 entry, via DARcorporation",
+  },
 ];
 
 export const contact = {

@@ -37,7 +37,7 @@ export default function Blueprint({ className }: { className?: string }) {
       </g>
 
       <text x="24" y="452" className="blueprint-label" fill="currentColor" stroke="none">
-        FIG. 01 — TRICOPTER, TOP VIEW
+        FIG. 01: TRICOPTER, TOP VIEW
       </text>
     </svg>
   );

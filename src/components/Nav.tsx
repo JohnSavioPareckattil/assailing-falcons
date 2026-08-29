@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "#log", label: "Flight Log" },
@@ -28,7 +29,10 @@ export default function Nav() {
           </li>
         ))}
       </ul>
-      <span className="nav-tail">F'26 · INDRA</span>
+      <div className="nav-right">
+        <span className="nav-tail">F'26 · INDRA</span>
+        <ThemeToggle />
+      </div>
     </motion.header>
   );
 }

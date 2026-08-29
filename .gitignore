@@ -8,3 +8,8 @@ dist-ssr
 # Raw / unoptimized source photography (400MB+) — curated, web-sized
 # copies live in public/media. Kept locally for future re-cropping.
 public/images/
+
+# Local Claude Code config and reference material, not site source
+.claude/
+VideoReference.mp4
+remix.md
