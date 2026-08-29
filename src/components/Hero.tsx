@@ -27,6 +27,7 @@ export default function Hero() {
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
   const mediaY = useTransform(scrollYProgress, [0, 1], [0, 160]);
+  const scrollCueOpacity = useTransform(scrollYProgress, [0, 0.12], [1, 0]);
 
   return (
     <section className="hero" id="top" ref={sectionRef}>
@@ -101,6 +102,26 @@ export default function Hero() {
           </MagneticButton>
         </motion.div>
       </div>
+
+      <motion.div
+        className="hero-scroll-cue"
+        style={reduceMotion ? undefined : { opacity: scrollCueOpacity }}
+        aria-hidden="true"
+      >
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 1.4 }}
+        >
+          SCROLL
+        </motion.span>
+        <motion.span
+          className="hero-scroll-cue-line"
+          initial={{ scaleY: 0 }}
+          animate={{ scaleY: 1 }}
+          transition={{ duration: 0.7, delay: 1.6, ease: [0.16, 1, 0.3, 1] }}
+        />
+      </motion.div>
     </section>
   );
 }

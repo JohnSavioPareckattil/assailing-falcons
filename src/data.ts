@@ -26,16 +26,16 @@ export const flightLog: FlightLogEntry[] = [
     image: "media/timeline/falcons-alpha-hero",
   },
   {
-    year: "2012-15",
-    code: "F'12-15",
+    year: "2012",
+    code: "F'12",
     name: "FALCONS BETA",
     result: "19TH OVERALL · VAN NUYS, LA",
     blurb:
-      "Flown at the Van Nuys, Los Angeles competition during the team's early build-and-learn years. Exact season undocumented in surviving team records.",
+      "Flown at the Van Nuys, Los Angeles competition during the team's early build-and-learn years.",
     image: "media/timeline/falcons-beta-hero",
   },
   {
-    year: "2012-13",
+    year: "2013",
     code: "F'13",
     name: "JUGAAD",
     result: "REGULAR CLASS · RECORDS UNAVAILABLE",
@@ -44,7 +44,7 @@ export const flightLog: FlightLogEntry[] = [
     image: "media/timeline/jugaad-hero",
   },
   {
-    year: "2013-14",
+    year: "2014",
     code: "F'14",
     name: "KNIGHTOUT",
     result: "SAE AERO DESIGN · RECORDS UNAVAILABLE",
@@ -53,7 +53,7 @@ export const flightLog: FlightLogEntry[] = [
     image: "media/timeline/knightout-hero",
   },
   {
-    year: "2014-15",
+    year: "2015",
     code: "F'15",
     name: "NAUTILUS",
     result: "ADVANCED CLASS · SAE AERO DESIGN EAST",

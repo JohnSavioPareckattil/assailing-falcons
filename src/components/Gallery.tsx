@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Reveal from "./Reveal";
 import CornerFrame from "./CornerFrame";
 import LazyImage from "./LazyImage";
-import { gallery, contact, type GalleryItem } from "../data";
+import ArcScrubber from "./ArcScrubber";
+import { gallery, flightLog, contact, type GalleryItem } from "../data";
 
 const categories: { key: GalleryItem["category"] | "all"; label: string }[] = [
   { key: "all", label: "All" },
@@ -12,6 +13,11 @@ const categories: { key: GalleryItem["category"] | "all"; label: string }[] = [
   { key: "events", label: "Events" },
 ];
 
+function planeSlugOf(src: string): string {
+  const file = src.split("/").pop() ?? "";
+  return file.match(/^[a-z]+/)?.[0] ?? file;
+}
+
 export default function Gallery() {
   const [active, setActive] = useState<GalleryItem["category"] | "all">("all");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -19,10 +25,46 @@ export default function Gallery() {
   const filtered = active === "all" ? gallery : gallery.filter((g) => g.category === active);
   const open = openIndex !== null ? filtered[openIndex] : null;
 
+  const planeGroups = useMemo(() => {
+    const map: Record<string, GalleryItem[]> = {};
+    gallery.forEach((item) => {
+      if (item.category !== "aircraft") return;
+      const slug = planeSlugOf(item.src);
+      (map[slug] ??= []).push(item);
+    });
+    return map;
+  }, []);
+
+  const planeName = (slug: string) =>
+    flightLog.find((e) => e.name.toLowerCase() === slug)?.name ?? slug.toUpperCase();
+
+  const openSlug = open && open.category === "aircraft" ? planeSlugOf(open.src) : null;
+  const openGroup = openSlug ? planeGroups[openSlug] : null;
+  const openGroupIndex = openGroup && open ? openGroup.findIndex((g) => g.src === open.src) : -1;
+
+  const jumpToGroupIndex = (newIndex: number) => {
+    if (!openGroup) return;
+    const item = openGroup[(newIndex + openGroup.length) % openGroup.length];
+    const idxInFiltered = filtered.findIndex((f) => f.src === item.src);
+    if (idxInFiltered !== -1) setOpenIndex(idxInFiltered);
+  };
+
   const select = (key: GalleryItem["category"] | "all") => {
     setActive(key);
     setOpenIndex(null);
   };
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: globalThis.KeyboardEvent) => {
+      if (e.key === "Escape") setOpenIndex(null);
+      if (e.key === "ArrowRight" && openGroup) jumpToGroupIndex(openGroupIndex + 1);
+      if (e.key === "ArrowLeft" && openGroup) jumpToGroupIndex(openGroupIndex - 1);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, openGroupIndex]);
 
   return (
     <section className="section gallery" id="gallery">
@@ -105,6 +147,16 @@ export default function Gallery() {
             >
               <CornerFrame />
               <LazyImage webp={`${open.src}-1600.webp`} src={`${open.src}-1600.jpg`} alt={open.alt} />
+
+              {openGroup && openGroup.length > 1 && (
+                <ArcScrubber
+                  count={openGroup.length}
+                  index={openGroupIndex}
+                  onChange={jumpToGroupIndex}
+                  label={planeName(openSlug!)}
+                />
+              )}
+
               <figcaption>{open.alt}</figcaption>
               <button
                 type="button"

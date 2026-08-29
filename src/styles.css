@@ -297,6 +297,38 @@ img {
   margin-left: -5px;
   mix-blend-mode: var(--cursor-blend, normal);
 }
+/* page-wide scroll progress, read as a flight path down the right edge */
+.scroll-path {
+  position: fixed;
+  top: 14vh;
+  bottom: 14vh;
+  right: clamp(0.9rem, 2.2vw, 1.6rem);
+  width: 20px;
+  z-index: 45;
+  pointer-events: none;
+}
+@media (max-width: 900px) {
+  .scroll-path { display: none; }
+}
+.scroll-path-track {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--line-strong) 12%, var(--line-strong) 88%, transparent);
+  transform: translateX(-50%);
+}
+.scroll-path-marker {
+  position: absolute;
+  left: 50%;
+  width: 13px;
+  height: 13px;
+  transform: translate(-50%, -50%) rotate(140deg);
+  color: var(--accent-text);
+  filter: drop-shadow(0 0 6px var(--glow-green));
+}
+
 .cursor-mark {
   position: absolute;
   top: 0;
@@ -629,7 +661,35 @@ html.custom-cursor-active * {
 .hero-hud > div { display: flex; flex-direction: column; gap: 0.35rem; }
 .hero-hud .r { text-align: right; align-items: flex-end; }
 .hero-hud strong { color: var(--brass-text); font-weight: 500; }
-.hero-hud-live { color: var(--accent-text); }
+.hero-hud-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--accent-text);
+}
+.wind-compass {
+  width: 15px;
+  height: 15px;
+  flex: none;
+}
+.wind-compass-ring {
+  fill: none;
+  stroke: var(--paper-dim);
+  stroke-width: 1;
+  opacity: 0.55;
+}
+.wind-compass line:not(.wind-compass-needle) {
+  stroke: var(--paper-dim);
+  stroke-width: 1;
+  opacity: 0.45;
+}
+.wind-compass-needle {
+  stroke: var(--accent-text);
+  stroke-width: 1.6;
+}
+.wind-compass-hub {
+  fill: var(--accent-text);
+}
 
 .hero-body {
   position: relative;
@@ -673,6 +733,34 @@ html.custom-cursor-active * {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+}
+
+.hero-scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(1.4rem, 4vw, 2.2rem);
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+.hero-scroll-cue span {
+  font-family: var(--f-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  color: var(--paper-dim);
+}
+.hero-scroll-cue-line {
+  width: 1px;
+  height: 28px;
+  background: var(--line-strong);
+  transform-origin: top;
+}
+@media (max-width: 640px) {
+  .hero-scroll-cue { display: none; }
 }
 
 /* ============================== STATS ============================== */
@@ -1579,6 +1667,68 @@ html.custom-cursor-active * {
   font-size: 0.75rem;
   color: var(--paper-dim);
   text-align: center;
+}
+
+/* curved scrubber for browsing one aircraft's photo set inside the lightbox */
+.arc-scrubber {
+  margin-top: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.arc-scrubber-dial {
+  width: min(60vw, 220px);
+  height: 44px;
+  touch-action: none;
+  cursor: pointer;
+}
+.arc-scrubber-track {
+  fill: none;
+  stroke: var(--line-strong);
+  stroke-width: 1.5;
+}
+.arc-scrubber-tick {
+  fill: var(--paper-faint);
+  cursor: pointer;
+  transition: fill 0.2s ease;
+}
+.arc-scrubber-tick:hover {
+  fill: var(--paper-dim);
+}
+.arc-scrubber-tick.is-active {
+  fill: var(--brass-text);
+}
+.arc-scrubber-handle {
+  fill: var(--green-bright);
+  filter: drop-shadow(0 0 5px var(--glow-green));
+}
+.arc-scrubber-step {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--paper-dim);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  flex: none;
+  transition: color var(--dur-instant) ease, border-color var(--dur-instant) ease;
+}
+.arc-scrubber-step:hover {
+  color: var(--paper);
+  border-color: var(--paper-dim);
+}
+.arc-scrubber-count {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--paper-dim);
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .arc-scrubber-count { display: none; }
 }
 .lightbox-close {
   position: absolute;
