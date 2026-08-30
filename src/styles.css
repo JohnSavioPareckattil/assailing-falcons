@@ -754,13 +754,6 @@ html.custom-cursor-active * {
   animation: livePulse 2.4s ease-in-out infinite;
   flex: none;
 }
-.hero-hud-countdown {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--on-photo-dim);
-  font-variant-numeric: tabular-nums;
-}
 .wind-compass {
   width: 15px;
   height: 15px;
@@ -1021,51 +1014,110 @@ html.custom-cursor-active * {
 .log {
   background: var(--panel);
 }
-.log-hint {
-  margin-top: -1.4rem;
-  margin-bottom: clamp(1.6rem, 4vw, 2.4rem);
+.log-rail {
+  position: relative;
+  --node-x: 17px;
+}
+@media (min-width: 860px) {
+  .log-rail { --node-x: 107px; }
+}
+.log-line-track,
+.log-line-progress {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: calc(var(--node-x) - 1px);
+  width: 2px;
+}
+.log-line-track {
+  background: var(--line);
+}
+.log-line-progress {
+  background: linear-gradient(var(--blue-deep), var(--green-bright), var(--brass));
+  transform-origin: top center;
+  box-shadow: 0 0 10px 1px var(--glow-blue);
+}
+
+.log-entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 1.2rem;
+  padding-bottom: clamp(2.4rem, 6vw, 4rem);
+}
+@media (min-width: 860px) {
+  .log-entry { grid-template-columns: 90px 34px 1fr; }
+}
+.log-entry:last-child { padding-bottom: 0; }
+
+.log-year {
+  display: none;
   font-family: var(--f-mono);
-  font-size: 0.76rem;
-  color: var(--paper-faint);
+  font-size: 0.95rem;
+  color: var(--paper-dim);
+  padding-top: 0.35rem;
 }
-.log-stage {
-  border: 1px solid var(--line);
-  background: var(--ink);
-  overflow: hidden;
+@media (min-width: 860px) {
+  .log-year { display: block; }
 }
-.log-stage-grid {
+
+.log-node {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.4rem;
+}
+.log-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--paper-dim);
+  background: var(--panel);
+  position: relative;
+  z-index: 2;
+}
+.log-entry--current .log-dot {
+  border-color: var(--green-bright);
+  background: var(--green-bright);
+  box-shadow: 0 0 0 4px var(--glow-blue);
+}
+
+.log-card {
   display: grid;
   grid-template-columns: 1fr;
+  gap: 1.2rem;
+  border: 1px solid var(--line);
+  background: var(--ink);
+  padding: clamp(1.1rem, 2.6vw, 1.6rem);
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
-@media (min-width: 760px) {
-  .log-stage-grid { grid-template-columns: 1.1fr 1fr; }
+.log-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--brass) 40%, var(--line));
+  box-shadow: 0 20px 34px -24px rgba(var(--shadow-rgb), 0.5);
 }
-.log-stage-media {
-  position: relative;
+@media (min-width: 640px) {
+  .log-card { grid-template-columns: 160px 1fr; }
+}
+.log-entry--current .log-card {
+  border-color: var(--green-bright);
+  box-shadow: 0 0 0 1px var(--green-bright), 0 0 28px -6px var(--glow-blue);
+}
+.log-thumb {
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  border-bottom: 1px solid var(--line);
+  border: 1px solid var(--line);
 }
-@media (min-width: 760px) {
-  .log-stage-media { aspect-ratio: auto; height: 100%; border-bottom: none; border-right: 1px solid var(--line); }
-}
-.log-stage-media img {
+.log-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* .lazy-image img also sets a transition (opacity, for the load fade) —
+     restate it here alongside transform since same-specificity rules don't
+     merge, the later one wins outright and would otherwise kill the fade */
+  transition: opacity 0.5s var(--ease-snap), transform 0.5s var(--ease-snap);
 }
-.log-stage-tag {
-  position: absolute;
-  left: 1rem;
-  bottom: 1rem;
-  z-index: 1;
-  font-family: var(--f-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  color: var(--brass-text);
-  background: rgba(var(--shadow-rgb), 0.75);
-  border: 1px solid var(--line-strong);
-  padding: 0.3rem 0.55rem;
+.log-card:hover .log-thumb img {
+  transform: scale(1.09);
 }
 .log-thumb-empty {
   width: 100%;
@@ -1091,32 +1143,31 @@ html.custom-cursor-active * {
   text-align: center;
   padding: 0 0.6rem;
 }
-.log-stage-info {
-  padding: clamp(1.6rem, 4vw, 2.6rem);
+.log-year-mobile {
+  font-family: var(--f-mono);
+  font-size: 0.8rem;
+  color: var(--paper-dim);
 }
-.log-stage-year {
-  display: block;
-  font-family: var(--f-display);
-  font-weight: 700;
-  font-size: clamp(2.6rem, 5vw, 3.6rem);
-  line-height: 1;
-  background: linear-gradient(90deg, var(--blue-deep), var(--green-bright) 55%, var(--brass));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+@media (min-width: 860px) {
+  .log-year-mobile { display: none; }
 }
 .log-name-row {
   display: flex;
   align-items: baseline;
   gap: 0.7rem;
   flex-wrap: wrap;
-  margin-top: 0.6rem;
+  margin-top: 0.3rem;
 }
 .log-name {
   font-family: var(--f-display);
   font-weight: 700;
   font-size: clamp(1.5rem, 3vw, 2.1rem);
   text-transform: uppercase;
+}
+.log-code {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  color: var(--brass-text);
 }
 .log-result {
   margin-top: 0.5rem;
@@ -1141,13 +1192,6 @@ html.custom-cursor-active * {
   background: var(--green-bright);
   border-radius: var(--radius-pill);
   padding: 0.2rem 0.6rem;
-}
-.log-scrubber-wrap {
-  margin-top: clamp(1.6rem, 4vw, 2.2rem);
-}
-.log-scrubber-wrap .arc-scrubber-dial {
-  width: min(84vw, 640px);
-  height: 56px;
 }
 
 /* ============================== FLAGSHIP ============================== */
@@ -1331,21 +1375,21 @@ html.custom-cursor-active * {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--green-bright);
+  background: var(--desk-color, var(--green-bright));
 }
 .crew-card:hover {
   background: var(--panel-2);
-  border-color: color-mix(in srgb, var(--brass) 45%, var(--line));
-  box-shadow: 0 16px 32px -18px color-mix(in srgb, var(--brass) 55%, transparent);
+  border-color: color-mix(in srgb, var(--desk-color, var(--brass)) 45%, var(--line));
+  box-shadow: 0 16px 32px -18px color-mix(in srgb, var(--desk-color, var(--brass)) 55%, transparent);
 }
 .crew-code {
   display: inline-block;
   font-family: var(--f-mono);
   font-size: 0.72rem;
   font-weight: 600;
-  color: color-mix(in srgb, var(--green-bright) 82%, var(--ink) 0%);
+  color: color-mix(in srgb, var(--desk-color, var(--green-bright)) 82%, var(--ink) 0%);
   letter-spacing: 0.08em;
-  background: color-mix(in srgb, var(--green-bright) 16%, transparent);
+  background: color-mix(in srgb, var(--desk-color, var(--green-bright)) 16%, transparent);
   padding: 0.2rem 0.5rem;
 }
 .crew-name {
@@ -1367,7 +1411,7 @@ html.custom-cursor-active * {
   transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 .crew-card:hover .crew-graphic {
-  color: var(--brass);
+  color: var(--desk-color, var(--brass));
   opacity: 0.9;
   transform: scale(1.05);
 }
@@ -1391,6 +1435,10 @@ html.custom-cursor-active * {
 }
 @media (min-width: 960px) {
   .sponsor-grid { grid-template-columns: repeat(5, 1fr); }
+  /* centers a trailing partial row (e.g. 13 logos in 5 columns leaves a
+     3-wide last row) instead of stacking the empty cells on one side —
+     see the --tile-col-start math in Sponsors.tsx */
+  .sponsor-tile { grid-column-start: var(--tile-col-start, auto); }
 }
 .sponsor-tile {
   background: var(--paper);
@@ -1687,7 +1735,7 @@ html.custom-cursor-active * {
   left: 0%;
   width: 18px;
   height: 18px;
-  transform: translate(-50%, -50%) rotate(90deg);
+  transform: translate(-50%, -50%);
   color: var(--brass-text);
 }
 .loading-plane svg {
@@ -1796,7 +1844,7 @@ html.custom-cursor-active * {
 }
 .gallery-tile:hover .gallery-tile-glow,
 .gallery-tile:focus-visible .gallery-tile-glow {
-  box-shadow: inset 0 0 0 2px var(--brass);
+  box-shadow: inset 0 0 0 2px var(--tile-color, var(--brass));
 }
 /* flags a tile that opens into a browsable, multi-photo set (see the arc
    scrubber in the lightbox) so that feature is discoverable from the grid */
@@ -1997,8 +2045,21 @@ html.custom-cursor-active * {
 .sponsor-triangle {
   position: relative;
   aspect-ratio: 1 / 0.88;
+  overflow: hidden;
   transform-style: preserve-3d;
   will-change: transform;
+}
+/* follows the same pointer position already driving the tilt above */
+.sponsor-spotlight {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle 220px at var(--spot-x, 50%) var(--spot-y, 50%),
+    var(--glow-sky) 0%,
+    transparent 70%
+  );
 }
 .sponsor-triangle-lines {
   position: absolute;
@@ -2182,10 +2243,29 @@ html.custom-cursor-active * {
 }
 .testimonial-card {
   position: relative;
+  overflow: hidden;
   border: 1px solid var(--line);
   padding: clamp(1.8rem, 4vw, 2.8rem);
   box-shadow: 0 24px 40px -28px rgba(var(--shadow-rgb), 0.5);
   transition: transform 0.35s var(--ease-snap), box-shadow 0.35s ease;
+}
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue-deep), var(--green-bright) 55%, var(--brass));
+}
+.testimonial-watermark {
+  position: absolute;
+  right: -14px;
+  bottom: -18px;
+  width: 96px;
+  height: 96px;
+  color: var(--line-strong);
+  pointer-events: none;
 }
 .testimonial-card:hover {
   transform: translateY(-4px);

@@ -45,7 +45,7 @@ export default function Reveal({
       className={className}
       initial={initial}
       whileInView={animate}
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ margin: "-80px" }}
       transition={{ ...baseTransition, delay }}
     >
       {children}

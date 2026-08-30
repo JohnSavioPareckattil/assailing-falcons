@@ -1,6 +1,7 @@
 import Reveal from "./Reveal";
 import CornerFrame from "./CornerFrame";
 import KineticHeading from "./KineticHeading";
+import PaperPlaneGlyph from "./PaperPlaneIcon";
 import { testimonials } from "../data";
 
 export default function Testimonials() {
@@ -18,6 +19,9 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <Reveal key={t.source} delay={i * 0.1} className="testimonial-card">
               <CornerFrame />
+              <svg className="testimonial-watermark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <PaperPlaneGlyph />
+              </svg>
               <p className="testimonial-quote">&ldquo;{t.quote}&rdquo;</p>
               <div className="testimonial-attribution">
                 <span className="testimonial-source">{t.source}</span>

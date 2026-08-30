@@ -3,7 +3,6 @@ import { motion, useScroll, useTransform, useMotionValue, useSpring, useReducedM
 import MagneticButton from "./MagneticButton";
 import LiveWeather from "./LiveWeather";
 import HeroSky from "./HeroSky";
-import NextSeasonCountdown from "./NextSeasonCountdown";
 import { useClickSpark } from "./useClickSpark";
 
 const lineVariants = {
@@ -108,7 +107,6 @@ export default function Hero() {
             <span className="hud-live-dot" aria-hidden="true" />
             <strong>F'26 · Indra</strong>
           </span>
-          <NextSeasonCountdown />
         </div>
       </motion.div>
 

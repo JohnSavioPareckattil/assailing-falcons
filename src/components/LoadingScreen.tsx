@@ -7,6 +7,7 @@ import {
   useReducedMotion,
   useTransform,
 } from "motion/react";
+import PaperPlaneGlyph from "./PaperPlaneIcon";
 
 export default function LoadingScreen() {
   const [visible, setVisible] = useState(true);
@@ -63,12 +64,7 @@ export default function LoadingScreen() {
               <motion.div className="loading-bar-fill" style={{ scaleX, originX: 0 }} />
               <motion.span className="loading-plane" style={{ left }} aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M3 13l18-7-4.5 17-3-6.5L7 20l2-4.5L3 13z"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinejoin="round"
-                  />
+                  <PaperPlaneGlyph />
                 </svg>
               </motion.span>
             </div>

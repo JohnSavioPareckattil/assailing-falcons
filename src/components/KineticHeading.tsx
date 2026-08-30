@@ -47,7 +47,7 @@ export default function KineticHeading({
         aria-hidden="true"
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ margin: "-100px" }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       />
       <motion.h2
@@ -55,7 +55,7 @@ export default function KineticHeading({
         style={style}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ margin: "-100px" }}
       >
         {lines.map((line, li) => {
           const words = line.split(" ");

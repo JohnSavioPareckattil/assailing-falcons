@@ -14,6 +14,14 @@ const categories: { key: GalleryItem["category"] | "all"; label: string }[] = [
   { key: "events", label: "Events" },
 ];
 
+// hover ring tints by category (existing brand family, no new hues) so the
+// three categories read as distinct even in the "All" mixed view
+const CATEGORY_COLOR: Record<GalleryItem["category"], string> = {
+  aircraft: "var(--green-bright)",
+  team: "var(--brass)",
+  events: "var(--blue-sky)",
+};
+
 function planeSlugOf(src: string): string {
   const file = src.split("/").pop() ?? "";
   return file.match(/^[a-z]+/)?.[0] ?? file;
@@ -101,6 +109,7 @@ export default function Gallery() {
                   type="button"
                   key={item.src}
                   className={`gallery-tile${item.wide ? " gallery-tile--wide" : ""}`}
+                  style={{ "--tile-color": CATEGORY_COLOR[item.category] } as React.CSSProperties}
                   onClick={() => setOpenIndex(i)}
                   aria-label={
                     groupSize > 1

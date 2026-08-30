@@ -4,7 +4,7 @@ import { animate, useInView, useReducedMotion } from "motion/react";
 export default function StatCounter({ value }: { value: string }) {
   const match = value.match(/^(\d+)(.*)$/);
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const inView = useInView(ref, { margin: "-80px" });
   const reduceMotion = useReducedMotion();
 
   const target = match ? parseInt(match[1], 10) : null;

@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "motion/react";
+import PaperPlaneGlyph from "./PaperPlaneIcon";
 
 // Fills the slot the flight-log section-head description used to sit in —
 // a small drawn-on route rather than another line of copy: a dashed course
@@ -17,7 +18,7 @@ export default function FlightPathDoodle() {
         strokeLinecap="round"
         initial={reduceMotion ? undefined : { pathLength: 0, opacity: 0 }}
         whileInView={reduceMotion ? undefined : { pathLength: 1, opacity: 1 }}
-        viewport={{ once: true, margin: "-40px" }}
+        viewport={{ margin: "-40px" }}
         transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
       />
       <motion.circle
@@ -27,23 +28,24 @@ export default function FlightPathDoodle() {
         fill="var(--paper-faint)"
         initial={reduceMotion ? undefined : { opacity: 0, scale: 0 }}
         whileInView={reduceMotion ? undefined : { opacity: 1, scale: 1 }}
-        viewport={{ once: true, margin: "-40px" }}
+        viewport={{ margin: "-40px" }}
         transition={{ delay: 0.1, duration: 0.4 }}
       />
-      {/* the same dart glyph used for the "no archive photograph" placeholder
-          below, at the arc's endpoint — one recurring mark for "aircraft in
-          flight" across the section rather than a one-off shape. Static
-          positioning transform lives on the outer <g>; Motion owns the
-          inner one so its animated scale doesn't fight a raw attribute. */}
+      {/* the same paper-plane glyph used for the "no archive photograph"
+          placeholder below, at the arc's endpoint — one recurring mark for
+          "aircraft in flight" across the section rather than a one-off
+          shape. Static positioning transform lives on the outer <g>;
+          Motion owns the inner one so its animated scale doesn't fight a
+          raw attribute. */}
       <g transform="translate(178 4) scale(0.55) rotate(35 24 24)">
         <motion.g
           initial={reduceMotion ? undefined : { opacity: 0, scale: 0.5 }}
           whileInView={reduceMotion ? undefined : { opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-40px" }}
+          viewport={{ margin: "-40px" }}
           transition={{ delay: 1.1, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          style={{ transformOrigin: "24px 24px" }}
+          style={{ transformOrigin: "24px 24px", color: "var(--brass)" }}
         >
-          <path d="M6 26l36-14-9 34-6-13-13 8 4-9-12-6z" fill="var(--brass)" stroke="none" />
+          <PaperPlaneGlyph />
         </motion.g>
       </g>
     </svg>

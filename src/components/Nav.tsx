@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from "motion/react";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
+  { href: "#about", label: "About Us" },
   { href: "#log", label: "Flight Log" },
   { href: "#indra", label: "Indra" },
   { href: "#crew", label: "Crew" },
@@ -20,21 +21,49 @@ export default function Nav() {
 
   useEffect(() => {
     const sections = links
-      .map((l) => document.getElementById(l.href.slice(1)))
-      .filter((el): el is HTMLElement => !!el);
+      .map((l) => ({ href: l.href, el: document.getElementById(l.href.slice(1)) }))
+      .filter((s): s is { href: string; el: HTMLElement } => !!s.el);
     if (!sections.length) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible) setActive(`#${visible.target.id}`);
-      },
-      { rootMargin: "-40% 0px -50% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
-    );
-    sections.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    // IntersectionObserver with a narrow detection band could fall through
+    // the gap between two sections (or a section with no nav link, like
+    // Sponsors/Testimonials) and freeze on whatever was last seen — the
+    // header would still show "Flight Log" long after you'd scrolled past
+    // it. Picking whichever tracked section's midpoint is nearest the
+    // reference line, every scroll frame, can't get stuck: it's always a
+    // fresh answer, never a stale one.
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const referenceY = window.innerHeight * 0.4;
+      const firstRect = sections[0].el.getBoundingClientRect();
+      if (firstRect.top > referenceY) {
+        setActive(null); // still above the first tracked section (in the hero)
+        return;
+      }
+      let best = sections[0].href;
+      let bestDist = Infinity;
+      for (const s of sections) {
+        const rect = s.el.getBoundingClientRect();
+        const dist = Math.abs(rect.top + rect.height / 2 - referenceY);
+        if (dist < bestDist) {
+          bestDist = dist;
+          best = s.href;
+        }
+      }
+      setActive(best);
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, []);
 
   useEffect(() => {

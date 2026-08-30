@@ -71,7 +71,7 @@ export default function Flagship() {
                         className="results-bar-fill"
                         initial={{ scaleX: 0 }}
                         whileInView={{ scaleX: barScale(r.place) }}
-                        viewport={{ once: true, margin: "-60px" }}
+                        viewport={{ margin: "-60px" }}
                         transition={{ duration: 0.9, delay: 0.2 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
                       />
                     </div>

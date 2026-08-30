@@ -12,6 +12,11 @@ export default function SponsorUs() {
   const py = useMotionValue(0.5);
   const rotateX = useSpring(useTransform(py, [0, 1], [7, -7]), { stiffness: 200, damping: 20 });
   const rotateY = useSpring(useTransform(px, [0, 1], [-7, 7]), { stiffness: 200, damping: 20 });
+  // same pointer tracking already driving the tilt also drives a spotlight
+  // that follows the cursor across the panel, instead of a second,
+  // unrelated interaction
+  const spotX = useTransform(px, (v) => `${v * 100}%`);
+  const spotY = useTransform(py, (v) => `${v * 100}%`);
 
   const handleMove = (e: MouseEvent<HTMLDivElement>) => {
     if (reduceMotion || !panelRef.current) return;
@@ -48,6 +53,13 @@ export default function SponsorUs() {
               style={reduceMotion ? undefined : { rotateX, rotateY, transformPerspective: 900 }}
             >
               <CornerFrame />
+              {!reduceMotion && (
+                <motion.span
+                  className="sponsor-spotlight"
+                  aria-hidden="true"
+                  style={{ "--spot-x": spotX, "--spot-y": spotY } as React.CSSProperties}
+                />
+              )}
               <svg className="sponsor-triangle-lines" viewBox="0 0 300 260" aria-hidden="true">
                 <path d="M150 26 L36 224 L264 224 Z" />
               </svg>

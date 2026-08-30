@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import PaperPlaneGlyph from "./PaperPlaneIcon";
 
 const KONAMI = [
   "ArrowUp",
@@ -13,8 +14,6 @@ const KONAMI = [
   "b",
   "a",
 ];
-
-const PLANE_PATH = "M3 13l18-7-4.5 17-3-6.5L7 20l2-4.5L3 13z";
 
 // waypoints for the catchable plane's 5s wander, as [left%, top%]
 const WANDER_PATH: [number, number][] = [
@@ -88,7 +87,7 @@ export default function EasterEgg() {
               animate={{ x: "108vw", opacity: [0, 1, 1, 0] }}
               transition={{ duration: 1.8, delay: p.delay, ease: "easeIn" }}
             >
-              <path d={PLANE_PATH} fill="currentColor" />
+              <PaperPlaneGlyph />
             </motion.svg>
           ))}
 
@@ -123,7 +122,7 @@ export default function EasterEgg() {
               if (e.key === "Enter" || e.key === " ") setCaught(true);
             }}
           >
-            <path d={PLANE_PATH} fill="currentColor" />
+            <PaperPlaneGlyph />
           </motion.svg>
 
           <motion.div

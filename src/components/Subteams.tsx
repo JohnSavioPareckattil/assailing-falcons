@@ -4,6 +4,16 @@ import SubteamGraphic from "./SubteamGraphic";
 import KineticHeading from "./KineticHeading";
 import { subteams } from "../data";
 
+// each desk gets its own tone from the existing brand family (no new hues)
+// so the four cards read as distinct departments at a glance, not four
+// copies of the same card
+const DESK_COLOR: Record<string, string> = {
+  DS: "var(--green-bright)",
+  ST: "var(--blue-deep)",
+  AV: "var(--blue-sky)",
+  MG: "var(--brass)",
+};
+
 export default function Subteams() {
   const reduceMotion = useReducedMotion();
 
@@ -26,6 +36,7 @@ export default function Subteams() {
             <Reveal key={t.code} as="div" variant="pop" delay={i * 0.1} className="crew-card-wrap">
               <motion.div
                 className="crew-card"
+                style={{ "--desk-color": DESK_COLOR[t.code] ?? "var(--green-bright)" } as React.CSSProperties}
                 whileHover={reduceMotion ? undefined : { y: -6, rotate: i % 2 === 0 ? -0.6 : 0.6 }}
                 transition={{ type: "spring", bounce: 0.3, duration: 0.4 }}
               >
