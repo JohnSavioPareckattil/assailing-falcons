@@ -15,7 +15,6 @@ import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 import EasterEgg from "./components/EasterEgg";
 import CursorTrail from "./components/CursorTrail";
-import ScrollFlightPath from "./components/ScrollFlightPath";
 import AmbientMotes from "./components/AmbientMotes";
 
 export default function App() {
@@ -30,7 +29,6 @@ export default function App() {
       <LoadingScreen />
       <EasterEgg />
       <CursorTrail />
-      <ScrollFlightPath />
       <div className="grid-field" aria-hidden="true">
         <div className="grid-field-pattern" />
       </div>

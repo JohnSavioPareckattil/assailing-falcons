@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { useReducedMotion } from "motion/react";
 
-type Mote = { id: number; left: number; size: number; duration: number; delay: number; hue: "blue" | "brass" };
+type Hue = "blue" | "brass" | "sky";
+type Mote = { id: number; left: number; size: number; duration: number; delay: number; hue: Hue };
+
+const HUES: Hue[] = ["blue", "sky", "brass"];
 
 function makeMotes(count: number): Mote[] {
   return Array.from({ length: count }, (_, i) => ({
@@ -10,7 +13,7 @@ function makeMotes(count: number): Mote[] {
     size: 2 + Math.random() * 3.5,
     duration: 16 + Math.random() * 18,
     delay: -Math.random() * 30,
-    hue: i % 3 === 0 ? "brass" : "blue",
+    hue: HUES[i % HUES.length],
   }));
 }
 

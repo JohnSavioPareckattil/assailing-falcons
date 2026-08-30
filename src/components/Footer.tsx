@@ -1,9 +1,11 @@
 import Reveal from "./Reveal";
+import FooterCompass from "./FooterCompass";
 import { contact } from "../data";
 
 export default function Footer() {
   return (
     <footer className="footer section" id="contact">
+      <FooterCompass />
       <div className="container">
         <div className="footer-grid">
           <Reveal>

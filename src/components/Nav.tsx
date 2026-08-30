@@ -83,7 +83,6 @@ export default function Nav() {
         />
       </div>
       <div className="nav-right">
-        <span className="nav-tail">F'26 · INDRA</span>
         <ThemeToggle />
       </div>
     </motion.header>

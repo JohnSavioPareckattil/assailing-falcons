@@ -1,7 +1,8 @@
 import { useRef } from "react";
-import { motion, useScroll, useReducedMotion } from "motion/react";
+import { motion, useScroll, useSpring, useReducedMotion } from "motion/react";
 import Reveal from "./Reveal";
 import LazyImage from "./LazyImage";
+import FlightPathDoodle from "./FlightPathDoodle";
 import { flightLog } from "../data";
 
 export default function FlightLog() {
@@ -11,6 +12,9 @@ export default function FlightLog() {
     target: railRef,
     offset: ["start 0.75", "end 0.6"],
   });
+  // smoothed so the rail eases into each shift instead of tracking the
+  // scrollbar 1:1 — the "fluid" motion the raw scrollYProgress lacks
+  const fluidProgress = useSpring(scrollYProgress, { stiffness: 90, damping: 24, mass: 0.4 });
 
   return (
     <section className="section log" id="log">
@@ -22,17 +26,18 @@ export default function FlightLog() {
               Sixteen years,<br />seventeen airframes
             </h2>
           </div>
-          <p className="eyebrow eyebrow--dim" style={{ maxWidth: "34ch", textAlign: "right" }}>
-            Every mission year gets a new callsign. This is the flight
-            plan from Falcons Alpha to Indra.
-          </p>
+          <FlightPathDoodle />
         </div>
 
         <div className="log-rail" ref={railRef}>
           <div className="log-line-track" />
           <motion.div
             className="log-line-progress"
-            style={reduceMotion ? undefined : { scaleY: scrollYProgress }}
+            initial={reduceMotion ? undefined : { opacity: 0 }}
+            whileInView={reduceMotion ? undefined : { opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            style={reduceMotion ? undefined : { scaleY: fluidProgress }}
           />
 
           {flightLog.map((entry, i) => (
