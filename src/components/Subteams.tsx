@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "motion/react";
 import Reveal from "./Reveal";
 import SubteamGraphic from "./SubteamGraphic";
+import KineticHeading from "./KineticHeading";
 import { subteams } from "../data";
 
 export default function Subteams() {
@@ -12,9 +13,11 @@ export default function Subteams() {
         <div className="section-head">
           <div>
             <p className="eyebrow">How We're Built</p>
-            <h2 className="section-title" style={{ marginTop: "0.6rem" }}>
-              Four desks,<br />one airframe
-            </h2>
+            <KineticHeading
+              className="section-title"
+              style={{ marginTop: "0.6rem" }}
+              lines={["Four desks,", "one airframe"]}
+            />
           </div>
         </div>
 

@@ -2,6 +2,7 @@ import { useRef, type MouseEvent } from "react";
 import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "motion/react";
 import Reveal from "./Reveal";
 import CornerFrame from "./CornerFrame";
+import KineticHeading from "./KineticHeading";
 import { sponsorWays, sponsorProof, contact } from "../data";
 
 export default function SponsorUs() {
@@ -29,9 +30,7 @@ export default function SponsorUs() {
         <div className="section-head">
           <div>
             <p className="eyebrow">Sponsor Us</p>
-            <h2 className="section-title" style={{ marginTop: "0.6rem" }}>
-              Back the build
-            </h2>
+            <KineticHeading className="section-title" style={{ marginTop: "0.6rem" }} lines={["Back the build"]} />
           </div>
           <p className="eyebrow eyebrow--dim" style={{ maxWidth: "34ch", textAlign: "right" }}>
             Every airframe is student-funded. Sponsorship is what turns a

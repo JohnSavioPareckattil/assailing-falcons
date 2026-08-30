@@ -1,5 +1,6 @@
 import Reveal from "./Reveal";
 import CornerFrame from "./CornerFrame";
+import KineticHeading from "./KineticHeading";
 import { testimonials } from "../data";
 
 export default function Testimonials() {
@@ -9,9 +10,7 @@ export default function Testimonials() {
         <div className="section-head">
           <div>
             <p className="eyebrow">Testimonials</p>
-            <h2 className="section-title" style={{ marginTop: "0.6rem" }}>
-              From the flight line
-            </h2>
+            <KineticHeading className="section-title" style={{ marginTop: "0.6rem" }} lines={["From the flight line"]} />
           </div>
         </div>
 

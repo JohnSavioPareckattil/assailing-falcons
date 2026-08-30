@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import KineticHeading from "./KineticHeading";
 import { sponsors } from "../data";
 
 export default function Sponsors() {
@@ -8,9 +9,7 @@ export default function Sponsors() {
         <div className="section-head">
           <div>
             <p className="eyebrow">Backed By</p>
-            <h2 className="section-title" style={{ marginTop: "0.6rem" }}>
-              On the fuselage
-            </h2>
+            <KineticHeading className="section-title" style={{ marginTop: "0.6rem" }} lines={["On the fuselage"]} />
           </div>
         </div>
 

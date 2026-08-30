@@ -22,11 +22,14 @@ export default function ArcScrubber({
   index,
   onChange,
   label,
+  stepLabel = "photo",
 }: {
   count: number;
   index: number;
   onChange: (i: number) => void;
   label: string;
+  /** noun used in the prev/next button aria-labels, e.g. "aircraft" */
+  stepLabel?: string;
 }) {
   const reduceMotion = useReducedMotion();
   const svgRef = useRef<SVGSVGElement>(null);
@@ -76,7 +79,7 @@ export default function ArcScrubber({
         type="button"
         className="arc-scrubber-step"
         onClick={() => onChange((index - 1 + count) % count)}
-        aria-label="Previous photo"
+        aria-label={`Previous ${stepLabel}`}
       >
         ‹
       </button>
@@ -86,7 +89,7 @@ export default function ArcScrubber({
         className="arc-scrubber-dial"
         viewBox="0 0 300 60"
         role="slider"
-        aria-label={`${label} photo position`}
+        aria-label={`${label} ${stepLabel} position`}
         aria-valuemin={1}
         aria-valuemax={count}
         aria-valuenow={index + 1}
@@ -119,7 +122,7 @@ export default function ArcScrubber({
         type="button"
         className="arc-scrubber-step"
         onClick={() => onChange((index + 1) % count)}
-        aria-label="Next photo"
+        aria-label={`Next ${stepLabel}`}
       >
         ›
       </button>

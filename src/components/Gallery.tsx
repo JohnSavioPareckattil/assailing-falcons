@@ -4,6 +4,7 @@ import Reveal from "./Reveal";
 import CornerFrame from "./CornerFrame";
 import LazyImage from "./LazyImage";
 import ArcScrubber from "./ArcScrubber";
+import KineticHeading from "./KineticHeading";
 import { gallery, flightLog, contact, type GalleryItem } from "../data";
 
 const categories: { key: GalleryItem["category"] | "all"; label: string }[] = [
@@ -72,9 +73,7 @@ export default function Gallery() {
         <div className="section-head">
           <div>
             <p className="eyebrow">Gallery</p>
-            <h2 className="section-title" style={{ marginTop: "0.6rem" }}>
-              The archive
-            </h2>
+            <KineticHeading className="section-title" style={{ marginTop: "0.6rem" }} lines={["The archive"]} />
           </div>
           <div className="gallery-filters" role="tablist" aria-label="Filter gallery by category">
             {categories.map((c) => (

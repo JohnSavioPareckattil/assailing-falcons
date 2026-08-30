@@ -3,6 +3,7 @@ import Reveal from "./Reveal";
 import CornerFrame from "./CornerFrame";
 import Blueprint from "./Blueprint";
 import LazyImage from "./LazyImage";
+import KineticHeading from "./KineticHeading";
 
 const specs = [
   { key: "Season", val: "F'26" },
@@ -26,9 +27,7 @@ export default function Flagship() {
         <div className="section-head">
           <div>
             <p className="eyebrow">Current Flagship</p>
-            <h2 className="section-title" style={{ marginTop: "0.6rem" }}>
-              Indra
-            </h2>
+            <KineticHeading className="section-title" style={{ marginTop: "0.6rem" }} lines={["Indra"]} />
           </div>
         </div>
 

@@ -1,8 +1,9 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform, useReducedMotion } from "motion/react";
+import { useEffect, useRef, useState, type PointerEvent } from "react";
+import { motion, useScroll, useTransform, useMotionValue, useSpring, useReducedMotion } from "motion/react";
 import MagneticButton from "./MagneticButton";
 import LiveWeather from "./LiveWeather";
 import HeroSky from "./HeroSky";
+import NextSeasonCountdown from "./NextSeasonCountdown";
 import { useClickSpark } from "./useClickSpark";
 
 const lineVariants = {
@@ -29,8 +30,44 @@ export default function Hero() {
   const mediaY = useTransform(scrollYProgress, [0, 1], [0, 160]);
   const scrollCueOpacity = useTransform(scrollYProgress, [0, 0.12], [1, 0]);
 
+  // cursor-driven depth: the photo tilts toward the pointer, the HUD/body
+  // text drift a couple of px the other way — separates into layers
+  // instead of reading as one flat image. Fine pointers only.
+  const [tiltEnabled, setTiltEnabled] = useState(false);
+  const pointerX = useMotionValue(0);
+  const pointerY = useMotionValue(0);
+  const tiltX = useSpring(pointerY, { stiffness: 120, damping: 18, mass: 0.5 });
+  const tiltY = useSpring(pointerX, { stiffness: 120, damping: 18, mass: 0.5 });
+  const mediaRotateX = useTransform(tiltX, [-1, 1], [3.2, -3.2]);
+  const mediaRotateY = useTransform(tiltY, [-1, 1], [-3.2, 3.2]);
+  const hudShiftX = useTransform(tiltY, [-1, 1], [3, -3]);
+  const bodyShiftX = useTransform(tiltY, [-1, 1], [-4, 4]);
+
+  useEffect(() => {
+    if (reduceMotion) return;
+    setTiltEnabled(window.matchMedia("(pointer: fine)").matches);
+  }, [reduceMotion]);
+
+  const handlePointerMove = (e: PointerEvent<HTMLElement>) => {
+    if (!tiltEnabled) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    pointerX.set(((e.clientX - rect.left) / rect.width) * 2 - 1);
+    pointerY.set(((e.clientY - rect.top) / rect.height) * 2 - 1);
+  };
+  const handlePointerLeave = () => {
+    pointerX.set(0);
+    pointerY.set(0);
+  };
+
   return (
-    <section className="hero" id="top" ref={sectionRef}>
+    <section
+      className="hero"
+      id="top"
+      ref={sectionRef}
+      onPointerMove={tiltEnabled ? handlePointerMove : undefined}
+      onPointerLeave={tiltEnabled ? handlePointerLeave : undefined}
+      style={tiltEnabled ? { perspective: 1200 } : undefined}
+    >
       <div className="hero-media">
         <picture>
           <source
@@ -44,14 +81,23 @@ export default function Hero() {
             sizes="100vw"
             alt="Indra, the team's 2026 flagship aircraft, spotlit on the tarmac at night"
             fetchPriority="high"
-            style={reduceMotion ? undefined : { y: mediaY, scale: 1.12 }}
+            style={
+              reduceMotion
+                ? undefined
+                : {
+                    y: mediaY,
+                    scale: 1.12,
+                    rotateX: tiltEnabled ? mediaRotateX : 0,
+                    rotateY: tiltEnabled ? mediaRotateY : 0,
+                  }
+            }
           />
         </picture>
       </div>
 
       <HeroSky />
 
-      <div className="hero-hud">
+      <motion.div className="hero-hud" style={tiltEnabled ? { x: hudShiftX } : undefined}>
         <div>
           <span>12.9165° N, 79.1325° E</span>
           <span>VIT Vellore, Tamil Nadu</span>
@@ -62,10 +108,11 @@ export default function Hero() {
             <span className="hud-live-dot" aria-hidden="true" />
             <strong>F'26 · Indra</strong>
           </span>
+          <NextSeasonCountdown />
         </div>
-      </div>
+      </motion.div>
 
-      <div className="hero-body">
+      <motion.div className="hero-body" style={tiltEnabled ? { x: bodyShiftX } : undefined}>
         <motion.p
           className="hero-eyebrow"
           initial={{ opacity: 0 }}
@@ -109,7 +156,7 @@ export default function Hero() {
             {secondarySpark.overlay}
           </MagneticButton>
         </motion.div>
-      </div>
+      </motion.div>
 
       <motion.div
         className="hero-scroll-cue"

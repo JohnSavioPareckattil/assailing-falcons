@@ -1,6 +1,7 @@
 import Reveal from "./Reveal";
 import Blueprint from "./Blueprint";
 import LazyImage from "./LazyImage";
+import KineticHeading from "./KineticHeading";
 
 export default function About() {
   return (
@@ -10,9 +11,11 @@ export default function About() {
         <div className="about-grid">
           <Reveal>
             <p className="eyebrow">Who We Are</p>
-            <h2 className="section-title" style={{ marginTop: "0.6rem", marginBottom: "1.6rem" }}>
-              Sixteen years<br />in the air
-            </h2>
+            <KineticHeading
+              className="section-title"
+              style={{ marginTop: "0.6rem", marginBottom: "1.6rem" }}
+              lines={["Sixteen years", "in the air"]}
+            />
             <div className="about-copy">
               <p>
                 <strong>Team Assailing Falcons</strong> is VIT Vellore's aeromodelling team.

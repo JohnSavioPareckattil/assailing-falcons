@@ -8,7 +8,7 @@ export default function Stats() {
       <div className="container">
         <div className="stats-grid">
           {stats.map((s, i) => (
-            <Reveal key={s.label} delay={i * 0.08} variant="fade" className="stat">
+            <Reveal key={s.label} delay={i * 0.08} variant="pop" className="stat">
               <div className="stat-value">
                 <StatCounter value={s.value} />
                 <sup>{s.unit}</sup>
